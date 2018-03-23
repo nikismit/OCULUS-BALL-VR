@@ -3534,12 +3534,12 @@ MonoBehaviour:
   _ballPoolAmount: 500
   _growPool: 1
   _spawnLocation: {fileID: 1468106366}
-  _growTimeMax: 2.5
+  _growTimeMax: 4
   _ballsizeMinMax: {x: 0.1, y: 5}
   _ballBounceMinMax: {x: 0.1, y: 1}
   _forceAdd: 50
   _bounceBasedOnPitch: 1
-  _massMultiplyBySize: 1
+  _massMultiplyBySize: 0
   lowPitchColor: {r: 0.7843138, g: 0.003921569, b: 0.9960785, a: 1}
   midPitchColor: {r: 1, g: 0.5254902, b: 0.003921569, a: 1}
   highPitchColor: {r: 0.003921569, g: 1, b: 0.7607844, a: 1}

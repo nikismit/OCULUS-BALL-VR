@@ -287,16 +287,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 108914229615738160, guid: 2519a14bffa5595499f70b27985c3294,
-        type: 2}
-      propertyPath: m_Shadows.m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114854371619849760, guid: 2519a14bffa5595499f70b27985c3294,
-        type: 2}
-      propertyPath: colorErrorMargin
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2519a14bffa5595499f70b27985c3294, type: 2}
   m_IsPrefabParent: 0
@@ -1404,7 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _publicAmplitude: 0
-  _silenceAmplitude: 0.1
+  _silenceAmplitude: 0.2
 --- !u!114 &604968776
 MonoBehaviour:
   m_ObjectHideFlags: 0

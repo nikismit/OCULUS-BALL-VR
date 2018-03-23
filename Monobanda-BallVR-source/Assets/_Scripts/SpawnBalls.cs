@@ -20,10 +20,13 @@ public class SpawnBalls : MonoBehaviour {
     // ball size
     public float _growTimeMax;
     public Vector2 _ballsizeMinMax;
-    public Vector2 _ballBounceMinMax;
-	public float _forceAdd;
-	public bool _bounceBasedOnPitch;
+	public float defaultMass;
 	public bool _massMultiplyBySize;
+    public Vector2 _ballBounceMinMax;
+	public bool _bounceBasedOnPitch;
+	public float _forceAdd;
+	
+	
 
 	[Header("Colors")]
 	public Color lowPitchColor;
@@ -117,6 +120,7 @@ public class SpawnBalls : MonoBehaviour {
             _isSpeaking = false;
             _timeRecording = 0;
             _highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
+			//print(_currentBall.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
             _currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
             _highestAmplitude = 0;
         }
@@ -137,7 +141,7 @@ public class SpawnBalls : MonoBehaviour {
 			float lowMid = 1.0f;
 			float midHigh = 0.0f;
 
-			if(_micPitch >= 0 && _micPitch <=0.5f){
+			if(_micPitch >= 0.01f && _micPitch <=0.5f){
 				belowMid = true;
 				lowMid = _micPitch*2;
 				midHigh = 0;
@@ -156,11 +160,11 @@ public class SpawnBalls : MonoBehaviour {
 
             if (_massMultiplyBySize)
             {
-                _currentRigidbody.mass = (1 - _micPitch) * _ballSizeCurrent;
+                _currentRigidbody.mass = defaultMass * _ballSizeCurrent;
             }
             else
             {
-                _currentRigidbody.mass = (1 - _micPitch);
+                _currentRigidbody.mass = defaultMass;
             }
 
             if (_bounceBasedOnPitch)
@@ -171,7 +175,7 @@ public class SpawnBalls : MonoBehaviour {
             {
                 _currentSphereCollider.material.bounciness = _ballBounceMinMax.y;
             }
-            _currentSphereCollider.material.bounceCombine = PhysicMaterialCombine.Multiply;
+            _currentSphereCollider.material.bounceCombine = PhysicMaterialCombine.Average;
         }
     }
 

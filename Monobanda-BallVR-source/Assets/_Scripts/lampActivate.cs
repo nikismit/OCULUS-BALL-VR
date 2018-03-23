@@ -60,6 +60,8 @@ public class lampActivate : MonoBehaviour {
 			//print("color is good!");
 			addingTime = true;
 			timer = 0.0f;
+		} else {
+			other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
 		}
 
 	}
@@ -67,6 +69,7 @@ public class lampActivate : MonoBehaviour {
 	private void OnTriggerExit(Collider other)
 	{
 		addingTime = false;
+		other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
 		timer = 0.0f;
 		this.GetComponent<Light>().enabled = false;
 	}

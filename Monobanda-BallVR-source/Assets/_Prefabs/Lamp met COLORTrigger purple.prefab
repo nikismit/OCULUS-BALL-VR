@@ -152,7 +152,7 @@ Light:
   m_SpotAngle: 45
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -200,5 +200,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerTime: 2
   wantedColor: {r: 0.77647066, g: 0, b: 0.98823535, a: 0}
-  colorErrorMargin: 0.15
+  colorErrorMargin: 0.4
   addingTime: 0

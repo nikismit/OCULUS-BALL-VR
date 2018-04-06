@@ -46,7 +46,7 @@ public class SpawnBalls : MonoBehaviour {
 	public float _minPitch;
 	public float _maxPitch;
 	public float _maxRegisteredAmplitude;
-    private float _micPitch;
+    public float _micPitch;
     private float _micAmplitude;
 
 

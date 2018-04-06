@@ -243,7 +243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114110948051841764, guid: 126d619cf4daa52469682f85c1378b4a,
         type: 2}
@@ -519,7 +519,7 @@ Transform:
   - {fileID: 739646806}
   - {fileID: 1826736038}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &192044883 stripped
 Transform:
@@ -1453,7 +1453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &604968775
 MonoBehaviour:
@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _publicAmplitude: 0
-  _silenceAmplitude: 2.5
+  _silenceAmplitude: 0.5
 --- !u!114 &604968776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,6 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listenToAudioListener: 0
   _audioProfile: 0
+  _publicAmplitude: 0
   channel: 0
 --- !u!1 &617954127
 GameObject:

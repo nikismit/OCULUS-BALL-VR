@@ -31,6 +31,7 @@ public class AudioPeer : MonoBehaviour {
 	private float _AmplitudeHighest;
 	//audio profile
 	public float _audioProfile;
+	public float _publicAmplitude;
 
 	//stereo channels
 	public enum _channel {Stereo, Left, Right};
@@ -94,6 +95,7 @@ public class AudioPeer : MonoBehaviour {
 			_AmplitudeHighest = _CurrentAmplitude;
 		}
 		_Amplitude = _CurrentAmplitude / _AmplitudeHighest;
+		_publicAmplitude = _Amplitude;
 		_AmplitudeBuffer = _CurrentAmplitudeBuffer / _AmplitudeHighest;
 	}
 

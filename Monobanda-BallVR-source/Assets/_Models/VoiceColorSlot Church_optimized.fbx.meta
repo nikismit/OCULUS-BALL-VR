@@ -17,6 +17,60 @@ ModelImporter:
     100018: Slot_01.003
     100020: Slot_01.012
     100022: //RootNode
+    100024: colorring
+    100026: colorring2
+    100028: colorring3
+    100030: Plane
+    100032: Plane.004
+    100034: Slot_01.000
+    100036: Slot_01.015
+    100038: Slot_01.016
+    100040: Slot_01.017
+    100042: Slot_01.018
+    100044: Slot_01.019
+    100046: Slot_01.020
+    100048: Slot_01.021
+    100050: Slot_01.022
+    100052: Slot_01.023
+    100054: Slot_01.024
+    100056: Slot_01.025
+    100058: Slot_01.026
+    100060: Slot_vertical
+    100062: Slot_vertical.001
+    100064: Slot_vertical.002
+    100066: Slot_vertical.003
+    100068: Slot_vertical.004
+    100070: Cube.004
+    100072: Plane.003
+    100074: Plane.005
+    100076: Plane.006
+    100078: Plane.007
+    100080: Plane.008
+    100082: Plane.009
+    100084: Mobile hole & floor
+    100086: piece of floor
+    100088: bucket
+    100090: FLOOR_big
+    100092: FLOOR_long
+    100094: FLOOR_long.001
+    100096: FLOOR_long.002
+    100098: FLOOR_medium
+    100100: FLOOR_small
+    100102: Pillar
+    100104: Pillar.low
+    100106: Pillar_triangle
+    100108: SKY temple
+    100110: sky temple roof
+    100112: SLOT_big
+    100114: SLOT_big.001
+    100116: SLOT_medium
+    100118: SLOT_medium.001
+    100120: SLOT_Rimmed
+    100122: SLOT_Skyisland
+    100124: SLOT_small
+    100126: SLOT_small.001
+    100128: STEPS
+    100130: sky temple roof.001
     400000: bool
     400002: Cube
     400004: Cube.001
@@ -29,6 +83,60 @@ ModelImporter:
     400018: Slot_01.003
     400020: Slot_01.012
     400022: //RootNode
+    400024: colorring
+    400026: colorring2
+    400028: colorring3
+    400030: Plane
+    400032: Plane.004
+    400034: Slot_01.000
+    400036: Slot_01.015
+    400038: Slot_01.016
+    400040: Slot_01.017
+    400042: Slot_01.018
+    400044: Slot_01.019
+    400046: Slot_01.020
+    400048: Slot_01.021
+    400050: Slot_01.022
+    400052: Slot_01.023
+    400054: Slot_01.024
+    400056: Slot_01.025
+    400058: Slot_01.026
+    400060: Slot_vertical
+    400062: Slot_vertical.001
+    400064: Slot_vertical.002
+    400066: Slot_vertical.003
+    400068: Slot_vertical.004
+    400070: Cube.004
+    400072: Plane.003
+    400074: Plane.005
+    400076: Plane.006
+    400078: Plane.007
+    400080: Plane.008
+    400082: Plane.009
+    400084: Mobile hole & floor
+    400086: piece of floor
+    400088: bucket
+    400090: FLOOR_big
+    400092: FLOOR_long
+    400094: FLOOR_long.001
+    400096: FLOOR_long.002
+    400098: FLOOR_medium
+    400100: FLOOR_small
+    400102: Pillar
+    400104: Pillar.low
+    400106: Pillar_triangle
+    400108: SKY temple
+    400110: sky temple roof
+    400112: SLOT_big
+    400114: SLOT_big.001
+    400116: SLOT_medium
+    400118: SLOT_medium.001
+    400120: SLOT_Rimmed
+    400122: SLOT_Skyisland
+    400124: SLOT_small
+    400126: SLOT_small.001
+    400128: STEPS
+    400130: sky temple roof.001
     2300000: bool
     2300002: Cube
     2300004: Cube.001
@@ -40,6 +148,60 @@ ModelImporter:
     2300016: Slot_01.002
     2300018: Slot_01.003
     2300020: Slot_01.012
+    2300022: colorring
+    2300024: colorring2
+    2300026: colorring3
+    2300028: Plane
+    2300030: Plane.004
+    2300032: Slot_01.000
+    2300034: Slot_01.015
+    2300036: Slot_01.016
+    2300038: Slot_01.017
+    2300040: Slot_01.018
+    2300042: Slot_01.019
+    2300044: Slot_01.020
+    2300046: Slot_01.021
+    2300048: Slot_01.022
+    2300050: Slot_01.023
+    2300052: Slot_01.024
+    2300054: Slot_01.025
+    2300056: Slot_01.026
+    2300058: Slot_vertical
+    2300060: Slot_vertical.001
+    2300062: Slot_vertical.002
+    2300064: Slot_vertical.003
+    2300066: Slot_vertical.004
+    2300068: Cube.004
+    2300070: Plane.003
+    2300072: Plane.005
+    2300074: Plane.006
+    2300076: Plane.007
+    2300078: Plane.008
+    2300080: Plane.009
+    2300082: Mobile hole & floor
+    2300084: piece of floor
+    2300086: bucket
+    2300088: FLOOR_big
+    2300090: FLOOR_long
+    2300092: FLOOR_long.001
+    2300094: FLOOR_long.002
+    2300096: FLOOR_medium
+    2300098: FLOOR_small
+    2300100: Pillar
+    2300102: Pillar.low
+    2300104: Pillar_triangle
+    2300106: SKY temple
+    2300108: sky temple roof
+    2300110: SLOT_big
+    2300112: SLOT_big.001
+    2300114: SLOT_medium
+    2300116: SLOT_medium.001
+    2300118: SLOT_Rimmed
+    2300120: SLOT_Skyisland
+    2300122: SLOT_small
+    2300124: SLOT_small.001
+    2300126: STEPS
+    2300128: sky temple roof.001
     3300000: bool
     3300002: Cube
     3300004: Cube.001
@@ -51,6 +213,60 @@ ModelImporter:
     3300016: Slot_01.002
     3300018: Slot_01.003
     3300020: Slot_01.012
+    3300022: colorring
+    3300024: colorring2
+    3300026: colorring3
+    3300028: Plane
+    3300030: Plane.004
+    3300032: Slot_01.000
+    3300034: Slot_01.015
+    3300036: Slot_01.016
+    3300038: Slot_01.017
+    3300040: Slot_01.018
+    3300042: Slot_01.019
+    3300044: Slot_01.020
+    3300046: Slot_01.021
+    3300048: Slot_01.022
+    3300050: Slot_01.023
+    3300052: Slot_01.024
+    3300054: Slot_01.025
+    3300056: Slot_01.026
+    3300058: Slot_vertical
+    3300060: Slot_vertical.001
+    3300062: Slot_vertical.002
+    3300064: Slot_vertical.003
+    3300066: Slot_vertical.004
+    3300068: Cube.004
+    3300070: Plane.003
+    3300072: Plane.005
+    3300074: Plane.006
+    3300076: Plane.007
+    3300078: Plane.008
+    3300080: Plane.009
+    3300082: Mobile hole & floor
+    3300084: piece of floor
+    3300086: bucket
+    3300088: FLOOR_big
+    3300090: FLOOR_long
+    3300092: FLOOR_long.001
+    3300094: FLOOR_long.002
+    3300096: FLOOR_medium
+    3300098: FLOOR_small
+    3300100: Pillar
+    3300102: Pillar.low
+    3300104: Pillar_triangle
+    3300106: SKY temple
+    3300108: sky temple roof
+    3300110: SLOT_big
+    3300112: SLOT_big.001
+    3300114: SLOT_medium
+    3300116: SLOT_medium.001
+    3300118: SLOT_Rimmed
+    3300120: SLOT_Skyisland
+    3300122: SLOT_small
+    3300124: SLOT_small.001
+    3300126: STEPS
+    3300128: sky temple roof.001
     4300000: Slot_01.012
     4300002: Plane.002
     4300004: bool
@@ -62,6 +278,60 @@ ModelImporter:
     4300016: Slot_01.001
     4300018: Slot_01.003
     4300020: Plane.001
+    4300022: colorring3
+    4300024: colorring2
+    4300026: colorring
+    4300028: Slot_01.000
+    4300030: Slot_01.026
+    4300032: Slot_01.025
+    4300034: Slot_01.024
+    4300036: Slot_01.023
+    4300038: Slot_01.022
+    4300040: Slot_01.021
+    4300042: Slot_01.020
+    4300044: Slot_01.019
+    4300046: Slot_01.018
+    4300048: Slot_01.017
+    4300050: Slot_01.016
+    4300052: Slot_01.015
+    4300054: Plane.004
+    4300056: Plane
+    4300058: Slot_vertical.004
+    4300060: Slot_vertical.003
+    4300062: Slot_vertical.002
+    4300064: Slot_vertical.001
+    4300066: Slot_vertical
+    4300068: Plane.009
+    4300070: Plane.008
+    4300072: Plane.007
+    4300074: Plane.006
+    4300076: Cube.004
+    4300078: Plane.005
+    4300080: Plane.003
+    4300082: piece of floor
+    4300084: Mobile hole & floor
+    4300086: Pillar.low
+    4300088: FLOOR_long.002
+    4300090: FLOOR_long.001
+    4300092: FLOOR_long
+    4300094: FLOOR_small
+    4300096: SLOT_small.001
+    4300098: SLOT_medium.001
+    4300100: SLOT_big.001
+    4300102: STEPS
+    4300104: sky temple roof
+    4300106: SLOT_Skyisland
+    4300108: SKY temple
+    4300110: FLOOR_big
+    4300112: FLOOR_medium
+    4300114: SLOT_big
+    4300116: Pillar_triangle
+    4300118: SLOT_medium
+    4300120: SLOT_small
+    4300122: Pillar
+    4300124: SLOT_Rimmed
+    4300126: bucket
+    4300128: sky temple roof.001
   materials:
     importMaterials: 1
     materialName: 0
@@ -108,7 +378,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 33
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

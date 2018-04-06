@@ -62,7 +62,7 @@ public class SpawnBalls : MonoBehaviour {
     
     private float _highestAmplitude;
 
-    private int _currentBallNum = 1;
+    public static int _currentBallNum = 1;
     
 
 
@@ -113,6 +113,7 @@ public class SpawnBalls : MonoBehaviour {
             _currentMaterial.SetColor("_Color", _currentColor);
             _currentBall.transform.position = _spawnLocation.position;
 			_currentBall.name = "Ball" + _currentBallNum;
+			//print(_currentBall.name);
 			_currentBallNum +=1;
             _currentRigidbody.isKinematic = true;
         }
@@ -129,6 +130,7 @@ public class SpawnBalls : MonoBehaviour {
 				_highestAmplitude = 0;
 			} else {
 				_currentBall.SetActive(false);
+				//_currentBallNum -= 1;
 			}
         }
 

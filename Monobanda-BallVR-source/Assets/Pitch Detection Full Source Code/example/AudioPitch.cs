@@ -23,6 +23,7 @@ public class AudioPitch : MonoBehaviour {
 	public int pitchTimeInterval=100; 					//Millisecons needed to detect tone
 	private float refValue = 0.1f; 						// RMS value for 0 dB
 	public float minVolumeDB=-17f;						//Min volume in bd needed to start detection
+	public float recTime;
 
 	private int currentDetectedNote =0;					//Las note detected (midi number)
 	private string currentDetectedNoteName;				//Note name in modern notation (C=Do, D=Re, etc..)
@@ -94,6 +95,7 @@ public class AudioPitch : MonoBehaviour {
 	
 
 	void Update () {
+		recTime = GetComponent<AudioSource>().time;
 		if (listening) {
             _audioSource.GetOutputData(data,0);
 			float sum = 0f;
@@ -116,6 +118,7 @@ public class AudioPitch : MonoBehaviour {
             //noteText.text="Note: "+pitchDetector.midiNoteToString(midi);
             detectionsMade [detectionPointer++] = midiant;
 			detectionPointer %= cumulativeDetections;
+			
 		}
 		else {
 			//noteText.text="Note: -";

@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 342}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 162
+  controlID: 129
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 0
     width: 831
     height: 486
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -364,9 +364,9 @@ MonoBehaviour:
     height: 610
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8afbf9ff
-    m_LastClickedID: -394358
-    m_ExpandedIDs: 88fbf9ff8afbf9ff8cfbf9ff0644faff0844faff9046faff44ccfaff46ccfaff48ccfaff8ccefafff41dfbfff61dfbfff81dfbff2020fbff00b5fdff1ab5fdff1cb5fdff1eb5fdffd6b7fdff38bafdff14fcffff16fcffff18fcffff00000000
+    m_SelectedIDs: 702e0000
+    m_LastClickedID: 11888
+    m_ExpandedIDs: 14fcffff16fcffff18fcfffff4ffffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -460,19 +460,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Scenes
+    - Assets/_Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scenes
+  - Assets/_Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\monobanda PLAY\Documents\GitHub\OCULUS-BALL-VR\Monobanda-BallVR-source
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 022a0000
-    m_LastClickedID: 10754
-    m_ExpandedIDs: 00000000e4280000e8280000723200007432000076320000783200007a3200007c3200007e32000000ca9a3bffffff7f
+    m_SelectedIDs: 7c2a0000
+    m_LastClickedID: 10876
+    m_ExpandedIDs: 00000000e4280000e8280000a4290000b6310000b8310000ba310000bc310000be310000c0310000c231000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -500,7 +500,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e4280000e8280000723200007432000076320000783200007a3200007c3200007e320000
+    m_ExpandedIDs: 00000000e4280000e8280000a4290000b6310000b8310000ba310000bc310000be310000c0310000c2310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -528,7 +528,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 
+    m_ExpandedInstanceIDs: cc2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -583,7 +583,7 @@ MonoBehaviour:
     height: 440
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
@@ -663,9 +663,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.0392451, y: -0.75092185, z: -13.451792}
+    m_Target: {x: 7.0032187, y: -6.856113, z: 2.7990098}
     speed: 2
-    m_Value: {x: 2.0392451, y: -0.75092185, z: -13.451792}
+    m_Value: {x: 7.0032187, y: -6.856113, z: 2.7990098}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -688,13 +688,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.024127496, y: 0.96850145, z: -0.10384058, w: 0.22503339}
+    m_Target: {x: 0.28570324, y: 0.5521314, z: -0.20896548, w: 0.7548895}
     speed: 2
-    m_Value: {x: 0.024127496, y: 0.96850145, z: -0.10384058, w: 0.22503339}
+    m_Value: {x: 0.28570324, y: 0.5521314, z: -0.20896548, w: 0.7548895}
   m_Size:
-    m_Target: 13.9900055
+    m_Target: 17.293306
     speed: 2
-    m_Value: 13.9900055
+    m_Value: 17.293306
   m_Ortho:
     m_Target: 0
     speed: 2

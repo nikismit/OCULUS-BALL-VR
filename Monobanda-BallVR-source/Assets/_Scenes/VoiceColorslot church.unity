@@ -1505,6 +1505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listenToAudioListener: 0
   _audioProfile: 0
+  _publicAmplitude: 0
   channel: 0
 --- !u!1 &617954127
 GameObject:

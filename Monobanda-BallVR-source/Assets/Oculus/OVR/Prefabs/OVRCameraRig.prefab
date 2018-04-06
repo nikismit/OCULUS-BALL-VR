@@ -162,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -0.54, y: 2.38, z: 0}
+  m_LocalPosition: {x: -0.54, y: 0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459718}
@@ -375,7 +375,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1319179359019904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 2}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -484,16 +484,18 @@ MonoBehaviour:
   _ballPoolAmount: 500
   _growPool: 1
   _spawnLocation: {fileID: 4324927648740320}
-  _growTimeMax: 5
-  _ballsizeMinMax: {x: 0.1, y: 5}
+  _growTimeMax: 10
+  _ballsizeMinMax: {x: 0.01, y: 5}
   defaultMass: 0.1
   _massMultiplyBySize: 0
   _ballBounceMinMax: {x: 0.1, y: 0.5}
   _bounceBasedOnPitch: 0
-  _forceAdd: 30
+  _forceAdd: 5
+  _minSpeakTime: 0.1
   lowPitchColor: {r: 0.7843138, g: 0.003921569, b: 0.9960785, a: 1}
   midPitchColor: {r: 1, g: 0.5254902, b: 0.003921569, a: 1}
   highPitchColor: {r: 0.003921569, g: 1, b: 0.7607844, a: 1}
   _minPitch: 10
   _maxPitch: 30
   _maxRegisteredAmplitude: 30
+  _micPitch: 0

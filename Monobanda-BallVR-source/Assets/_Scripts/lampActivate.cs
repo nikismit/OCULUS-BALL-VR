@@ -69,7 +69,9 @@ public class lampActivate : MonoBehaviour {
 	private void OnTriggerExit(Collider other)
 	{
 		addingTime = false;
-		other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
+		if(other.GetComponent<DestroyAtZeroVelocity>()){
+			other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
+		}
 		timer = 0.0f;
 		this.GetComponent<Light>().enabled = false;
 	}

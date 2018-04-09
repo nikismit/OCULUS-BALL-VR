@@ -144,7 +144,7 @@ public class AudioPitch : MonoBehaviour {
 		GetComponent<AudioSource>().volume = 1f;
 		GetComponent<AudioSource>().clip = null;
 		GetComponent<AudioSource>().loop = true; // Set the AudioClip to loop
-		//GetComponent<AudioSource>().mute = false; // Mute the sound, we don't want the player to hear it
+		GetComponent<AudioSource>().mute = false; // Mute the sound, we don't want the player to hear it
 		StartMicrophone();
 	}
 
@@ -155,14 +155,21 @@ public class AudioPitch : MonoBehaviour {
 	}
 	
 	public void StartMicrophone () {
+		GetComponent<AudioSource>().Stop();
+		GetComponent<AudioSource>().time = 0;
 		GetComponent<AudioSource>().clip = Microphone.Start(selectedDevice, true, 10, maxFreq);//Starts recording
 		while (!(Microphone.GetPosition(selectedDevice) > 0)){} // Wait until the recording has started
 		GetComponent<AudioSource>().Play(); // Play the audio source!
 	}
-	
+
 	public void StopMicrophone () {
 		GetComponent<AudioSource>().Stop();//Stops the audio
 		Microphone.End(selectedDevice);//Stops the recording of the device	
+	}
+
+	public void ClearMicrophone(){
+		StopMicrophone();
+		setUptMic();
 	}
 
 	int repetitions(int element) {

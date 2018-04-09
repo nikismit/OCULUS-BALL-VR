@@ -45,6 +45,7 @@ public class SpawnBalls : MonoBehaviour {
 
     //microphone variables
 	[Header("Mic Options")]
+	public GameObject MicManager;
 	public float _minPitch;
 	public float _maxPitch;
 	public float _maxRegisteredAmplitude;
@@ -57,7 +58,7 @@ public class SpawnBalls : MonoBehaviour {
 
     
     private float _ballSizeCurrent;
-
+	private float _currentAmplitude;
     
     
     private float _highestAmplitude;
@@ -112,9 +113,9 @@ public class SpawnBalls : MonoBehaviour {
             _currentSphereCollider = _currentBall.GetComponent<SphereCollider>();
             _currentMaterial.SetColor("_Color", _currentColor);
             _currentBall.transform.position = _spawnLocation.position;
-			_currentBall.name = "Ball" + _currentBallNum;
+			//_currentBall.name = "Ball" + _currentBallNum;
 			//print(_currentBall.name);
-			_currentBallNum +=1;
+			//_currentBallNum +=1;
             _currentRigidbody.isKinematic = true;
         }
 
@@ -128,6 +129,7 @@ public class SpawnBalls : MonoBehaviour {
 				//print(_currentBall.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
 				_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 				_highestAmplitude = 0;
+				MicManager.GetComponent<AudioPitch>().ClearMicrophone();
 			} else {
 				_currentBall.SetActive(false);
 				//_currentBallNum -= 1;
@@ -140,6 +142,7 @@ public class SpawnBalls : MonoBehaviour {
             {
                 _highestAmplitude = _micAmplitude;
             }
+			_currentAmplitude = _micAmplitude;
             _currentBall.transform.position = _spawnLocation.position;
             _timeRecording += Time.deltaTime;
             _spawnTimer += Time.deltaTime;

@@ -153,19 +153,19 @@ public class SpawnBalls : MonoBehaviour {
 			float lowMid = 1.0f;
 			float midHigh = 0.0f;
 
-			if(_micPitch >= 0.01f && _micPitch <=0.5f){
+			if(_micPitch <=0.5f){
 				belowMid = true;
 				lowMid = _micPitch*2;
 				midHigh = 0;
-			} else if (_micPitch > 0.5f && _micPitch <= 1.0f){
+			} else if (_micPitch > 0.5f){
 				belowMid = false;
 				midHigh = (_micPitch - 0.5f)*2;
 				lowMid = 0;
 			}
 			if(belowMid){
-				_currentColor = Color.Lerp(lowPitchColor, midPitchColor, lowMid);
+				_currentColor = Color.Lerp(lowPitchColor, midPitchColor, Mathf.Clamp01(lowMid));
 			} else {
-				_currentColor = Color.Lerp(midPitchColor, highPitchColor, midHigh);
+				_currentColor = Color.Lerp(midPitchColor, highPitchColor, Mathf.Clamp01(midHigh));
 			}
             _currentMaterial.SetColor("_Color", _currentColor);
 			_currentMaterial.SetColor("_EmissionColor", _currentColor);

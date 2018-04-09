@@ -26,6 +26,8 @@ public class SpawnBalls : MonoBehaviour {
 	public bool _bounceBasedOnPitch;
 	public float _forceAdd;
 	
+	private float _spawnTimer = 0.0f;
+	public float _minSpeakTime = 0.5f;
 	
 
 	[Header("Colors")]
@@ -43,6 +45,7 @@ public class SpawnBalls : MonoBehaviour {
 
     //microphone variables
 	[Header("Mic Options")]
+	public GameObject MicManager;
 	public float _minPitch;
 	public float _maxPitch;
 	public float _maxRegisteredAmplitude;
@@ -55,12 +58,12 @@ public class SpawnBalls : MonoBehaviour {
 
     
     private float _ballSizeCurrent;
-
+	private float _currentAmplitude;
     
     
     private float _highestAmplitude;
 
-    private int _currentBallNum = 1;
+    public static int _currentBallNum = 1;
     
 
 
@@ -103,26 +106,34 @@ public class SpawnBalls : MonoBehaviour {
         {
             _currentColor = new Color(0, 0, 0, 1);
             _isSpeaking = true;
+			_spawnTimer = 0.0f;
             _currentBall = GetPooledBall();
             _currentMaterial = _currentBall.GetComponent<Renderer>().material;
             _currentRigidbody = _currentBall.GetComponent<Rigidbody>();
             _currentSphereCollider = _currentBall.GetComponent<SphereCollider>();
             _currentMaterial.SetColor("_Color", _currentColor);
             _currentBall.transform.position = _spawnLocation.position;
-			_currentBall.name = "Ball" + _currentBallNum;
-			_currentBallNum +=1;
+			//_currentBall.name = "Ball" + _currentBallNum;
+			//print(_currentBall.name);
+			//_currentBallNum +=1;
             _currentRigidbody.isKinematic = true;
         }
 
         if ((_micAmplitude < VoiceProfile._amplitudeSilence) && (_isSpeaking)) //stop speaking RELEASE
         {
-            _currentRigidbody.isKinematic = false;
-            _isSpeaking = false;
-            _timeRecording = 0;
-            _highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
-			//print(_currentBall.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
-            _currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
-            _highestAmplitude = 0;
+			if(_spawnTimer >= _minSpeakTime){
+				_currentRigidbody.isKinematic = false;
+				_isSpeaking = false;
+				_timeRecording = 0;
+				_highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
+				//print(_currentBall.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
+				_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
+				_highestAmplitude = 0;
+				MicManager.GetComponent<AudioPitch>().ClearMicrophone();
+			} else {
+				_currentBall.SetActive(false);
+				//_currentBallNum -= 1;
+			}
         }
 
         if (_isSpeaking) //WHILE speaking
@@ -131,9 +142,10 @@ public class SpawnBalls : MonoBehaviour {
             {
                 _highestAmplitude = _micAmplitude;
             }
+			_currentAmplitude = _micAmplitude;
             _currentBall.transform.position = _spawnLocation.position;
             _timeRecording += Time.deltaTime;
-           
+            _spawnTimer += Time.deltaTime;
             _ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
             _currentBall.transform.localScale = new Vector3(_ballSizeCurrent, _ballSizeCurrent, _ballSizeCurrent);
 

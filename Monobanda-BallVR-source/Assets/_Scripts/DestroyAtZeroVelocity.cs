@@ -32,7 +32,8 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 			timer = 0.0f;
             startTimer = false;
 			this.gameObject.SetActive(false);
-			
+			startTimer = false;
+			//SpawnBalls._currentBallNum -=1;
 		}
 
 	}

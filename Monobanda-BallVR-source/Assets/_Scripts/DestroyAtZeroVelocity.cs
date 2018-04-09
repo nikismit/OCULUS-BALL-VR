@@ -30,6 +30,7 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 
 		if(timer >= deathTimer){
 			timer = 0.0f;
+            startTimer = false;
 			this.gameObject.SetActive(false);
 			
 		}

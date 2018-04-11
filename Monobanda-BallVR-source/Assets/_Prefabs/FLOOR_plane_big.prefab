@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4586665997945788}
   - component: {fileID: 33692343101853710}
   - component: {fileID: 23142828451499926}
+  - component: {fileID: 64000164298855544}
   m_Layer: 0
   m_Name: FLOOR_plane_big
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1342673093378586}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.9108931, y: 0, z: -32.137455}
+  m_LocalPosition: {x: 2, y: 0, z: -4}
   m_LocalScale: {x: 150, y: 150, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,4 +80,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1342673093378586}
+  m_Mesh: {fileID: 4300000, guid: 5dd37b9326cee8448b4418e07f9b960e, type: 3}
+--- !u!64 &64000164298855544
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342673093378586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 5dd37b9326cee8448b4418e07f9b960e, type: 3}

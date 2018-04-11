@@ -8,6 +8,7 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 	public float deathTimer = 5.0f;
 	private float timer = 0.0f;
 	public bool startTimer;
+	public bool lampActive = false;
 	bool launched = false;
 
 	// Use this for initialization
@@ -22,7 +23,7 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 			launched = true;
 		}
 		
-		if((rigbody.velocity == new Vector3(0.0f, 0.0f, 0.0f) && launched == true) || startTimer == true){
+		if((rigbody.velocity == new Vector3(0.0f, 0.0f, 0.0f) && launched == true && lampActive == false) || startTimer == true){
 			timer += Time.deltaTime;
 		} else {
 			timer = 0.0f;
@@ -32,6 +33,7 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 			timer = 0.0f;
 			this.gameObject.SetActive(false);
 			startTimer = false;
+			lampActive = false;
 			//SpawnBalls._currentBallNum -=1;
 		}
 

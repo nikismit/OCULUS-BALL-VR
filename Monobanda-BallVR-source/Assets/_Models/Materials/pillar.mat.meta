@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 035e67e86c7cfae44950ba8e42431ffd
 timeCreated: 1523010132
+=======
+guid: 308ac7bc93997ae4fbc1b241019af617
+timeCreated: 1522847666
+>>>>>>> Niki
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 2100000

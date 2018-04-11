@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnBalls : MonoBehaviour {
 
+	
+
 	[Header("Ball Options")]
     
     public GameObject _ballPrefab;
@@ -28,6 +30,7 @@ public class SpawnBalls : MonoBehaviour {
 	
 	private float _spawnTimer = 0.0f;
 	public float _minSpeakTime = 0.5f;
+	public bool _playSoundMade = true;
 	
 
 	[Header("Colors")]
@@ -56,6 +59,9 @@ public class SpawnBalls : MonoBehaviour {
     private float _timeRecording;
     private bool _isSpeaking;
 
+	private float _clipStart;
+	private float _clipEnd;
+	private AudioClip _currentClip;
     
     private float _ballSizeCurrent;
 	private float _currentAmplitude;
@@ -117,11 +123,17 @@ public class SpawnBalls : MonoBehaviour {
 			//print(_currentBall.name);
 			//_currentBallNum +=1;
             _currentRigidbody.isKinematic = true;
+			_clipStart = MicManager.GetComponent<AudioSource>().time;
         }
 
         if ((_micAmplitude < VoiceProfile._amplitudeSilence) && (_isSpeaking)) //stop speaking RELEASE
         {
 			if(_spawnTimer >= _minSpeakTime){
+				_clipEnd = MicManager.GetComponent<AudioSource>().time;
+				if(_playSoundMade){
+					_currentClip = MakeSubclip(MicManager.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
+					_currentBall.GetComponent<AudioSource>().clip = _currentClip;
+				}
 				_currentRigidbody.isKinematic = false;
 				_isSpeaking = false;
 				_timeRecording = 0;
@@ -153,19 +165,19 @@ public class SpawnBalls : MonoBehaviour {
 			float lowMid = 1.0f;
 			float midHigh = 0.0f;
 
-			if(_micPitch >= 0.01f && _micPitch <=0.5f){
+			if(_micPitch <=0.5f){
 				belowMid = true;
 				lowMid = _micPitch*2;
 				midHigh = 0;
-			} else if (_micPitch > 0.5f && _micPitch <= 1.0f){
+			} else if (_micPitch > 0.5f){
 				belowMid = false;
 				midHigh = (_micPitch - 0.5f)*2;
 				lowMid = 0;
 			}
 			if(belowMid){
-				_currentColor = Color.Lerp(lowPitchColor, midPitchColor, lowMid);
+				_currentColor = Color.Lerp(lowPitchColor, midPitchColor, Mathf.Clamp01(lowMid));
 			} else {
-				_currentColor = Color.Lerp(midPitchColor, highPitchColor, midHigh);
+				_currentColor = Color.Lerp(midPitchColor, highPitchColor, Mathf.Clamp01(midHigh));
 			}
             _currentMaterial.SetColor("_Color", _currentColor);
 			_currentMaterial.SetColor("_EmissionColor", _currentColor);
@@ -219,5 +231,24 @@ public class SpawnBalls : MonoBehaviour {
 
     }
 
+	private AudioClip MakeSubclip(AudioClip clip, float start, float stop)
+	{
+		/* Create a new audio clip */
+		int frequency = clip.frequency;
+		float timeLength = stop - start;
+		if (timeLength <= 0) {
+			timeLength += 30.0f;
+		}
+		int samplesLength = (int)(frequency * timeLength);
+		AudioClip newClip = AudioClip.Create(clip.name + "-sub", samplesLength, 1, frequency, false);
+		/* Create a temporary buffer for the samples */
+		float[] data = new float[samplesLength];
+		/* Get the data from the original clip */
+		clip.GetData(data, (int)(frequency * start));
+		/* Transfer the data to the new clip */
+		newClip.SetData(data, 0);
+		/* Return the sub clip */
+		return newClip;
+	}
 
 }

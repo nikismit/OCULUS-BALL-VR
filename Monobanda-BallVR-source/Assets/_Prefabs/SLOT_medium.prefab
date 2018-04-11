@@ -28,6 +28,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1599494983196990
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4397784237639138}
+  - component: {fileID: 135627793839308576}
+  - component: {fileID: 114307437369359444}
+  m_Layer: 0
+  m_Name: Magnet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1676128256199508
 GameObject:
   m_ObjectHideFlags: 1
@@ -92,8 +109,21 @@ Transform:
   m_LocalScale: {x: 100.00024, y: 100.00022, z: 100.000244}
   m_Children: []
   m_Father: {fileID: 4645636365452640}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 90.00001}
+--- !u!4 &4397784237639138
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599494983196990}
+  m_LocalRotation: {x: -0.000000029802317, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4645636365452640}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4595616551643004
 Transform:
   m_ObjectHideFlags: 1
@@ -101,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451065999760130}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -4.02, y: 0, z: -27.2}
+  m_LocalPosition: {x: -3.04, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4645636365452640}
@@ -119,7 +149,7 @@ Transform:
   m_LocalScale: {x: 0.099999994, y: 7.7058153, z: 0.10000008}
   m_Children: []
   m_Father: {fileID: 4645636365452640}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4645636365452640
 Transform:
@@ -131,6 +161,7 @@ Transform:
   m_LocalPosition: {x: 0.0003699994, y: -0.00013000726, z: 0.015399998}
   m_LocalScale: {x: 0.01, y: 0.010000003, z: 0.010000003}
   m_Children:
+  - {fileID: 4397784237639138}
   - {fileID: 4021021587457150}
   - {fileID: 4643792197300178}
   m_Father: {fileID: 4595616551643004}
@@ -342,3 +373,28 @@ MonoBehaviour:
   wantedColor: {r: 0.77647066, g: 0, b: 0.98823535, a: 0}
   colorErrorMargin: 0.4
   addingTime: 0
+--- !u!114 &114307437369359444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599494983196990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f087e98e7d7c39d48bd41ec56d983f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetPower: 10
+  minDistance: 1
+--- !u!135 &135627793839308576
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599494983196990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}

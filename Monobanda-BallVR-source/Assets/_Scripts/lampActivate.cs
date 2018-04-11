@@ -15,6 +15,8 @@ public class lampActivate : MonoBehaviour {
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
+	bool audioPlayed = false;
+	private GameObject currentOccupant;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +31,14 @@ public class lampActivate : MonoBehaviour {
 			timer += Time.deltaTime;
 		}
 		if (timer >= triggerTime){
+			if(audioPlayed == false){
+				if(currentOccupant.GetComponent<AudioSource>().clip != null){
+					currentOccupant.GetComponent<AudioSource>().Play();
+					audioPlayed = true;
+				}
+			}
 			this.GetComponent<Light>().enabled = true;
+			
 			timer = 0.0f;
 		}
 		
@@ -37,6 +46,7 @@ public class lampActivate : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
+		currentOccupant = other.gameObject;
 		Color otherColor = other.GetComponent<Renderer>().material.color;
 		if(otherColor.r <= wantedColor.r + colorErrorMargin && otherColor.r >= wantedColor.r - colorErrorMargin){
 			redGood = true;
@@ -72,6 +82,7 @@ public class lampActivate : MonoBehaviour {
 		if(other.GetComponent<DestroyAtZeroVelocity>()){
 			other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
 		}
+		audioPlayed = false;
 		timer = 0.0f;
 		this.GetComponent<Light>().enabled = false;
 	}

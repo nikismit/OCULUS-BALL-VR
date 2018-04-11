@@ -8,6 +8,7 @@ public class Magnetize : MonoBehaviour {
 	GameObject toMagnetize;
 	Color neededColor;
 	public float magnetPower = 10;
+	public float minDistance = 1.0f;
 	bool magnetize;
 	bool redGood = false;
 	bool greenGood = false;
@@ -25,10 +26,12 @@ public class Magnetize : MonoBehaviour {
 	void Update () {
 
 		if(magnetize == true){
-			Quaternion prevRot = toMagnetize.transform.rotation;
-			toMagnetize.transform.LookAt(this.transform.position);
-			toMagnetize.GetComponent<Rigidbody>().AddForce(toMagnetize.transform.forward * magnetPower * Time.deltaTime);
-			toMagnetize.transform.rotation = prevRot;
+			if(Vector3.Distance(this.transform.position, toMagnetize.transform.position) >= minDistance){
+				Quaternion prevRot = toMagnetize.transform.rotation;
+				toMagnetize.transform.LookAt(this.transform.position);
+				toMagnetize.GetComponent<Rigidbody>().AddForce(toMagnetize.transform.forward * magnetPower * Time.deltaTime);
+				toMagnetize.transform.rotation = prevRot;
+			}
 		}
 		
 	}

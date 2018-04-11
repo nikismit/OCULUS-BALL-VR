@@ -250,6 +250,11 @@ Prefab:
       propertyPath: MicManager
       value: 
       objectReference: {fileID: 604968773}
+    - target: {fileID: 114110948051841764, guid: 126d619cf4daa52469682f85c1378b4a,
+        type: 2}
+      propertyPath: micManager
+      value: 
+      objectReference: {fileID: 604968773}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
   m_IsPrefabParent: 0
@@ -1708,7 +1713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _publicAmplitude: 0
-  _silenceAmplitude: 2.5
+  _silenceAmplitude: 0.5
 --- !u!114 &604968776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3729,6 +3734,61 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036131715}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1076259758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1076259759}
+  - component: {fileID: 1076259761}
+  - component: {fileID: 1076259760}
+  m_Layer: 0
+  m_Name: Magnet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1076259759
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1076259758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1306744507}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1076259760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1076259758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f087e98e7d7c39d48bd41ec56d983f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetPower: 10
+  minDistance: 0.5
+--- !u!135 &1076259761
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1076259758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1167001445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4344,6 +4404,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1306744507 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4032186821727252, guid: cbdf9b89d5702894f96cb56e80610a67,
+    type: 2}
+  m_PrefabInternal: {fileID: 1428212874}
 --- !u!1 &1309957172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,6 +5015,14 @@ Prefab:
     - target: {fileID: 1785748874680548, guid: cbdf9b89d5702894f96cb56e80610a67, type: 2}
       propertyPath: m_Name
       value: Lamp met COLORTrigger mint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581765039179362, guid: cbdf9b89d5702894f96cb56e80610a67, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581765039179362, guid: cbdf9b89d5702894f96cb56e80610a67, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.639
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbdf9b89d5702894f96cb56e80610a67, type: 2}

@@ -15,7 +15,7 @@ public class lampActivate : MonoBehaviour {
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
-	bool audioPlayed = false;
+	public bool audioPlayed = false;
 	private GameObject currentOccupant;
 
 	// Use this for initialization
@@ -37,9 +37,20 @@ public class lampActivate : MonoBehaviour {
 					audioPlayed = true;
 				}
 			}
+			currentOccupant.GetComponent<DestroyAtZeroVelocity>().lampActive = true;
 			this.GetComponent<Light>().enabled = true;
 			
 			timer = 0.0f;
+		}
+
+		if(currentOccupant != null){
+			if(currentOccupant.GetComponent<AudioSource>()){
+				if (currentOccupant.GetComponent<AudioSource>().isPlaying){
+					this.GetComponent<Light>().enabled = true;
+				} else {
+					this.GetComponent<Light>().enabled = false;
+				}
+			}
 		}
 		
 	}
@@ -81,10 +92,12 @@ public class lampActivate : MonoBehaviour {
 		addingTime = false;
 		if(other.GetComponent<DestroyAtZeroVelocity>()){
 			other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
+			other.GetComponent<DestroyAtZeroVelocity>().lampActive = false;
 		}
 		audioPlayed = false;
 		timer = 0.0f;
 		this.GetComponent<Light>().enabled = false;
+
 	}
 
 }

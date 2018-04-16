@@ -34,6 +34,11 @@ public class Magnetize : MonoBehaviour {
 			}
 		}
 		
+		if(target.GetComponent<lampActivate>().audioPlayed == true){
+			magnetize = false;
+			toMagnetize = null;
+		}
+
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -60,6 +65,9 @@ public class Magnetize : MonoBehaviour {
 		if(redGood && greenGood && blueGood){
 			magnetize = true;
 			toMagnetize = other.gameObject;
+		} else {
+			magnetize = false;
+			toMagnetize = null;
 		}
 
 	}

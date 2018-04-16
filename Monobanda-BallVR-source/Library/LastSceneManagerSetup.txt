@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Voiceslot church.unity
+- path: Assets/_Scenes/RecordPlayer_Church.unity
   isLoaded: 1
   isActive: 1

@@ -119,9 +119,9 @@ public class SpawnBalls : MonoBehaviour {
             _currentSphereCollider = _currentBall.GetComponent<SphereCollider>();
             _currentMaterial.SetColor("_Color", _currentColor);
             _currentBall.transform.position = _spawnLocation.position;
-			//_currentBall.name = "Ball" + _currentBallNum;
+			_currentBall.name = "Ball" + _currentBallNum;
 			//print(_currentBall.name);
-			//_currentBallNum +=1;
+			_currentBallNum +=1;
             _currentRigidbody.isKinematic = true;
 			_clipStart = MicManager.GetComponent<AudioSource>().time;
         }

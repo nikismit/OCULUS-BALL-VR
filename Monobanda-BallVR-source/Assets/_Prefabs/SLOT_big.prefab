@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4226439077944870}
   - component: {fileID: 33427673092769746}
   - component: {fileID: 23601608683971208}
+  - component: {fileID: 64857078609731620}
   m_Layer: 0
   m_Name: SLOT_big
   m_TagString: Untagged
@@ -118,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737195517401158}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -6.11, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: -0.96, z: -4}
   m_LocalScale: {x: 150, y: 150, z: 136.36363}
   m_Children:
   - {fileID: 4253168220815092}
@@ -284,6 +285,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831821913228712}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &64857078609731620
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737195517401158}
+  m_Material: {fileID: 13400000, guid: 7fd7eb48db6b31548bbda37d477e0746, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 39e29b9f3ea25784599a52ce63a29884, type: 3}
 --- !u!65 &65477472215295706
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -393,7 +408,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817943472425888}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3

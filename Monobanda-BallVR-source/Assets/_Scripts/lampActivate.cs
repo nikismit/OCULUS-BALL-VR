@@ -43,12 +43,13 @@ public class lampActivate : MonoBehaviour {
 			timer = 0.0f;
 		}
 
-
-		if(currentOccupant.GetComponent<AudioSource>()){
-			if (currentOccupant.GetComponent<AudioSource>().isPlaying){
-				this.GetComponent<Light>().enabled = true;
-			} else {
-				this.GetComponent<Light>().enabled = false;
+		if(currentOccupant != null){
+			if(currentOccupant.GetComponent<AudioSource>()){
+				if (currentOccupant.GetComponent<AudioSource>().isPlaying){
+					this.GetComponent<Light>().enabled = true;
+				} else {
+					this.GetComponent<Light>().enabled = false;
+				}
 			}
 		}
 		

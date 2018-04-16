@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Voiceslot church trippy shadows.unity
+- path: Assets/_Scenes/Recordplayer plane.unity
   isLoaded: 1
   isActive: 1

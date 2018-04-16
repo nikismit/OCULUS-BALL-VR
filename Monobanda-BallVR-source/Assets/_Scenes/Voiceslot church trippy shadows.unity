@@ -774,6 +774,11 @@ Prefab:
       propertyPath: m_Shadows.m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114064210108678136, guid: b59df07443467454db210479eade7986,
+        type: 2}
+      propertyPath: audioTriggersLight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b59df07443467454db210479eade7986, type: 2}
   m_IsPrefabParent: 0

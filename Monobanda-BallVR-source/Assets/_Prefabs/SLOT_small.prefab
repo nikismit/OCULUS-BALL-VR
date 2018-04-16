@@ -401,6 +401,8 @@ MonoBehaviour:
   wantedColor: {r: 0, g: 1, b: 0.75294125, a: 0}
   colorErrorMargin: 0.4
   addingTime: 0
+  audioPlayed: 0
+  audioTriggersLight: 0
 --- !u!135 &135365288260449658
 SphereCollider:
   m_ObjectHideFlags: 1

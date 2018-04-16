@@ -388,6 +388,8 @@ MonoBehaviour:
   wantedColor: {r: 0.77647066, g: 0, b: 0.98823535, a: 0}
   colorErrorMargin: 0.4
   addingTime: 0
+  audioPlayed: 0
+  audioTriggersLight: 0
 --- !u!114 &114307437369359444
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -32,9 +32,12 @@ public class RecordPlayer : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.GetComponent<DestroyAtZeroVelocity>()){
-			if(other.GetComponent<DestroyAtZeroVelocity>().lampActive == true){
-				other.GetComponent<AudioSource>().Play();
+		
+		if(other == other.GetComponent<BoxCollider>()){
+			if (other.GetComponent<DestroyAtZeroVelocity>()){
+				if(other.GetComponent<DestroyAtZeroVelocity>().lampActive == true){
+					other.GetComponent<AudioSource>().Play();
+				}
 			}
 		}
 	}

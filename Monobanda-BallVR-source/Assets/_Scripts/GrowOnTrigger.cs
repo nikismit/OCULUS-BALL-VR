@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GrowOnTrigger : MonoBehaviour {
 
-	public bool checkObjectToTrigger = false;
-	public GameObject ObjectToTrigger;
+	
+	public GameObject ObjectToGrow;
 
 	
 	public float sizeMultiplier = 2.0f;
@@ -16,16 +16,23 @@ public class GrowOnTrigger : MonoBehaviour {
 	float timer = 0.0f;
 	bool addingTime = false;
 
-	bool growing = false;
+	public bool growing = false;
 
 	Vector3 normalSize = new Vector3 (1,1,1);
 	Vector3 wantedSize = new Vector3 (2,2,2);
+
+	public Color wantedColor;
+	public float colorErrorMargin = 0.1f;
+
+	bool redGood = false;
+	bool greenGood = false;
+	bool blueGood = false;
 
 	
 
 	// Use this for initialization
 	void Start () {
-		normalSize = this.transform.localScale;
+		normalSize = ObjectToGrow.transform.localScale;
 		wantedSize = normalSize * sizeMultiplier;
 	}
 	
@@ -42,12 +49,12 @@ public class GrowOnTrigger : MonoBehaviour {
 
 		
 		if(growing){
-			if(this.transform.localScale.x < wantedSize.x){
-				transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * growSpeed;
+			if(ObjectToGrow.transform.localScale.x < wantedSize.x){
+				ObjectToGrow.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * growSpeed;
 			}
 		} else {
-			if(this.transform.localScale.x > normalSize.x){
-				transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * growSpeed;
+			if(ObjectToGrow.transform.localScale.x > normalSize.x){
+				ObjectToGrow.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * growSpeed;
 			}
 		}
 
@@ -56,22 +63,43 @@ public class GrowOnTrigger : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(checkObjectToTrigger == true){
-			if(other.gameObject == ObjectToTrigger){
-				addingTime = true;
-				timer = 0.0f;
-			}
+		Color otherColor = other.GetComponent<Renderer>().material.color;
+		if(otherColor.r <= wantedColor.r + colorErrorMargin && otherColor.r >= wantedColor.r - colorErrorMargin){
+			redGood = true;
 		} else {
+			redGood = false;
+		}
+
+		if(otherColor.b <= wantedColor.b + colorErrorMargin && otherColor.b >= wantedColor.b - colorErrorMargin){
+			blueGood = true;
+		} else {
+			blueGood = false;
+		}
+
+		if(otherColor.g <= wantedColor.g + colorErrorMargin && otherColor.g >= wantedColor.g - colorErrorMargin){
+			greenGood = true;
+		} else {
+			greenGood = false;
+		}
+
+		if(redGood && greenGood && blueGood){
+			//print("color is good!");
 			addingTime = true;
 			timer = 0.0f;
+		} else {
+			other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
 		addingTime = false;
+		if(other.GetComponent<DestroyAtZeroVelocity>()){
+			other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
+			other.GetComponent<DestroyAtZeroVelocity>().lampActive = false;
+		}
 		timer = 0.0f;
-		growing = false;
+		this.GetComponent<Light>().enabled = false;
 	}
 
 	

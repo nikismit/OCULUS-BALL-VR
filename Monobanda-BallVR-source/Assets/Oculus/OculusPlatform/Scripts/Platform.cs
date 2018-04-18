@@ -28,21 +28,24 @@ namespace Oculus.Platform
       IsPlatformInitialized = true;
     }
 
-    private static string getAppID(string appId = null) {
-      string configAppID = GetAppIDFromConfig();
-      if (String.IsNullOrEmpty(appId))
+    private static string getAppID(bool forceWindowsPlatform, string appId = null) {
+      if (!UnityEngine.Application.isEditor || forceWindowsPlatform)
       {
-        if (String.IsNullOrEmpty(configAppID))
+        string configAppID = GetAppIDFromConfig(forceWindowsPlatform);
+        if (String.IsNullOrEmpty(appId))
         {
-          throw new UnityException("Update your app id by selecting 'Oculus Platform' -> 'Edit Settings'");
+          if (String.IsNullOrEmpty(configAppID))
+          {
+            throw new UnityException("Update your app id by selecting 'Oculus Platform' -> 'Edit Settings'");
+          }
+          appId = configAppID;
         }
-        appId = configAppID;
-      }
-      else
-      {
-        if (!String.IsNullOrEmpty(configAppID))
+        else
         {
-          Debug.LogWarningFormat("The 'Oculus App Id ({0})' field in 'Oculus Platform/Edit Settings' is clobbering appId ({1}) that you passed in to Platform.Core.Init.  You should only specify this in one place.  We recommend the menu location.", configAppID, appId);
+          if (!String.IsNullOrEmpty(configAppID))
+          {
+            Debug.LogWarningFormat("The 'Oculus App Id ({0})' field in 'Oculus Platform/Edit Settings' is clobbering appId ({1}) that you passed in to Platform.Core.Init.  You should only specify this in one place.  We recommend the menu location.", configAppID, appId);
+          }
         }
       }
       return appId;
@@ -59,23 +62,25 @@ namespace Oculus.Platform
     //    For example: ovr_GetLoggedInUserID() will return 0 until platform is
     //    fully initialized
     public static Request<Models.PlatformInitialize> AsyncInitialize(string appId = null) {
-      appId = getAppID(appId);
+      bool forceWindowsPlatform = UnityEngine.Application.platform == RuntimePlatform.WindowsEditor && !PlatformSettings.UseStandalonePlatform;
+      appId = getAppID(forceWindowsPlatform, appId);
 
       Request<Models.PlatformInitialize> request;
-      if (UnityEngine.Application.isEditor && PlatformSettings.UseStandalonePlatform) {
-        var platform = new StandalonePlatform();
-        request = platform.InitializeInEditor();
-      }
-      else if (UnityEngine.Application.platform == RuntimePlatform.WindowsEditor ||
-               UnityEngine.Application.platform == RuntimePlatform.WindowsPlayer) {
+      if (forceWindowsPlatform) {
         var platform = new WindowsPlatform();
         request = platform.AsyncInitialize(appId);
-      }
-      else if (UnityEngine.Application.platform == RuntimePlatform.Android) {
+      } else if (UnityEngine.Application.isEditor) {
+        //TODO add async support: T16528410
+        var platform = new StandalonePlatform();
+        platform.InitializeInEditor();
+        request = new Request<Models.PlatformInitialize>(0);
+      } else if (UnityEngine.Application.platform == RuntimePlatform.Android) {
         var platform = new AndroidPlatform();
         request = platform.AsyncInitialize(appId);
-      }
-      else {
+      } else if (UnityEngine.Application.platform == RuntimePlatform.WindowsPlayer) {
+        var platform = new WindowsPlatform();
+        request = platform.AsyncInitialize(appId);
+      } else {
         throw new NotImplementedException("Oculus platform is not implemented on this platform yet.");
       }
 
@@ -98,22 +103,22 @@ namespace Oculus.Platform
 
     public static void Initialize(string appId = null)
     {
-      appId = getAppID(appId);
+      bool forceWindowsPlatform = UnityEngine.Application.platform == RuntimePlatform.WindowsEditor && !PlatformSettings.UseStandalonePlatform;
+      appId = getAppID(forceWindowsPlatform, appId);
 
-      if (UnityEngine.Application.isEditor && PlatformSettings.UseStandalonePlatform) {
-        var platform = new StandalonePlatform();
-        IsPlatformInitialized = platform.InitializeInEditor() != null;
-      }
-      else if (UnityEngine.Application.platform == RuntimePlatform.WindowsEditor ||
-               UnityEngine.Application.platform == RuntimePlatform.WindowsPlayer) {
+      if (forceWindowsPlatform) {
         var platform = new WindowsPlatform();
         IsPlatformInitialized = platform.Initialize(appId);
-      }
-      else if (UnityEngine.Application.platform == RuntimePlatform.Android) {
+      } else if (UnityEngine.Application.isEditor) {
+        var platform = new StandalonePlatform();
+        IsPlatformInitialized = platform.InitializeInEditor();
+      } else if (UnityEngine.Application.platform == RuntimePlatform.Android) {
         var platform = new AndroidPlatform();
         IsPlatformInitialized = platform.Initialize(appId);
-      }
-      else {
+      } else if (UnityEngine.Application.platform == RuntimePlatform.WindowsPlayer) {
+        var platform = new WindowsPlatform();
+        IsPlatformInitialized = platform.Initialize(appId);
+      } else {
         throw new NotImplementedException("Oculus platform is not implemented on this platform yet.");
       }
 
@@ -130,16 +135,17 @@ namespace Oculus.Platform
       (new GameObject("Oculus.Platform.CallbackRunner")).AddComponent<CallbackRunner>();
     }
 
-    private static string GetAppIDFromConfig()
+    private static string GetAppIDFromConfig(bool forceWindows)
     {
       if (UnityEngine.Application.platform == RuntimePlatform.Android)
       {
         return PlatformSettings.MobileAppID;
       }
-      else
+      else if (UnityEngine.Application.platform == RuntimePlatform.WindowsPlayer || forceWindows)
       {
         return PlatformSettings.AppID;
       }
+      return null;
     }
   }
 
@@ -177,7 +183,6 @@ namespace Oculus.Platform
         );
     }
 
-    [Obsolete("Deprecated in favor of SetRoomInviteAcceptedNotificationCallback")]
     public static void SetRoomInviteNotificationCallback(Message<string>.Callback callback)
     {
         Callback.SetNotificationCallback(
@@ -185,26 +190,6 @@ namespace Oculus.Platform
           callback
         );
     }
-
-    // Be notified when someone you've invited has accepted your invitation.
-    public static void SetRoomInviteAcceptedNotificationCallback(Message<string>.Callback callback)
-    {
-      Callback.SetNotificationCallback(
-        Message.MessageType.Notification_Room_InviteAccepted,
-        callback
-      );
-    }
-
-    // Be notified when you've received an invitation to a room from another player.
-    // You can also poll for room invites using Notifications.GetRoomInviteNotifications.
-    public static void SetRoomInviteReceivedNotificationCallback(Message<Models.RoomInviteNotification>.Callback callback)
-    {
-      Callback.SetNotificationCallback(
-        Message.MessageType.Notification_Room_InviteReceived,
-        callback
-      );
-    }
-
   }
 
   public static partial class Livestreaming
@@ -574,7 +559,7 @@ namespace Oculus.Platform
       return null;
     }
 
-    /// Unlock fields of a BITFIELD achievement.
+    /// Unlock fields of a BITFIELD acheivement.
     /// \param name The name of the achievement to unlock
     /// \param fields A string containing either '0' or '1' characters. Every '1' will unlock the field in the corresponding position.
     ///
@@ -1268,10 +1253,7 @@ namespace Oculus.Platform
 
   public static partial class Notifications
   {
-    /// Retrieve a list of all pending room invites for your application (for
-    /// example, notifications that may have been sent before the user launched
-    /// your game). You can also get push notifications with
-    /// MessageType.Notification_Room_InviteReceived.
+    /// Retrieve a list of all pending room invites for your application.
     ///
     public static Request<Models.RoomInviteNotificationList> GetRoomInviteNotifications()
     {
@@ -1392,7 +1374,9 @@ namespace Oculus.Platform
       return null;
     }
 
-    /// DEPRECATED. Use GetInvitableUsers2.
+    /// Loads a list of users you can invite to your current room. These are pulled
+    /// from your friends list and filtered for relevance and interest. If your
+    /// current room cannot be joined, this list will be empty.
     ///
     public static Request<Models.UserList> GetInvitableUsers()
     {
@@ -1404,26 +1388,9 @@ namespace Oculus.Platform
       return null;
     }
 
-    /// Loads a list of users you can invite to a room. These are pulled from your
-    /// friends list and filtered for relevance and interest. If the room cannot be
-    /// joined, this list will be empty. By default, the invitable users returned
-    /// will be for the user's current room.
-    ///
-    /// Customization can be done via RoomOptions. Create this object with
-    /// ovr_RoomOptions_Create. The params that could be used are:
-    ///
-    /// 1. roomID - will return the invitable users for this room (instead of the
-    /// current room).
-    ///
-    /// 2. ordering - returns the list of users in the provided ordering (see
-    /// UserOrdering enum).
-    ///
-    /// Example usage:
-    ///
-    ///   auto roomOptions = ovr_RoomOptions_Create();
-    ///   ovr_RoomOptions_SetOrdering(roomOptions, ovrUserOrdering_PresenceAlphabetical);
-    ///   ovr_RoomOptions_SetRoomId(roomOptions, roomID);
-    ///   ovr_Room_GetInvitableUsers2(roomOptions);
+    /// Loads a list of users you can invite to your current room. These are pulled
+    /// from your friends list and filtered for relevance and interest. If your
+    /// current room cannot be joined, this list will be empty.
     /// \param roomOptions Additional configuration for this request. Optional.
     ///
     public static Request<Models.UserList> GetInvitableUsers2(RoomOptions roomOptions = null)
@@ -1448,10 +1415,7 @@ namespace Oculus.Platform
       return null;
     }
 
-    /// Invites a user to the specified room. They will receive a notification via
-    /// MessageType.Notification_Room_InviteReceived if they are in your game,
-    /// and/or they can poll for room invites using
-    /// Notification.GetRoomInviteNotifications().
+    /// Invites a user to the specified room.
     /// \param roomID The ID of your current room.
     /// \param inviteToken A user's invite token, returned by Room.GetInvitableUsers().
     ///
@@ -1670,33 +1634,6 @@ namespace Oculus.Platform
       return null;
     }
 
-    /// Returns a list of users that the logged in user was in a room with
-    /// recently, sorted by relevance, along with any rooms they might be in. All
-    /// you need to do to use this method is to use our Rooms API, and we will
-    /// track the number of times users are together, their most recent encounter,
-    /// and the amount of time they spend together.
-    ///
-    /// Customization can be done via UserOptions. Create this object with
-    /// ovr_UserOptions_Create. The params that could be used are:
-    ///
-    /// 1. TimeWindow - how recently should the users have played? The default is
-    /// ovrTimeWindow_ThirtyDays.
-    ///
-    /// 2. MaxUsers - we will limit the number of results returned. By default, the
-    /// number is unlimited, but the server may choose to limit results for
-    /// performance reasons.
-    /// \param userOptions Additional configuration for this request. Optional.
-    ///
-    public static Request<Models.UserAndRoomList> GetLoggedInUserRecentlyMetUsersAndRooms(UserOptions userOptions = null)
-    {
-      if (Core.IsInitialized())
-      {
-        return new Request<Models.UserAndRoomList>(CAPI.ovr_User_GetLoggedInUserRecentlyMetUsersAndRooms((IntPtr)userOptions));
-      }
-
-      return null;
-    }
-
     /// returns an ovrID which is unique per org. allows different apps within the
     /// same org to identify the user.
     /// \param userID to load the org scoped id of
@@ -1706,19 +1643,6 @@ namespace Oculus.Platform
       if (Core.IsInitialized())
       {
         return new Request<Models.OrgScopedID>(CAPI.ovr_User_GetOrgScopedID(userID));
-      }
-
-      return null;
-    }
-
-    /// Returns all accounts belonging to this user. Accounts are the Oculus user
-    /// and x-users that are linked to this user.
-    ///
-    public static Request<Models.SdkAccountList> GetSdkAccounts()
-    {
-      if (Core.IsInitialized())
-      {
-        return new Request<Models.SdkAccountList>(CAPI.ovr_User_GetSdkAccounts());
       }
 
       return null;
@@ -1737,21 +1661,6 @@ namespace Oculus.Platform
       if (Core.IsInitialized())
       {
         return new Request<Models.UserProof>(CAPI.ovr_User_GetUserProof());
-      }
-
-      return null;
-    }
-
-    /// Launch the profile of the given user on Gear VR. The profile surfaces
-    /// information about the user and supports relevant actions that the viewer
-    /// may take on that user, e.g. sending a friend request.
-    /// \param userID User ID for profile being viewed
-    ///
-    public static Request LaunchProfile(UInt64 userID)
-    {
-      if (Core.IsInitialized())
-      {
-        return new Request(CAPI.ovr_User_LaunchProfile(userID));
       }
 
       return null;

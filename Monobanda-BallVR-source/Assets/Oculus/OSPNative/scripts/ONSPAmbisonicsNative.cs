@@ -26,7 +26,6 @@ using System.Runtime.InteropServices;
 
 public class ONSPAmbisonicsNative : MonoBehaviour
 {
-#if !UNITY_5
 	static int numFOAChannels    = 4;  // we are only dealing with 1st order Ambisonics at this time
     static int paramVSpeakerMode = 6;  // set speaker mode (OculusAmbi or VSpeaker)
     static int paramAmbiStat     = 7;  // use this to return internal Ambisonic status
@@ -59,7 +58,7 @@ public class ONSPAmbisonicsNative : MonoBehaviour
             useVirtualSpeakers = value;
         }
     }
-#endif
+
     /// <summary>
     /// OnEnable this instance.
     /// </summary>
@@ -118,15 +117,12 @@ public class ONSPAmbisonicsNative : MonoBehaviour
 
         // Set speaker mode
         if(useVirtualSpeakers == true)
-            source.SetAmbisonicDecoderFloat(paramVSpeakerMode, 1.0f); // VSpeakerMode
+            source.SetSpatializerFloat(paramVSpeakerMode, 1.0f); // VSpeakerMode
         else
-            source.SetAmbisonicDecoderFloat(paramVSpeakerMode, 0.0f); // OclusAmbi 
+            source.SetSpatializerFloat(paramVSpeakerMode, 0.0f); // OclusAmbi 
 
         float statusF = 0.0f;
-        // PGG 5/25/2017 There is a bug in the 2017.2 beta that does not
-        // allow for ambisonic params to be passed through to native
-        // from C# Get latest editor from Unity when available
-        source.GetAmbisonicDecoderFloat(paramAmbiStat, out statusF);
+        source.GetSpatializerFloat(paramAmbiStat, out statusF);
 
         ovrAmbisonicsNativeStatus status = (ovrAmbisonicsNativeStatus)statusF;
 

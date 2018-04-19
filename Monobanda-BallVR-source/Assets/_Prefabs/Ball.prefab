@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54757154219202338}
   - component: {fileID: 114290331016238506}
   - component: {fileID: 82094262298599070}
+  - component: {fileID: 65850499057710444}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422347210497496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.115, y: -0.353, z: 0.9}
+  m_LocalPosition: {x: -3.3358836, y: 0.00000007047037, z: -5.7725677}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4884534715963588}
@@ -129,6 +130,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!65 &65850499057710444
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422347210497496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82094262298599070
 AudioSource:
   m_ObjectHideFlags: 1

@@ -31,11 +31,9 @@ using System.Runtime.InteropServices;
 
 public class ONSPAudioSource : MonoBehaviour
 {
-#if TEST_READONLY_PARAMETERS
     // Spatializer read-only system parameters (global)
     static int readOnly_GlobalRelectionOn = 8;
     static int readOnly_NumberOfUsedSpatializedVoices = 9;
-#endif
 
     // Import functions
     public const string strONSPS = "AudioPluginOculusSpatializer";
@@ -216,12 +214,12 @@ public class ONSPAudioSource : MonoBehaviour
 		source.SetSpatializerFloat(2, near);
 		source.SetSpatializerFloat(3, far);
 
-	        source.SetSpatializerFloat(4, volumetricRadius);
-
 		if(enableRfl == true)
-			source.SetSpatializerFloat(5, 0.0f);
+			source.SetSpatializerFloat(4, 0.0f);
 		else
-			source.SetSpatializerFloat(5, 1.0f);
+			source.SetSpatializerFloat(4, 1.0f);
+
+        source.SetSpatializerFloat(5, volumetricRadius);
 	}
 
     private static ONSPAudioSource RoomReflectionGizmoAS = null; 

@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/_Scenes/Recordplayer plane.unity
-=======
-- path: Assets/_Scenes/Growing_Holes.unity
->>>>>>> Evelyn
+- path: Assets/_Scenes/MonumentValleyGarden.unity
   isLoaded: 1
   isActive: 1

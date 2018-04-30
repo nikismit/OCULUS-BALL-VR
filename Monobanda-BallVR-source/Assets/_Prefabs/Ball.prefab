@@ -285,7 +285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTimer: 5
   startTimer: 0
-  lampActive: 0
 --- !u!135 &135609236330556740
 SphereCollider:
   m_ObjectHideFlags: 1

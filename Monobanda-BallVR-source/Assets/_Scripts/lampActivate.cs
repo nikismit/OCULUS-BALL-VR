@@ -15,11 +15,14 @@ public class lampActivate : MonoBehaviour {
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
+    
     public bool playBallAudio = false;
 	public bool lampLinkedToAudio = false;
-	public bool audioPlayed = false;
     public bool lampStaysOn = false;
-
+    public bool audioPlayed = false;
+    public bool needBallSize = false;
+    public Vector2 wantedBallsizeMinMax;
+    bool sizeGood = false;
 	private GameObject currentOccupant;
 
 	// Use this for initialization
@@ -96,7 +99,23 @@ public class lampActivate : MonoBehaviour {
 			greenGood = false;
 		}
 
-		if(redGood && greenGood && blueGood){
+        if(needBallSize == true)
+        {
+            if(other.transform.localScale.x >= wantedBallsizeMinMax.x && other.transform.localScale.x <= wantedBallsizeMinMax.y)
+            {
+                sizeGood = true;
+            }
+            else
+            {
+                sizeGood = false;
+            }
+        }
+        else
+        {
+            sizeGood = true;
+        }
+
+		if(redGood && greenGood && blueGood && sizeGood){
 			addingTime = true;
 			timer = 0.0f;
 		} else {

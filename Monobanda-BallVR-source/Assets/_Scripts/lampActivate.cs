@@ -15,8 +15,10 @@ public class lampActivate : MonoBehaviour {
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
+    public bool playBallAudio = false;
 	public bool lampLinkedToAudio = false;
 	public bool audioPlayed = false;
+    public bool lampStaysOn = false;
 
 	private GameObject currentOccupant;
 
@@ -32,29 +34,43 @@ public class lampActivate : MonoBehaviour {
 		if(addingTime){
 			timer += Time.deltaTime;
 		}
-		if (timer >= triggerTime){
-			if(audioPlayed == false){
-				if(currentOccupant.GetComponent<AudioSource>().clip != null){
-					currentOccupant.GetComponent<AudioSource>().Play();
-					audioPlayed = true;
-				}
-			}
-			currentOccupant.GetComponent<DestroyAtZeroVelocity>().lampActive = true;
-			this.GetComponent<Light>().enabled = true;
-			
-			timer = 0.0f;
-		}
-		if(lampLinkedToAudio == true){
-			if(currentOccupant != null){
-				if(currentOccupant.GetComponent<AudioSource>()){
-					if (currentOccupant.GetComponent<AudioSource>().isPlaying){
-						this.GetComponent<Light>().enabled = true;
-					} else {
-						this.GetComponent<Light>().enabled = false;
-					}
-				}
-			}
-		}
+        if (currentOccupant)
+        {
+            if (timer >= triggerTime && addingTime == true)
+            {
+                if (audioPlayed == false && playBallAudio == true)
+                {
+
+                    if (currentOccupant.GetComponent<AudioSource>().clip)
+                    {
+                        currentOccupant.GetComponent<AudioSource>().Play();
+                        audioPlayed = true;
+                    }
+
+                }
+                currentOccupant.GetComponent<DestroyAtZeroVelocity>().lampActive = true;
+                this.GetComponent<Light>().enabled = true;
+
+                timer = 0.0f;
+            }
+            if (lampLinkedToAudio == true)
+            {
+                if (currentOccupant != null)
+                {
+                    if (currentOccupant.GetComponent<AudioSource>())
+                    {
+                        if (currentOccupant.GetComponent<AudioSource>().isPlaying)
+                        {
+                            this.GetComponent<Light>().enabled = true;
+                        }
+                        else
+                        {
+                            this.GetComponent<Light>().enabled = false;
+                        }
+                    }
+                }
+            }
+        }
 		
 	}
 
@@ -81,7 +97,6 @@ public class lampActivate : MonoBehaviour {
 		}
 
 		if(redGood && greenGood && blueGood){
-			//print("color is good!");
 			addingTime = true;
 			timer = 0.0f;
 		} else {
@@ -99,8 +114,10 @@ public class lampActivate : MonoBehaviour {
 		}
 		audioPlayed = false;
 		timer = 0.0f;
-		this.GetComponent<Light>().enabled = false;
-
+        if (lampStaysOn == false)
+        {
+            this.GetComponent<Light>().enabled = false;
+        }
 	}
 
 }

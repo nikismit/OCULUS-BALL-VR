@@ -749,7 +749,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496800519453064}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -9, y: 0, z: 19}
+  m_LocalPosition: {x: 0.23999977, y: 0, z: 0}
   m_LocalScale: {x: 150, y: 150, z: 136.36363}
   m_Children:
   - {fileID: 4302341704492538}
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   addingTime: 0
   playBallAudio: 0
   lampLinkedToAudio: 0
-  lampStaysOn: 0
+  lampStaysOn: 1
   audioPlayed: 0
   needBallSize: 0
   wantedBallsizeMinMax: {x: 0, y: 0}

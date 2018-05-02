@@ -5,10 +5,10 @@ using UnityEngine;
 public class GrowOnTrigger : MonoBehaviour {
 
 	
-	public GameObject ObjectToGrow;
+	public GameObject[] ObjectsToGrow = new GameObject[1];
 
 	
-	public float sizeMultiplier = 2.0f;
+	public Vector3 wantedSizes = new Vector3 (2,2,2);
 	public float growSpeed = 2.0f;
 
 	public float triggerTime = 2.0f;
@@ -18,8 +18,8 @@ public class GrowOnTrigger : MonoBehaviour {
 
 	public bool growing = false;
 
-	Vector3 normalSize = new Vector3 (1,1,1);
-	Vector3 wantedSize = new Vector3 (2,2,2);
+	Vector3[] normalSizes = new Vector3[1];
+	
 
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;
@@ -32,8 +32,14 @@ public class GrowOnTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		normalSize = ObjectToGrow.transform.localScale;
-		wantedSize = normalSize * sizeMultiplier;
+		normalSizes = new Vector3[ObjectsToGrow.Length];
+		//print(normalSizes.Length + " -> " + ObjectsToGrow.Length);
+		int i = 0;
+		foreach(GameObject g in ObjectsToGrow){
+			normalSizes[i] = g.transform.localScale;
+			i++;
+		}
+		i=0;
 	}
 	
 	// Update is called once per frame
@@ -49,13 +55,32 @@ public class GrowOnTrigger : MonoBehaviour {
 
 		
 		if(growing){
-			if(ObjectToGrow.transform.localScale.x < wantedSize.x){
-				ObjectToGrow.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * growSpeed;
+			foreach(GameObject g in ObjectsToGrow){
+				if(g.transform.localScale.x < wantedSizes.x){
+					g.transform.localScale += new Vector3(1, 0, 0) * Time.deltaTime * growSpeed;
+				}
+				if(g.transform.localScale.y < wantedSizes.y){
+					g.transform.localScale += new Vector3(0, 1, 0) * Time.deltaTime * growSpeed;
+				}
+				if(g.transform.localScale.z < wantedSizes.z){
+					g.transform.localScale += new Vector3(0, 0, 1) * Time.deltaTime * growSpeed;
+				}
 			}
 		} else {
-			if(ObjectToGrow.transform.localScale.x > normalSize.x){
-				ObjectToGrow.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime * growSpeed;
+			int j = 0;
+			foreach(GameObject g in ObjectsToGrow){
+				if(g.transform.localScale.x > normalSizes[j].x){
+					g.transform.localScale += new Vector3(1, 0, 0) * Time.deltaTime * growSpeed;
+				}
+				if(g.transform.localScale.y > normalSizes[j].y){
+					g.transform.localScale += new Vector3(0, 1, 0) * Time.deltaTime * growSpeed;
+				}
+				if(g.transform.localScale.z > normalSizes[j].z){
+					g.transform.localScale += new Vector3(0, 0, 1) * Time.deltaTime * growSpeed;
+				}
+				j++;
 			}
+			j=0;
 		}
 
 
@@ -99,7 +124,6 @@ public class GrowOnTrigger : MonoBehaviour {
 			other.GetComponent<DestroyAtZeroVelocity>().lampActive = false;
 		}
 		timer = 0.0f;
-		this.GetComponent<Light>().enabled = false;
 	}
 
 	

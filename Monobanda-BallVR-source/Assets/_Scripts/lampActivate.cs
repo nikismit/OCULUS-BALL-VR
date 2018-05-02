@@ -10,19 +10,36 @@ public class lampActivate : MonoBehaviour {
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;
 
+	public Light[] lightsToActivate = new Light[1];
+
 	float timer = 0.0f;
 	public bool addingTime = false;
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
-	public bool audioPlayed = false;
-    public bool audioTriggersLight = true;
+
+    
+    public bool playBallAudio = false;
+	public bool lampLinkedToAudio = false;
+    public bool lampStaysOn = false;
+    public bool audioPlayed = false;
+    public bool needBallSize = false;
+    public Vector2 wantedBallsizeMinMax;
+    bool sizeGood = false;
+
+	public bool updateAudio = false;
+	bool audioUpdated = false;
+	
+
 	private GameObject currentOccupant;
 
 	// Use this for initialization
 	void Start () {
-		this.GetComponent<Light>().enabled = false;
-		wantedColor = this.GetComponent<Light>().color;
+		foreach(Light l in lightsToActivate){
+			l.enabled = false;
+		}
+		audioUpdated = false;
+		//wantedColor = this.GetComponent<Light>().color;
 	}
 	
 	// Update is called once per frame
@@ -31,41 +48,65 @@ public class lampActivate : MonoBehaviour {
 		if(addingTime){
 			timer += Time.deltaTime;
 		}
-		if (timer >= triggerTime){
-			if(audioPlayed == false){
-				if(currentOccupant.GetComponent<AudioSource>().clip != null){
-					currentOccupant.GetComponent<AudioSource>().Play();
-					audioPlayed = true;
+
+        if (currentOccupant)
+        {
+            if (timer >= triggerTime && addingTime == true)
+            {
+                if (audioPlayed == false && playBallAudio == true)
+                {
+
+                    if (currentOccupant.GetComponent<AudioSource>().clip)
+                    {
+						if(audioUpdated == false){
+							foreach (Light l in lightsToActivate){
+								l.GetComponent<AudioSource>().clip = currentOccupant.GetComponent<AudioSource>().clip;
+							}
+						}
+						audioUpdated = true;
+						currentOccupant.GetComponent<AudioSource>().Play();
+                        audioPlayed = true;
+                    }
+
+                }
+                currentOccupant.GetComponent<DestroyAtZeroVelocity>().lampActive = true;
+                foreach(Light l in lightsToActivate){
+					l.enabled = true;
+					l.GetComponent<AudioLamp>().enabled = true;
+				}
+
+                timer = 0.0f;
+            }
+            if (lampLinkedToAudio == true)
+            {
+                if (currentOccupant != null)
+                {
+                    if (currentOccupant.GetComponent<AudioSource>())
+                    {
+                        if (currentOccupant.GetComponent<AudioSource>().isPlaying)
+                        {
+                            foreach(Light l in lightsToActivate){
+								l.enabled = true;
+							}
+                        }
+                        else
+                        {
+                            foreach(Light l in lightsToActivate){
+								l.enabled = false;
+							}
+                        }
+					}
 				}
 			}
-			currentOccupant.GetComponent<DestroyAtZeroVelocity>().lampActive = true;
-			this.GetComponent<Light>().enabled = true;
-			
-			timer = 0.0f;
 		}
-        if (audioTriggersLight == true)
-        {
-            if (currentOccupant != null)
-            {
-                if (currentOccupant.GetComponent<AudioSource>())
-                {
-                    if (currentOccupant.GetComponent<AudioSource>().isPlaying)
-                    {
-                        this.GetComponent<Light>().enabled = true;
-                    }
-                    else
-                    {
-                        this.GetComponent<Light>().enabled = false;
-                    }
-                }
-            }
-        }
+		
 		
 	}
 
-	private void OnTriggerEnter(Collider other)
+
+	void OnTriggerEnter(Collider other)
 	{
-		currentOccupant = other.gameObject;
+		
 		Color otherColor = other.GetComponent<Renderer>().material.color;
 		if(otherColor.r <= wantedColor.r + colorErrorMargin && otherColor.r >= wantedColor.r - colorErrorMargin){
 			redGood = true;
@@ -85,17 +126,36 @@ public class lampActivate : MonoBehaviour {
 			greenGood = false;
 		}
 
-		if(redGood && greenGood && blueGood){
-			//print("color is good!");
+        if(needBallSize == true)
+        {
+            if(other.transform.localScale.x >= wantedBallsizeMinMax.x && other.transform.localScale.x <= wantedBallsizeMinMax.y)
+            {
+                sizeGood = true;
+            }
+            else
+            {
+                sizeGood = false;
+            }
+        }
+        else
+        {
+            sizeGood = true;
+        }
+
+		if(redGood && greenGood && blueGood && sizeGood){
+			currentOccupant = other.gameObject;
 			addingTime = true;
 			timer = 0.0f;
+			if(updateAudio == true){
+				audioUpdated = false;
+			}
 		} else {
 			other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
 		}
 
 	}
 
-	private void OnTriggerExit(Collider other)
+	void OnTriggerExit(Collider other)
 	{
 		addingTime = false;
 		if(other.GetComponent<DestroyAtZeroVelocity>()){
@@ -104,8 +164,13 @@ public class lampActivate : MonoBehaviour {
 		}
 		audioPlayed = false;
 		timer = 0.0f;
-		this.GetComponent<Light>().enabled = false;
-
+        if (lampStaysOn == false)
+        {
+            foreach(Light l in lightsToActivate){
+				l.enabled = false;
+				l.GetComponent<AudioLamp>().enabled = false;
+			}
+        }
 	}
 
 }

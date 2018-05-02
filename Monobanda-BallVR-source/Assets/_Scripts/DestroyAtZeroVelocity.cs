@@ -9,6 +9,7 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 	private float timer = 0.0f;
 	public bool startTimer;
 	public bool lampActive = false;
+    public float growSize = 0.0f;
 	bool launched = false;
 
 	// Use this for initialization

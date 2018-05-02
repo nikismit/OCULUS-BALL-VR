@@ -20,7 +20,11 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 300}
+=======
+  m_MinSize: {x: 950, y: 542}
+>>>>>>> origin/Evelyn
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,9 +44,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1680
     height: 918
   m_MinSize: {x: 681, y: 492}
+=======
+    width: 1920
+    height: 947
+  m_MinSize: {x: 683, y: 492}
+>>>>>>> origin/Evelyn
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 9
@@ -87,10 +97,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 321
     height: 555
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 379
+    height: 573
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> origin/Evelyn
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -111,9 +128,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 555
     width: 1315
     height: 363
+=======
+    y: 573
+    width: 1531
+    height: 374
+>>>>>>> origin/Evelyn
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 13}
@@ -141,8 +164,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1680
     height: 968
+=======
+    width: 1920
+    height: 997
+>>>>>>> origin/Evelyn
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
@@ -204,9 +232,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1315
     height: 918
   m_MinSize: {x: 404, y: 492}
+=======
+    width: 1531
+    height: 947
+  m_MinSize: {x: 406, y: 492}
+>>>>>>> origin/Evelyn
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 10
@@ -228,10 +262,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1315
     height: 555
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
+=======
+    width: 1531
+    height: 573
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+>>>>>>> origin/Evelyn
   vertical: 0
   controlID: 11
 --- !u!114 &11
@@ -248,10 +289,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 321
     y: 0
     width: 994
     height: 555
+=======
+    x: 379
+    y: 0
+    width: 1152
+    height: 573
+>>>>>>> origin/Evelyn
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
@@ -325,6 +373,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/_Material
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -338,6 +387,21 @@ MonoBehaviour:
     m_SelectedIDs: 983f0000
     m_LastClickedID: 16280
     m_ExpandedIDs: 00000000223c00008c3c0000b43c0000e63d00000e3e0000d43e00004841000052410000a841000026420000184300004c43000058430000484600004a4600004c4600004e4600005046000052460000544600005646000000ca9a3bffffff7f
+=======
+    - Assets/_Prefabs
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/_Prefabs
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\monobanda PLAY\Documents\GitHub\OCULUS-BALL-VR\Monobanda-BallVR-source
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 36}
+    m_SelectedIDs: 66290000
+    m_LastClickedID: 10598
+    m_ExpandedIDs: 0000000062290000e6290000662b0000622d00005c2f0000682f000048320000d0320000a03a0000a23a0000a43a0000a63a0000a83a0000aa3a0000ac3a0000ae3a000000ca9a3bffffff7f
+>>>>>>> origin/Evelyn
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: _Material
@@ -365,7 +429,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000223c0000e63d0000983f00004841000052410000484600004a4600004c4600004e46000050460000524600005446000056460000
+=======
+    m_ExpandedIDs: 0000000062290000e6290000662b0000622d00005c2f0000682f000048320000d0320000a03a0000a23a0000a43a0000a63a0000a83a0000aa3a0000ac3a0000ae3a0000
+>>>>>>> origin/Evelyn
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -393,7 +461,11 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c62300009c400000
+=======
+    m_ExpandedInstanceIDs: aa300000f8320000e82f0000
+>>>>>>> origin/Evelyn
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -419,7 +491,11 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 186
+=======
+  m_DirectoriesAreaWidth: 214
+>>>>>>> origin/Evelyn
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -476,6 +552,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 91
     width: 319
     height: 534
@@ -484,6 +561,16 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 7ee4d5ffbc79dbffe6c2dcff3633deff4454dfff4654dfff3a48e8ff4648e8ffc6c3eaffc89af2ff787af3ff000cf7ff6e1bf7ffaea8f7ffbe03f8ffee0ff8ffea11f8fff612f8fff014f8ff5416f8ff6418f8ff7819f8ff741af8ff041ef8ff301ef8ff4a1ef8ff4c1ef8ff801ff8ff5821f8ffee23f8ffea24f8ffee25f8fffa26f8ff0c27f8ff8086f8ffd668f9ff509cf9ffeeb9f9fff0b9f9ff2ebef9ff0616fafffabcfaffbedafaffd2eafbffb4fdfbff4c1dfcfff834fdffa256fdffd0d0fdff2ad8fdff66f2fdff8c11feffec73feffe2caffff10e3ffff00000000faa9000038c30000f2c5000006c60000a604010012430100e080010098860100828701000ecf01005ed10100
+=======
+    y: 92
+    width: 377
+    height: 552
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 70d2ffff
+    m_LastClickedID: 0
+    m_ExpandedIDs: 0ee0ffff56e7ffff20eaffff6ef0ffffa4f0ffffa6f0ffff10f2ffffd2f5ffff84f6ffff86f6ffff18fcffff00000000
+>>>>>>> origin/Evelyn
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: plane
@@ -502,7 +589,11 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
+<<<<<<< HEAD
   - Astrid 01
+=======
+  - MonumentValleyGarden_Evelyn
+>>>>>>> origin/Evelyn
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -528,16 +619,26 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 323
     y: 91
     width: 990
     height: 534
   m_SceneLighting: 1
   lastFramingTime: 12368.877645999417
+=======
+    x: 381
+    y: 92
+    width: 1148
+    height: 552
+  m_SceneLighting: 1
+  lastFramingTime: 83.55075785567534
+>>>>>>> origin/Evelyn
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 12.506413, y: -1.4135427, z: 6.49608}
     speed: 2
     m_Value: {x: 12.506413, y: -1.4135427, z: 6.49608}
@@ -547,6 +648,17 @@ MonoBehaviour:
     showFog: 0
     showMaterialUpdate: 1
     showSkybox: 0
+=======
+    m_Target: {x: 3.436108, y: -0.72827005, z: 3.8529158}
+    speed: 2
+    m_Value: {x: 3.436108, y: -0.72827005, z: 3.8529158}
+  m_RenderMode: 0
+  m_ValidateTrueMetals: 0
+  m_SceneViewState:
+    showFog: 1
+    showMaterialUpdate: 1
+    showSkybox: 1
+>>>>>>> origin/Evelyn
     showFlares: 1
     showImageEffects: 1
   grid:
@@ -563,6 +675,7 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.1191737, y: 0.51922506, z: -0.07335543, w: 0.8431221}
     speed: 2
     m_Value: {x: 0.11917174, y: 0.51921654, z: -0.07335422, w: 0.84310824}
@@ -570,6 +683,15 @@ MonoBehaviour:
     m_Target: 19.730759
     speed: 2
     m_Value: 19.730759
+=======
+    m_Target: {x: -0.17010197, y: -0.22916086, z: 0.040708907, w: -0.9575455}
+    speed: 2
+    m_Value: {x: -0.17010197, y: -0.22916086, z: 0.040708907, w: -0.9575455}
+  m_Size:
+    m_Target: 19.407576
+    speed: 2
+    m_Value: 19.407576
+>>>>>>> origin/Evelyn
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -602,10 +724,17 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 323
     y: 91
     width: 990
     height: 534
+=======
+    x: 381
+    y: 92
+    width: 1148
+    height: 552
+>>>>>>> origin/Evelyn
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 1
@@ -614,10 +743,17 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -495
     m_HBaseRangeMax: 495
     m_VBaseRangeMin: -258.5
     m_VBaseRangeMax: 258.5
+=======
+    m_HBaseRangeMin: -574
+    m_HBaseRangeMax: 574
+    m_VBaseRangeMin: -267.5
+    m_VBaseRangeMax: 267.5
+>>>>>>> origin/Evelyn
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -634,25 +770,43 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 990
       height: 517
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 495, y: 258.5}
+=======
+      width: 1148
+      height: 535
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 574, y: 267.5}
+>>>>>>> origin/Evelyn
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -495
       y: -258.5
       width: 990
       height: 517
+=======
+      x: -574
+      y: -267.5
+      width: 1148
+      height: 535
+>>>>>>> origin/Evelyn
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 990, y: 534}
+=======
+  m_LastWindowPixelSize: {x: 1148, y: 552}
+>>>>>>> origin/Evelyn
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100

@@ -134,6 +134,7 @@ public class SpawnBalls : MonoBehaviour {
 					_currentClip = MakeSubclip(MicManager.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
 					_currentBall.GetComponent<AudioSource>().clip = _currentClip;
 				}
+                _currentBall.GetComponent<DestroyAtZeroVelocity>().growSize = _ballSizeCurrent;
 				_currentRigidbody.isKinematic = false;
 				_isSpeaking = false;
 				_timeRecording = 0;

@@ -131,14 +131,22 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451065999760130}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2, z: -3}
+=======
+>>>>>>> origin/Evelyn
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 4.3627486, y: 1.1597948, z: 1.7030115}
+>>>>>>> Niki
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4645636365452640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4643792197300178
 Transform:
   m_ObjectHideFlags: 1
@@ -388,8 +396,18 @@ MonoBehaviour:
   wantedColor: {r: 0.77647066, g: 0, b: 0.98823535, a: 0}
   colorErrorMargin: 0.4
   addingTime: 0
+<<<<<<< HEAD
   audioPlayed: 0
   audioTriggersLight: 0
+=======
+<<<<<<< HEAD
+  lampLinkedToAudio: 0
+  audioPlayed: 0
+=======
+  audioPlayed: 0
+  audioTriggersLight: 0
+>>>>>>> Niki
+>>>>>>> origin/Evelyn
 --- !u!114 &114307437369359444
 MonoBehaviour:
   m_ObjectHideFlags: 1

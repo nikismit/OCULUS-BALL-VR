@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 108518520922377516}
   - component: {fileID: 65152631204944168}
   - component: {fileID: 114404214043129298}
-  - component: {fileID: 114825202544571988}
   m_Layer: 0
   m_Name: Lamp met COLORTrigger mint (3)
   m_TagString: Untagged
@@ -145,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496061484824146}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9, y: 0, z: 10}
   m_LocalScale: {x: 45.553123, y: 45.553123, z: 45.553123}
   m_Children:
   - {fileID: 4481328884004836}
@@ -388,27 +387,15 @@ MonoBehaviour:
   triggerTime: 2
   wantedColor: {r: 0, g: 1, b: 0.75294125, a: 0}
   colorErrorMargin: 0.4
+  lightsToActivate:
+  - {fileID: 108518520922377516}
   addingTime: 0
+  playBallAudio: 0
+  lampLinkedToAudio: 0
+  lampStaysOn: 0
   audioPlayed: 0
-  audioTriggersLight: 1
---- !u!114 &114825202544571988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1520800226448430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8be386564a2f48e4390f7459ee795b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToGrow: {fileID: 1299163191516716}
-  sizeMultiplier: 30
-  growSpeed: 0.2
-  triggerTime: 2
-  growing: 0
-  wantedColor: {r: 0, g: 1, b: 0.75294125, a: 0}
-  colorErrorMargin: 0.4
+  needBallSize: 0
+  wantedBallsizeMinMax: {x: 0, y: 0}
 --- !u!135 &135466530376713108
 SphereCollider:
   m_ObjectHideFlags: 1

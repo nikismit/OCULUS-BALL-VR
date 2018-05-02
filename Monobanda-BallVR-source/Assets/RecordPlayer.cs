@@ -34,8 +34,9 @@ public class RecordPlayer : MonoBehaviour {
 	{
 		
 		if(other == other.GetComponent<BoxCollider>()){
-			if (other.GetComponent<DestroyAtZeroVelocity>()){
-				if(other.GetComponent<DestroyAtZeroVelocity>().lampActive == true){
+			if (other.GetComponent<AudioLamp>()){
+				if(other.GetComponent<AudioLamp>().enabled == true){
+					print("HIT! -> " + other.gameObject.name);
 					other.GetComponent<AudioSource>().Play();
 				}
 			}

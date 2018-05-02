@@ -2123,8 +2123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be386564a2f48e4390f7459ee795b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToGrow: {fileID: 1985006391157800}
-  sizeMultiplier: 500
+  ObjectsToGrow:
+  - {fileID: 1985006391157800}
+  wantedSizes: {x: 0.5, y: 0.5, z: 0.5}
   growSpeed: 0.4
   triggerTime: 0.001
   growing: 0
@@ -2157,9 +2158,15 @@ MonoBehaviour:
   triggerTime: 0.002
   wantedColor: {r: 0.77647066, g: 0, b: 0.98823535, a: 0}
   colorErrorMargin: 0.4
+  lightsToActivate:
+  - {fileID: 108696104739630534}
   addingTime: 0
+  playBallAudio: 0
+  lampLinkedToAudio: 0
+  lampStaysOn: 1
   audioPlayed: 0
-  audioTriggersLight: 0
+  needBallSize: 0
+  wantedBallsizeMinMax: {x: 0, y: 0}
 --- !u!135 &135576521371679248
 SphereCollider:
   m_ObjectHideFlags: 1

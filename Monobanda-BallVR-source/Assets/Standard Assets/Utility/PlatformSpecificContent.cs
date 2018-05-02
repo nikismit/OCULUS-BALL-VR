@@ -11,12 +11,11 @@ namespace UnityStandardAssets.Utility
     [ExecuteInEditMode]
 #endif
     public class PlatformSpecificContent : MonoBehaviour
-<<<<<<< HEAD
+
 #if UNITY_EDITOR
         , UnityEditor.Build.IActiveBuildTargetChanged
 #endif
-=======
->>>>>>> Niki
+
     {
         private enum BuildTargetGroup
         {
@@ -24,7 +23,7 @@ namespace UnityStandardAssets.Utility
             Mobile
         }
 
-<<<<<<< HEAD
+
         [SerializeField]
         private BuildTargetGroup m_BuildTargetGroup;
         [SerializeField]
@@ -33,12 +32,8 @@ namespace UnityStandardAssets.Utility
         private MonoBehaviour[] m_MonoBehaviours = new MonoBehaviour[0];
         [SerializeField]
         private bool m_ChildrenOfThisObject;
-=======
-        [SerializeField] private BuildTargetGroup m_BuildTargetGroup;
-        [SerializeField] private GameObject[] m_Content = new GameObject[0];
-        [SerializeField] private MonoBehaviour[] m_MonoBehaviours = new MonoBehaviour[0];
-        [SerializeField] private bool m_ChildrenOfThisObject;
->>>>>>> Niki
+
+
 
 #if !UNITY_EDITOR
 	void OnEnable()
@@ -54,8 +49,7 @@ namespace UnityStandardAssets.Utility
                 return 1;
             }
         }
-=======
->>>>>>> Niki
+
 #endif
 
 #if UNITY_EDITOR
@@ -63,25 +57,24 @@ namespace UnityStandardAssets.Utility
         private void OnEnable()
         {
             EditorApplication.update += Update;
-<<<<<<< HEAD
-=======
+
             EditorUserBuildSettings.activeBuildTargetChanged += Update;
->>>>>>> Niki
+
         }
 
 
         private void OnDisable()
         {
             EditorApplication.update -= Update;
-<<<<<<< HEAD
+
         }
 
         public void OnActiveBuildTargetChanged(BuildTarget previousTarget, BuildTarget newTarget)
         {
             CheckEnableContent();
-=======
+
             EditorUserBuildSettings.activeBuildTargetChanged -= Update;
->>>>>>> Niki
+
         }
 
         private void Update()
@@ -143,8 +136,6 @@ namespace UnityStandardAssets.Utility
             }
         }
     }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> Niki
+

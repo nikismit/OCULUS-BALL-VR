@@ -63,13 +63,13 @@ public class GrowOnTrigger : MonoBehaviour {
 			int j = 0;
 			foreach(GameObject g in ObjectsToGrow){
 				if(g.transform.localScale.x < neededSizes[j].x){
-					g.transform.localScale += new Vector3(1, 0, 0) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(1.0f, 0, 0) * Time.deltaTime * growSpeed;
 				}
 				if(g.transform.localScale.y < neededSizes[j].y){
-					g.transform.localScale += new Vector3(0, 1, 0) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(0, 1.0f, 0) * Time.deltaTime * growSpeed;
 				}
 				if(g.transform.localScale.z < neededSizes[j].z){
-					g.transform.localScale += new Vector3(0, 0, 1) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(0, 0, 1.0f) * Time.deltaTime * growSpeed;
 				}
 				j++;
 			}
@@ -78,13 +78,13 @@ public class GrowOnTrigger : MonoBehaviour {
 			int j = 0;
 			foreach(GameObject g in ObjectsToGrow){
 				if(g.transform.localScale.x > normalSizes[j].x){
-					g.transform.localScale += new Vector3(1, 0, 0) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(1.0f, 0, 0) * Time.deltaTime * growSpeed;
 				}
 				if(g.transform.localScale.y > normalSizes[j].y){
-					g.transform.localScale += new Vector3(0, 1, 0) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(0, 1.0f, 0) * Time.deltaTime * growSpeed;
 				}
 				if(g.transform.localScale.z > normalSizes[j].z){
-					g.transform.localScale += new Vector3(0, 0, 1) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(0, 0, 1.0f) * Time.deltaTime * growSpeed;
 				}
 				j++;
 			}

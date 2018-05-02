@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -114,8 +114,8 @@ MonoBehaviour:
     y: 0
     width: 379
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 0
     width: 539
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -362,7 +362,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 8}
     m_SelectedIDs: 2c2d0000
     m_LastClickedID: 11564
-    m_ExpandedIDs: 0000000062290000e6290000222a00006c2b00007c2c0000682d0000642f0000702f0000fa2f0000fc2f0000dc300000523200007c320000da320000ee3a0000f03a0000f23a0000f43a0000f63a0000f83a0000fa3a0000fc3a000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000062290000e6290000222a00006c2b00007c2c0000682d0000642f0000702f0000fa2f0000fc2f0000dc300000523200007c320000da32000036380000383800003a3800003c3800003e38000040380000423800004438000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000062290000e62900006c2b0000682d0000642f0000702f000052320000da320000ee3a0000f03a0000f23a0000f43a0000f63a0000f83a0000fa3a0000fc3a0000
+    m_ExpandedIDs: 0000000062290000e6290000222a00006c2b00007c2c0000682d0000642f0000702f0000fa2f0000fc2f0000dc300000523200007c320000da32000036380000383800003a3800003c3800003e380000403800004238000044380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,23 +506,23 @@ MonoBehaviour:
     height: 552
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8823fbff
-    m_LastClickedID: -318584
-    m_ExpandedIDs: d221fbffd421fbff8823fbff7624fbff7824fbff5646fbff5846fbff5a52fbffb6ecfdff8ed8ffffc6d8ffff94d9ffff42daffff34dbffff36dbffff38dbffff18fcffff00000000123b000072670000066800002e680000
+    m_SelectedIDs: 40f9ffff
+    m_LastClickedID: -1728
+    m_ExpandedIDs: 72f9ffff74f9ffff28fbffff18fcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Lamp met COLORTrigger purple (1)
-      m_OriginalName: Lamp met COLORTrigger purple (1)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -9836
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 

@@ -27,6 +27,7 @@ public class RecordPlayer : MonoBehaviour {
 		}
 
 		this.transform.position = Vector3.Lerp(origin, goal, timer/secondsToMove);
+		
 
 	}
 
@@ -42,4 +43,6 @@ public class RecordPlayer : MonoBehaviour {
 			}
 		}
 	}
+
+	
 }

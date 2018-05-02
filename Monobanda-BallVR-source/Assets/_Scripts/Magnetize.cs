@@ -43,7 +43,11 @@ public class Magnetize : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Color otherColor = other.GetComponent<Renderer>().material.color;
+		Color otherColor = new Color(0,0,0);
+		if(other.GetComponent<Renderer>()){
+			otherColor = other.GetComponent<Renderer>().material.color;
+		}
+
 		if(otherColor.r <= neededColor.r + colorErrorMargin && otherColor.r >= neededColor.r - colorErrorMargin){
 			redGood = true;
 		} else {

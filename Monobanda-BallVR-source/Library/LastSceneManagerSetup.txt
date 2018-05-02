@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/_Scenes/Astrid 01.unity
-=======
-- path: Assets/_Scenes/MonumentValleyGarden_Evelyn.unity
->>>>>>> origin/Evelyn
+- path: Assets/_Scenes/Astrid 02.unity
   isLoaded: 1
   isActive: 1

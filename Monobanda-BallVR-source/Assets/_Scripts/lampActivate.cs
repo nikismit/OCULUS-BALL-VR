@@ -17,12 +17,7 @@ public class lampActivate : MonoBehaviour {
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
-<<<<<<< HEAD
-	public bool audioPlayed = false;
-    public bool audioTriggersLight = true;
-=======
-
-    
+	    
     public bool playBallAudio = false;
 	public bool lampLinkedToAudio = false;
     public bool lampStaysOn = false;
@@ -35,7 +30,7 @@ public class lampActivate : MonoBehaviour {
 	bool audioUpdated = false;
 	
 
->>>>>>> origin/Evelyn
+
 	private GameObject currentOccupant;
 
 	// Use this for initialization
@@ -53,24 +48,9 @@ public class lampActivate : MonoBehaviour {
 		if(addingTime){
 			timer += Time.deltaTime;
 		}
-<<<<<<< HEAD
-		if (timer >= triggerTime){
-			if(audioPlayed == false){
-				if(currentOccupant.GetComponent<AudioSource>().clip != null){
-					currentOccupant.GetComponent<AudioSource>().Play();
-					audioPlayed = true;
-				}
-			}
-			currentOccupant.GetComponent<DestroyAtZeroVelocity>().lampActive = true;
-			this.GetComponent<Light>().enabled = true;
-			
-			timer = 0.0f;
-		}
-        if (audioTriggersLight == true)
-=======
 
-        if (currentOccupant)
->>>>>>> origin/Evelyn
+		if (currentOccupant)
+
         {
             if (timer >= triggerTime && addingTime == true)
             {
@@ -98,9 +78,7 @@ public class lampActivate : MonoBehaviour {
 
                 timer = 0.0f;
             }
-<<<<<<< HEAD
         }
-=======
             if (lampLinkedToAudio == true)
             {
                 if (currentOccupant != null)
@@ -122,11 +100,8 @@ public class lampActivate : MonoBehaviour {
 					}
 				}
 			}
-		}
-		
->>>>>>> origin/Evelyn
-		
 	}
+		
 
 
 	void OnTriggerEnter(Collider other)

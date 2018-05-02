@@ -168,7 +168,10 @@ public class lampActivate : MonoBehaviour {
         {
             foreach(Light l in lightsToActivate){
 				l.enabled = false;
-				l.GetComponent<AudioLamp>().enabled = false;
+                if (l.GetComponent<AudioLamp>())
+                {
+                    l.GetComponent<AudioLamp>().enabled = false;
+                }
 			}
         }
 	}

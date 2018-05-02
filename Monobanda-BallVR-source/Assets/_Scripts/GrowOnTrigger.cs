@@ -57,14 +57,17 @@ public class GrowOnTrigger : MonoBehaviour {
 		if(growing){
 			foreach(GameObject g in ObjectsToGrow){
 				if(g.transform.localScale.x < wantedSizes.x){
-					g.transform.localScale += new Vector3(1, 0, 0) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(1.0f, 0, 0) * Time.deltaTime * growSpeed;
+                    print("GROEIx");
 				}
 				if(g.transform.localScale.y < wantedSizes.y){
-					g.transform.localScale += new Vector3(0, 1, 0) * Time.deltaTime * growSpeed;
-				}
+					g.transform.localScale += new Vector3(0, 1.0f, 0) * Time.deltaTime * growSpeed;
+                    print("GROEIy");
+                }
 				if(g.transform.localScale.z < wantedSizes.z){
-					g.transform.localScale += new Vector3(0, 0, 1) * Time.deltaTime * growSpeed;
-				}
+					g.transform.localScale += new Vector3(0, 0, 1.0f) * Time.deltaTime * growSpeed;
+                    print("GROEIz");
+                }
 			}
 		} else {
 			int j = 0;

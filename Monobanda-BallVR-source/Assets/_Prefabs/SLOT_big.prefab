@@ -471,8 +471,13 @@ MonoBehaviour:
   wantedColor: {r: 1, g: 0.5176471, b: 0, a: 0}
   colorErrorMargin: 0.4
   addingTime: 0
+<<<<<<< HEAD
   lampLinkedToAudio: 0
   audioPlayed: 0
+=======
+  audioPlayed: 0
+  audioTriggersLight: 0
+>>>>>>> Niki
 --- !u!135 &135196654064405372
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 075689404d3f700489e2e077b0c63ba3
 folderAsset: yes
 timeCreated: 1525085499
+=======
+guid: 6b8a54894b7ae5f4dbf85389d229a236
+folderAsset: yes
+timeCreated: 1525175700
+>>>>>>> Niki
 licenseType: Free
 DefaultImporter:
   userData: 

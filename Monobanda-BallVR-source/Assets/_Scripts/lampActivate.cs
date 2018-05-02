@@ -15,6 +15,7 @@ public class lampActivate : MonoBehaviour {
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
+<<<<<<< HEAD
     
     public bool playBallAudio = false;
 	public bool lampLinkedToAudio = false;
@@ -23,6 +24,10 @@ public class lampActivate : MonoBehaviour {
     public bool needBallSize = false;
     public Vector2 wantedBallsizeMinMax;
     bool sizeGood = false;
+=======
+	public bool audioPlayed = false;
+    public bool audioTriggersLight = true;
+>>>>>>> Niki
 	private GameObject currentOccupant;
 
 	// Use this for initialization
@@ -37,6 +42,7 @@ public class lampActivate : MonoBehaviour {
 		if(addingTime){
 			timer += Time.deltaTime;
 		}
+<<<<<<< HEAD
         if (currentOccupant)
         {
             if (timer >= triggerTime && addingTime == true)
@@ -70,6 +76,33 @@ public class lampActivate : MonoBehaviour {
                         {
                             this.GetComponent<Light>().enabled = false;
                         }
+=======
+		if (timer >= triggerTime){
+			if(audioPlayed == false){
+				if(currentOccupant.GetComponent<AudioSource>().clip != null){
+					currentOccupant.GetComponent<AudioSource>().Play();
+					audioPlayed = true;
+				}
+			}
+			currentOccupant.GetComponent<DestroyAtZeroVelocity>().lampActive = true;
+			this.GetComponent<Light>().enabled = true;
+			
+			timer = 0.0f;
+		}
+        if (audioTriggersLight == true)
+        {
+            if (currentOccupant != null)
+            {
+                if (currentOccupant.GetComponent<AudioSource>())
+                {
+                    if (currentOccupant.GetComponent<AudioSource>().isPlaying)
+                    {
+                        this.GetComponent<Light>().enabled = true;
+                    }
+                    else
+                    {
+                        this.GetComponent<Light>().enabled = false;
+>>>>>>> Niki
                     }
                 }
             }

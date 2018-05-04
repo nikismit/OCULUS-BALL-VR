@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Astrid 02.unity
+- path: Assets/_Scenes/Astrid 05.unity
   isLoaded: 1
   isActive: 1

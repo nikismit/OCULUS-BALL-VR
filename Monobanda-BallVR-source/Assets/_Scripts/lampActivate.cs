@@ -150,7 +150,7 @@ public class lampActivate : MonoBehaviour {
 				audioUpdated = false;
 			}
 		} else {
-			other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
+			//other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
 		}
 
 	}

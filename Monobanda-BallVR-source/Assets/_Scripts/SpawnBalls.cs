@@ -31,7 +31,9 @@ public class SpawnBalls : MonoBehaviour {
 	private float _spawnTimer = 0.0f;
 	public float _minSpeakTime = 0.5f;
 	public bool _playSoundMade = true;
-	
+
+	public bool lifeTime = false;
+	public float BallLifeTime = 5.0f;
 
 	[Header("Colors")]
 	public Color lowPitchColor;
@@ -41,7 +43,8 @@ public class SpawnBalls : MonoBehaviour {
 
     private GameObject _currentBall;
     private Material _currentMaterial;
-    private Color _currentColor;
+	
+	public Color _currentColor;
     private int _currentItem;
     private Rigidbody _currentRigidbody;
     private SphereCollider _currentSphereCollider;
@@ -57,7 +60,7 @@ public class SpawnBalls : MonoBehaviour {
 
 
     private float _timeRecording;
-    private bool _isSpeaking;
+    public bool _isSpeaking;
 
 	private float _clipStart;
 	private float _clipEnd;
@@ -124,6 +127,7 @@ public class SpawnBalls : MonoBehaviour {
 			_currentBallNum +=1;
             _currentRigidbody.isKinematic = true;
 			_clipStart = MicManager.GetComponent<AudioSource>().time;
+			_currentBall.GetComponent<DestroyAtZeroVelocity>().deathTimer = BallLifeTime;
         }
 
         if ((_micAmplitude < VoiceProfile._amplitudeSilence) && (_isSpeaking)) //stop speaking RELEASE
@@ -143,6 +147,7 @@ public class SpawnBalls : MonoBehaviour {
 				_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 				_highestAmplitude = 0;
 				MicManager.GetComponent<AudioPitch>().ClearMicrophone();
+				_currentBall.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
 			} else {
 				_currentBall.SetActive(false);
 				//_currentBallNum -= 1;
@@ -156,9 +161,10 @@ public class SpawnBalls : MonoBehaviour {
                 _highestAmplitude = _micAmplitude;
             }
 			_currentAmplitude = _micAmplitude;
-            _currentBall.transform.position = _spawnLocation.position;
+            
             _timeRecording += Time.deltaTime;
             _spawnTimer += Time.deltaTime;
+			_currentBall.transform.position = _spawnLocation.position + 0.2f * this.transform.forward * _timeRecording;
             _ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
             _currentBall.transform.localScale = new Vector3(_ballSizeCurrent, _ballSizeCurrent, _ballSizeCurrent);
 

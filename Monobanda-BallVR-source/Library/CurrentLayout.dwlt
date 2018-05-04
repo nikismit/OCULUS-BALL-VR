@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 613
     height: 573
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 0
-  controlID: 9
+  controlID: 138
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -114,8 +114,8 @@ MonoBehaviour:
     y: 0
     width: 379
     height: 573
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 12010, y: 14042}
   vertical: 1
-  controlID: 10
+  controlID: 139
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 221}
   m_MaxSize: {x: 12010, y: 4021}
   vertical: 0
-  controlID: 11
+  controlID: 140
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 0
     width: 539
     height: 573
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -350,19 +350,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Scripts
+    - Assets/_Prefabs/USE THESE
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scripts
+  - Assets/_Prefabs/USE THESE
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\monobanda PLAY\Documents\GitHub\OCULUS-BALL-VR\Monobanda-BallVR-source
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 8}
-    m_SelectedIDs: 2c2d0000
-    m_LastClickedID: 11564
-    m_ExpandedIDs: 0000000062290000e6290000222a00006c2b00007c2c0000682d0000642f0000702f0000fa2f0000fc2f0000dc300000523200007c320000da32000036380000383800003a3800003c3800003e38000040380000423800004438000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 36}
+    m_SelectedIDs: 56780000
+    m_LastClickedID: 30806
+    m_ExpandedIDs: 000000006229000066290000e6290000222a00006c2b00007c2c0000682d0000642f0000702f0000fa2f0000dc300000523200007c320000da320000f03a0000f23a0000f43a0000f63a0000f83a0000fa3a0000fc3a0000fe3a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000062290000e6290000222a00006c2b00007c2c0000682d0000642f0000702f0000fa2f0000fc2f0000dc300000523200007c320000da32000036380000383800003a3800003c3800003e380000403800004238000044380000
+    m_ExpandedIDs: 0000000062290000e6290000222a00006c2b00007c2c0000682d0000642f0000702f0000fa2f0000fc2f0000dc300000523200007c320000da320000f03a0000f23a0000f43a0000f63a0000f83a0000fa3a0000fc3a0000fe3a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -418,7 +418,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: aa300000f8320000e82f0000f02f0000
+    m_ExpandedInstanceIDs: aa300000f8320000e82f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,23 +506,23 @@ MonoBehaviour:
     height: 552
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 40f9ffff
-    m_LastClickedID: -1728
-    m_ExpandedIDs: 72f9ffff74f9ffff28fbffff18fcffff00000000
+    m_SelectedIDs: 56780000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 40a6f8ffb8a9f8ffa4cff8ff82dbf8fffcd7fffffed7ffffaad8ffffacd8ffff78d9ffff7ad9ffff7edaffff80daffff6cdbffff6edbffff70dbffff18fcffff00000000163b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: RecordPlayer
+      m_OriginalName: RecordPlayer
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -471132
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -558,14 +558,14 @@ MonoBehaviour:
     width: 535
     height: 552
   m_SceneLighting: 1
-  lastFramingTime: 83.55075785567534
+  lastFramingTime: 46.171261700917874
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.245827, y: -4.349185, z: -0.4078344}
+    m_Target: {x: 0.72143996, y: -0.34510875, z: 0.621223}
     speed: 2
-    m_Value: {x: 11.245827, y: -4.349185, z: -0.4078344}
+    m_Value: {x: 0.72143996, y: -0.34510875, z: 0.621223}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -588,13 +588,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.15140544, y: 0.65183365, z: -0.13506037, w: 0.7307175}
+    m_Target: {x: -0.16071679, y: -0.16730869, z: 0.027656715, w: -0.97232354}
     speed: 2
-    m_Value: {x: 0.15140544, y: 0.65183365, z: -0.13506037, w: 0.7307175}
+    m_Value: {x: -0.16071679, y: -0.16730869, z: 0.027656715, w: -0.97232354}
   m_Size:
-    m_Target: 19.407576
+    m_Target: 10.827259
     speed: 2
-    m_Value: 19.407576
+    m_Value: 10.827259
   m_Ortho:
     m_Target: 0
     speed: 2

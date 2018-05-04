@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class GrowOnTrigger : MonoBehaviour {
 
-	
-	public GameObject[] ObjectsToGrow = new GameObject[1];
+	[System.Serializable]
+	public class ObjectToGrow{
+		public GameObject GrowObject;
+		public float delayTime;
+		[HideInInspector] public Vector3 normalSize;
+		[HideInInspector] public Vector3 neededSize;
+	}
 
-	
-	public Vector3 wantedSizes = new Vector3 (2,2,2);
-	public float growSpeed = 2.0f;
+	public bool childrenToGrow = false;
+	public float childGrowDelay = 0.1f;
+
+	public ObjectToGrow[] ObjectsToGrow = new ObjectToGrow[1];
+	public Vector3 sizeMultiplier;
+	public float growTime = 2.0f;
 
 	public float triggerTime = 2.0f;
 
 	float timer = 0.0f;
+	float growTimer = 0.0f;
+	float fullGrowTime = 0.0f;
 	bool addingTime = false;
 
 	public bool growing = false;
-
-	Vector3[] normalSizes = new Vector3[1];
-	Vector3[] neededSizes = new Vector3[1];
 	
-
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;
 
@@ -33,18 +39,31 @@ public class GrowOnTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		normalSizes = new Vector3[ObjectsToGrow.Length];
-		neededSizes = new Vector3[ObjectsToGrow.Length];
 		//print(normalSizes.Length + " -> " + ObjectsToGrow.Length);
-		int i = 0;
-		foreach(GameObject g in ObjectsToGrow){
-			normalSizes[i] = g.transform.localScale;
-			neededSizes[i].x = normalSizes[i].x * wantedSizes.x;
-			neededSizes[i].y = normalSizes[i].y * wantedSizes.y;
-			neededSizes[i].z = normalSizes[i].z * wantedSizes.z;
-			i++;
+
+		fullGrowTime = 0.0f;
+
+		if(childrenToGrow){
+			ObjectsToGrow = new ObjectToGrow[this.transform.childCount];
+			
+			int j = this.transform.childCount;
+			//print(transform.GetChild(0).gameObject);
+			for(int i = 0; i < j; ++i){
+				ObjectsToGrow[i] = new ObjectToGrow{
+					GrowObject = transform.GetChild(i).gameObject,
+					delayTime = childGrowDelay
+				};
+			}
+			
 		}
-		i=0;
+
+		foreach(ObjectToGrow g in ObjectsToGrow){
+			g.normalSize = g.GrowObject.transform.localScale;
+			g.neededSize.x = g.normalSize.x * sizeMultiplier.x;
+			g.neededSize.y = g.normalSize.y * sizeMultiplier.y;
+			g.neededSize.z = g.normalSize.z * sizeMultiplier.z;
+			fullGrowTime += g.delayTime;
+		}
 	}
 	
 	// Update is called once per frame
@@ -60,35 +79,46 @@ public class GrowOnTrigger : MonoBehaviour {
 
 		
 		if(growing){
-			int j = 0;
-			foreach(GameObject g in ObjectsToGrow){
-				if(g.transform.localScale.x < neededSizes[j].x){
-					g.transform.localScale += new Vector3(1.0f, 0, 0) * Time.deltaTime * growSpeed;
-				}
-				if(g.transform.localScale.y < neededSizes[j].y){
-					g.transform.localScale += new Vector3(0, 1.0f, 0) * Time.deltaTime * growSpeed;
-				}
-				if(g.transform.localScale.z < neededSizes[j].z){
-					g.transform.localScale += new Vector3(0, 0, 1.0f) * Time.deltaTime * growSpeed;
-				}
-				j++;
+			if(growTimer < fullGrowTime){
+				growTimer += Time.deltaTime;
 			}
-			j=0;
+			float timeNeeded = 0.0f;
+			foreach(ObjectToGrow g in ObjectsToGrow){
+				if(growTimer >= timeNeeded){
+					if(g.GrowObject.transform.localScale.x < g.neededSize.x){
+						g.GrowObject.transform.localScale += (new Vector3(1.0f, 0, 0) * Time.deltaTime) / growTime;
+					}
+					if(g.GrowObject.transform.localScale.y < g.neededSize.y){
+						g.GrowObject.transform.localScale += (new Vector3(0, 1.0f, 0) * Time.deltaTime) / growTime;
+					}
+					if(g.GrowObject.transform.localScale.z < g.neededSize.z){
+						g.GrowObject.transform.localScale += (new Vector3(0, 0, 1.0f) * Time.deltaTime) / growTime;
+					}
+				}
+				timeNeeded += g.delayTime;
+			}
+			timeNeeded = 0.0f;
+			
 		} else {
-			int j = 0;
-			foreach(GameObject g in ObjectsToGrow){
-				if(g.transform.localScale.x > normalSizes[j].x){
-					g.transform.localScale += new Vector3(1.0f, 0, 0) * Time.deltaTime * growSpeed;
-				}
-				if(g.transform.localScale.y > normalSizes[j].y){
-					g.transform.localScale += new Vector3(0, 1.0f, 0) * Time.deltaTime * growSpeed;
-				}
-				if(g.transform.localScale.z > normalSizes[j].z){
-					g.transform.localScale += new Vector3(0, 0, 1.0f) * Time.deltaTime * growSpeed;
-				}
-				j++;
+			if(growTimer>0.0f){
+				growTimer -= Time.deltaTime;
 			}
-			j=0;
+			float timeNeeded = fullGrowTime;
+			foreach(ObjectToGrow g in ObjectsToGrow){
+				if(growTimer<=timeNeeded){
+					if(g.GrowObject.transform.localScale.x > g.normalSize.x){
+						g.GrowObject.transform.localScale -= (new Vector3(1.0f, 0, 0) * Time.deltaTime) / growTime;
+					}
+					if(g.GrowObject.transform.localScale.y > g.normalSize.y){
+						g.GrowObject.transform.localScale -= (new Vector3(0, 1.0f, 0) * Time.deltaTime) / growTime;
+					}
+					if(g.GrowObject.transform.localScale.z > g.normalSize.z){
+						g.GrowObject.transform.localScale -= (new Vector3(0, 0, 1.0f) * Time.deltaTime) / growTime;
+					}
+				}
+				timeNeeded-=g.delayTime;
+			}
+			timeNeeded = fullGrowTime;
 		}
 
 

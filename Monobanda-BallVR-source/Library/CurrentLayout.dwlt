@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 613
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 0
     width: 539
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -350,19 +350,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Prefabs
+    - Assets/_Material
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Prefabs
+  - Assets/_Material
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\PROJECTS\OCULUS BALL VR\Monobanda-BallVR-source
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 50450000
-    m_LastClickedID: 17744
-    m_ExpandedIDs: 000000004c45000050450000b2450000ca45000002470000604700002c4800008649000092490000dc490000584a00006e4b0000844b0000be4b00005a4c00005c4c00005e4c0000604c0000624c0000644c0000664c0000684c000000ca9a3bffffff7f
+    m_SelectedIDs: a62d0000
+    m_LastClickedID: 11686
+    m_ExpandedIDs: 000000007e29000082290000062a0000422a00008c2b00009e2c0000a62d0000a82f0000b42f0000423000002c310000b4320000f4320000583300004c3800004e38000050380000523800005438000056380000583800005a38000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c45000050450000b2450000ca45000002470000604700002c4800008649000092490000dc490000584a00006e4b0000844b0000be4b00005a4c00005c4c00005e4c0000604c0000624c0000644c0000664c0000684c0000
+    m_ExpandedIDs: 000000007e29000082290000062a0000422a00008c2b00009e2c0000a62d0000a82f0000b42f0000423000002c310000b4320000f4320000583300004c3800004e38000050380000523800005438000056380000583800005a380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: aa300000f8320000e82f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -506,9 +506,9 @@ MonoBehaviour:
     height: 552
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7861ffff
-    m_LastClickedID: -40584
-    m_ExpandedIDs: 82d3feff7261ffff7861ffffa261ffff9284ffff9484ffff0a88ffff2288ffff2888ffff00000000
+    m_SelectedIDs: 7444fdff
+    m_LastClickedID: -179084
+    m_ExpandedIDs: 2ad3ffff2cd3ffff2ee9ffff34efffff4cf8ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -527,7 +527,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
-  - NikiTests
+  - Level2
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -558,14 +558,14 @@ MonoBehaviour:
     width: 535
     height: 552
   m_SceneLighting: 1
-  lastFramingTime: 1360.315332715845
+  lastFramingTime: 334.8026150031098
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.0000053625554, y: -0.23860681, z: 0.000003600493}
+    m_Target: {x: -4.055133, y: 1.6601632, z: 14.447732}
     speed: 2
-    m_Value: {x: -0.0000053625554, y: -0.23860681, z: 0.000003600493}
+    m_Value: {x: -4.055133, y: 1.6601632, z: 14.447732}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -588,13 +588,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.17779693, y: 0.1286038, z: -0.023442958, w: -0.9753547}
+    m_Target: {x: -0.2736819, y: 0.44709042, z: -0.14583865, w: -0.8390226}
     speed: 2
-    m_Value: {x: -0.17779543, y: 0.12860271, z: -0.023442758, w: -0.97534645}
+    m_Value: {x: -0.27367926, y: 0.4470861, z: -0.14583723, w: -0.8390145}
   m_Size:
-    m_Target: 14.949808
+    m_Target: 5.259354
     speed: 2
-    m_Value: 14.949808
+    m_Value: 5.259354
   m_Ortho:
     m_Target: 0
     speed: 2

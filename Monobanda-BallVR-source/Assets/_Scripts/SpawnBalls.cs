@@ -156,9 +156,10 @@ public class SpawnBalls : MonoBehaviour {
                 _highestAmplitude = _micAmplitude;
             }
 			_currentAmplitude = _micAmplitude;
-            _currentBall.transform.position = _spawnLocation.position;
+            
             _timeRecording += Time.deltaTime;
             _spawnTimer += Time.deltaTime;
+			_currentBall.transform.position = _spawnLocation.position + 0.2f * this.transform.forward * _timeRecording;
             _ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
             _currentBall.transform.localScale = new Vector3(_ballSizeCurrent, _ballSizeCurrent, _ballSizeCurrent);
 

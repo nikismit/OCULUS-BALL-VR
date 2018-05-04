@@ -61,10 +61,10 @@ public class lampActivate : MonoBehaviour {
 						if(audioUpdated == false){
 							foreach (Light l in lightsToActivate){
 								l.GetComponent<AudioSource>().clip = currentOccupant.GetComponent<AudioSource>().clip;
+								l.GetComponent<AudioSource>().Play();
 							}
 						}
 						audioUpdated = true;
-						currentOccupant.GetComponent<AudioSource>().Play();
                         audioPlayed = true;
                     }
 
@@ -79,23 +79,13 @@ public class lampActivate : MonoBehaviour {
             }
             if (lampLinkedToAudio == true)
             {
-                if (currentOccupant != null)
-                {
-                    if (currentOccupant.GetComponent<AudioSource>())
-                    {
-                        if (currentOccupant.GetComponent<AudioSource>().isPlaying)
-                        {
-                            foreach(Light l in lightsToActivate){
-								l.enabled = true;
-							}
-                        }
-                        else
-                        {
-                            foreach(Light l in lightsToActivate){
-								l.enabled = false;
-							}
-                        }
+				foreach(Light l in lightsToActivate){
+					if(l.GetComponent<AudioSource>().isPlaying){
+						l.enabled = true;
+					} else {
+						l.enabled = false;
 					}
+
 				}
 			}
 		}

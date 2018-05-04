@@ -19,6 +19,7 @@ public class GrowOnTrigger : MonoBehaviour {
 	public bool growing = false;
 
 	Vector3[] normalSizes = new Vector3[1];
+	Vector3[] neededSizes = new Vector3[1];
 	
 
 	public Color wantedColor;
@@ -33,10 +34,14 @@ public class GrowOnTrigger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		normalSizes = new Vector3[ObjectsToGrow.Length];
+		neededSizes = new Vector3[ObjectsToGrow.Length];
 		//print(normalSizes.Length + " -> " + ObjectsToGrow.Length);
 		int i = 0;
 		foreach(GameObject g in ObjectsToGrow){
 			normalSizes[i] = g.transform.localScale;
+			neededSizes[i].x = normalSizes[i].x * wantedSizes.x;
+			neededSizes[i].y = normalSizes[i].y * wantedSizes.y;
+			neededSizes[i].z = normalSizes[i].z * wantedSizes.z;
 			i++;
 		}
 		i=0;
@@ -55,31 +60,31 @@ public class GrowOnTrigger : MonoBehaviour {
 
 		
 		if(growing){
+			int j = 0;
 			foreach(GameObject g in ObjectsToGrow){
-				if(g.transform.localScale.x < wantedSizes.x){
+				if(g.transform.localScale.x < neededSizes[j].x){
 					g.transform.localScale += new Vector3(1.0f, 0, 0) * Time.deltaTime * growSpeed;
-                    print("GROEIx");
 				}
-				if(g.transform.localScale.y < wantedSizes.y){
+				if(g.transform.localScale.y < neededSizes[j].y){
 					g.transform.localScale += new Vector3(0, 1.0f, 0) * Time.deltaTime * growSpeed;
-                    print("GROEIy");
-                }
-				if(g.transform.localScale.z < wantedSizes.z){
+				}
+				if(g.transform.localScale.z < neededSizes[j].z){
 					g.transform.localScale += new Vector3(0, 0, 1.0f) * Time.deltaTime * growSpeed;
-                    print("GROEIz");
-                }
+				}
+				j++;
 			}
+			j=0;
 		} else {
 			int j = 0;
 			foreach(GameObject g in ObjectsToGrow){
 				if(g.transform.localScale.x > normalSizes[j].x){
-					g.transform.localScale += new Vector3(1, 0, 0) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(1.0f, 0, 0) * Time.deltaTime * growSpeed;
 				}
 				if(g.transform.localScale.y > normalSizes[j].y){
-					g.transform.localScale += new Vector3(0, 1, 0) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(0, 1.0f, 0) * Time.deltaTime * growSpeed;
 				}
 				if(g.transform.localScale.z > normalSizes[j].z){
-					g.transform.localScale += new Vector3(0, 0, 1) * Time.deltaTime * growSpeed;
+					g.transform.localScale += new Vector3(0, 0, 1.0f) * Time.deltaTime * growSpeed;
 				}
 				j++;
 			}

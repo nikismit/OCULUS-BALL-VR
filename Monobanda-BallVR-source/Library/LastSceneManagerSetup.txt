@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Scenes/Astrid 05.unity
+=======
+- path: Assets/_Scenes/NikiTests.unity
+>>>>>>> origin/Niki
   isLoaded: 1
   isActive: 1

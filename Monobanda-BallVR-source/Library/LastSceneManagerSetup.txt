@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Scenes/Demo.unity
+=======
+- path: Assets/_Scenes/Voiceslot church trippy shadows.unity
+>>>>>>> origin/Niki
   isLoaded: 1
   isActive: 1

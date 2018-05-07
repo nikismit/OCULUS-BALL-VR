@@ -41,7 +41,8 @@ public class SpawnBalls : MonoBehaviour {
 
     private GameObject _currentBall;
     private Material _currentMaterial;
-    private Color _currentColor;
+	
+	public Color _currentColor;
     private int _currentItem;
     private Rigidbody _currentRigidbody;
     private SphereCollider _currentSphereCollider;
@@ -57,7 +58,7 @@ public class SpawnBalls : MonoBehaviour {
 
 
     private float _timeRecording;
-    private bool _isSpeaking;
+    public bool _isSpeaking;
 
 	private float _clipStart;
 	private float _clipEnd;

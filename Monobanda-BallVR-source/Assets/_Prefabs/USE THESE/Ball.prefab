@@ -287,6 +287,8 @@ MonoBehaviour:
   startTimer: 0
   lampActive: 0
   growSize: 0
+  audioPlayerPrefab: {fileID: 1123379449106794, guid: 372a6f636a4cc3848aeace8fec794641,
+    type: 2}
 --- !u!135 &135609236330556740
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -26,7 +26,7 @@ public class GrowOnTrigger : MonoBehaviour {
 	float fullGrowTime = 0.0f;
 	bool addingTime = false;
 
-	public bool growing = false;
+	[HideInInspector]public bool growing = false;
 	
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;

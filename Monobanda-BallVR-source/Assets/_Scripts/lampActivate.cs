@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class lampActivate : MonoBehaviour {
 
+	public Light[] lightsToActivate = new Light[1];
 	
-	public float triggerTime = 2.0f;
-
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;
 
-	public Light[] lightsToActivate = new Light[1];
+	public bool needBallSize = false;
+    public Vector2 wantedBallsizeMinMax;
+
+	public float triggerTime = 2.0f;
 
 	float timer = 0.0f;
-	public bool addingTime = false;
+	bool addingTime = false;
 	bool redGood = false;
 	bool greenGood = false;
 	bool blueGood = false;
@@ -21,9 +23,8 @@ public class lampActivate : MonoBehaviour {
     public bool playBallAudio = false;
 	public bool lampLinkedToAudio = false;
     public bool lampStaysOn = false;
-    public bool audioPlayed = false;
-    public bool needBallSize = false;
-    public Vector2 wantedBallsizeMinMax;
+	[HideInInspector]public bool audioPlayed = false;
+    
     bool sizeGood = false;
 
 	public bool updateAudio = false;

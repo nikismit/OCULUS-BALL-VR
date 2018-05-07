@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/_Scenes/Astrid 05.unity
-=======
-- path: Assets/_Scenes/NikiTests.unity
->>>>>>> origin/Niki
+- path: Assets/Pitch Detection Full Source Code/example/demo.unity
   isLoaded: 1
   isActive: 1

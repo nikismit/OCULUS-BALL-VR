@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/_Scenes/Astrid 05.unity
-=======
-- path: Assets/_Scenes/EvelynTests.unity
->>>>>>> origin/Evelyn
   isLoaded: 1
   isActive: 1

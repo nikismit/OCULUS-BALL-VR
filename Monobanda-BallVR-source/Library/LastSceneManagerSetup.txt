@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Pitch Detection Full Source Code/example/demo.unity
-=======
-- path: Assets/_Scenes/Nikitreetower.unity
->>>>>>> origin/Niki
+- path: Assets/_Scenes/Demo.unity
   isLoaded: 1
   isActive: 1

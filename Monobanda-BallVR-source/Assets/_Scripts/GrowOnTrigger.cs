@@ -26,7 +26,7 @@ public class GrowOnTrigger : MonoBehaviour {
 	float fullGrowTime = 0.0f;
 	bool addingTime = false;
 
-	public bool growing = false;
+	[HideInInspector]public bool growing = false;
 	
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;
@@ -86,13 +86,13 @@ public class GrowOnTrigger : MonoBehaviour {
 			foreach(ObjectToGrow g in ObjectsToGrow){
 				if(growTimer >= timeNeeded){
 					if(g.GrowObject.transform.localScale.x < g.neededSize.x){
-						g.GrowObject.transform.localScale += (new Vector3(1.0f, 0, 0) * Time.deltaTime) / growTime;
+						g.GrowObject.transform.localScale += (new Vector3(g.neededSize.x, 0, 0) * Time.deltaTime) / growTime;
 					}
 					if(g.GrowObject.transform.localScale.y < g.neededSize.y){
-						g.GrowObject.transform.localScale += (new Vector3(0, 1.0f, 0) * Time.deltaTime) / growTime;
+						g.GrowObject.transform.localScale += (new Vector3(0, g.neededSize.y, 0) * Time.deltaTime) / growTime;
 					}
 					if(g.GrowObject.transform.localScale.z < g.neededSize.z){
-						g.GrowObject.transform.localScale += (new Vector3(0, 0, 1.0f) * Time.deltaTime) / growTime;
+						g.GrowObject.transform.localScale += (new Vector3(0, 0, g.neededSize.z) * Time.deltaTime) / growTime;
 					}
 				}
 				timeNeeded += g.delayTime;

@@ -2315,8 +2315,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectsToGrow:
-  - {fileID: 1985006391157800}
-  wantedSizes: {x: 500, y: 500, z: 500}
+  - GrowObject: {fileID: 1985006391157800}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  sizeMultiplier: {x: 500, y: 500, z: 500}
   growSpeed: 0.4
   triggerTime: 0.001
   growing: 0

@@ -10,6 +10,8 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 	public bool startTimer;
 	public bool lampActive = false;
     public float growSize = 0.0f;
+	public GameObject audioPlayerPrefab;
+	GameObject audioPrefab;
 	bool launched = false;
 
 	// Use this for initialization
@@ -32,6 +34,8 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 
 		if(timer >= deathTimer){
 			timer = 0.0f;
+			audioPlayerPrefab.GetComponent<AudioSource>().clip = this.GetComponent<AudioSource>().clip;
+			audioPrefab = Instantiate(audioPlayerPrefab,this.transform.position,this.transform.rotation);
 			this.gameObject.SetActive(false);
 			startTimer = false;
 			lampActive = false;

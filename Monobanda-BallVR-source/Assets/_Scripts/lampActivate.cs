@@ -31,6 +31,7 @@ public class lampActivate : MonoBehaviour {
 	public bool updateAudio = false;
 	bool audioUpdated = false;
 	
+	[HideInInspector]public bool lampActive = false;
 
 	private GameObject currentOccupant;
 
@@ -54,7 +55,8 @@ public class lampActivate : MonoBehaviour {
         {
             if (timer >= triggerTime && addingTime == true)
             {
-                if (audioPlayed == false && playBallAudio == true)
+				lampActive = true;
+				if (audioPlayed == false && playBallAudio == true)
                 {
 
                     if (currentOccupant.GetComponent<AudioSource>().clip)

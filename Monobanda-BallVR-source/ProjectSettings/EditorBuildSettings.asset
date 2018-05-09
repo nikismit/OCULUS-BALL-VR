@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/EvelynTests.unity
+    guid: 3ad22c82dd8b79f4b813a95799c665f2
+  - enabled: 1
+    path: Assets/_Scenes/Level1.unity
+    guid: 407a2535d54c2c2448bd0fe225703253

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Base path: C:/Program Files/Unity2017/Editor/Data
+=======
+Base path: D:/Program Files/Unity2017/Editor/Data
+>>>>>>> origin/Evelyn_Fix
 Cmd: initializeCompiler
 Cmd: preprocess
   insize=17660 outsize=14921 ok=1

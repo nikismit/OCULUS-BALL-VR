@@ -1,8 +1,12 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/_Scenes/Demo.unity
 =======
 - path: Assets/_Scenes/Voiceslot church trippy shadows.unity
 >>>>>>> origin/Niki
+=======
+- path: Assets/_Scenes/EvelynTests.unity
+>>>>>>> origin/Evelyn_Fix
   isLoaded: 1
   isActive: 1

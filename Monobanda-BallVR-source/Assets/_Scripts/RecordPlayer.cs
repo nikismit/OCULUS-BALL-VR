@@ -33,7 +33,6 @@ public class RecordPlayer : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		
 		if(other == other.GetComponent<BoxCollider>()){
 			if (other.GetComponent<AudioLamp>()){
 				if(other.GetComponent<AudioLamp>().enabled == true){

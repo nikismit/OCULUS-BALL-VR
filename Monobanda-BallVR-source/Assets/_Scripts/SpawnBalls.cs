@@ -8,6 +8,7 @@ public class SpawnBalls : MonoBehaviour {
 
 	[Header("Ball Options")]
     
+	public Collider playerCollider;
     public GameObject _ballPrefab;
     public Material _ballMaterial;
     public PhysicMaterial _ballPhysicMaterial;
@@ -129,6 +130,7 @@ public class SpawnBalls : MonoBehaviour {
 				_currentBallNum +=1;
 				_currentRigidbody.isKinematic = true;
 				_clipStart = MicManager.GetComponent<AudioSource>().time;
+				Physics.IgnoreCollision(playerCollider, _currentBall.GetComponent<Collider>(), true);
 			
 			}
 

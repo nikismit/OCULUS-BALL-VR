@@ -37,7 +37,7 @@ public class RecordPlayer : MonoBehaviour {
 			if (other.GetComponent<AudioLamp>()){
 				if(other.GetComponent<AudioLamp>().enabled == true){
 					//print("HIT! -> " + other.gameObject.name);
-					other.GetComponent<AudioSource>().Play();
+					PlayAudioFaded.FadeInNOut(other.GetComponent<AudioSource>(), other.GetComponent<AudioSource>().clip.length/2, other.GetComponent<AudioSource>().clip.length/2);
 				}
 			}
 		}

@@ -186,7 +186,7 @@ public class Doorway : MonoBehaviour {
 				newPlayerPos.y = playerOrigin.y;
 				player.transform.position = Vector3.Lerp(playerOrigin, newPlayerPos, Mathf.Clamp01(movePlayerTimer));
 			} else {
-				SceneManager.LoadScene(nameSceneToLoad);
+				AutoFade.LoadLevel("Level2", 3,3,Color.white);
 			}
 
 

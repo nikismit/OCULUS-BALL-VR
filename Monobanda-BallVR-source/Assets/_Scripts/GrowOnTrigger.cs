@@ -30,6 +30,7 @@ public class GrowOnTrigger : MonoBehaviour {
 	
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;
+	public bool destroyWrongBalls = true;
 
 	bool redGood = false;
 	bool greenGood = false;
@@ -150,7 +151,9 @@ public class GrowOnTrigger : MonoBehaviour {
 			addingTime = true;
 			timer = 0.0f;
 		} else {
-			other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
+			if(destroyWrongBalls){
+				other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
+			}
 		}
 	}
 

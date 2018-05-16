@@ -302,24 +302,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be386564a2f48e4390f7459ee795b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childrenToGrow: 0
+  childGrowDelay: 0.1
   ObjectsToGrow:
-  - {fileID: 1446358229}
-  - {fileID: 947224614}
-  - {fileID: 1493130266}
-  - {fileID: 205542604}
-  - {fileID: 824963245}
-  - {fileID: 1887422319}
-  - {fileID: 620626620}
-  - {fileID: 116876320}
-  - {fileID: 1958126689}
-  - {fileID: 1249101000}
-  - {fileID: 520598927}
-  - {fileID: 999214113}
-  - {fileID: 347550366}
-  - {fileID: 455109331}
-  - {fileID: 340354436}
-  wantedSizes: {x: 100, y: 100, z: 100}
-  growSpeed: 1
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  - GrowObject: {fileID: 0}
+    delayTime: 0
+    normalSize: {x: 0, y: 0, z: 0}
+    neededSize: {x: 0, y: 0, z: 0}
+  sizeMultiplier: {x: 0, y: 0, z: 0}
+  growTime: 2
   triggerTime: 0.001
   growing: 0
   wantedColor: {r: 0.003921569, g: 0.9960785, b: 0.75294125, a: 1}
@@ -336,19 +383,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700ecc00a7d81394ca5791804912ed32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerTime: 0.002
-  wantedColor: {r: 0.003921569, g: 0.9960785, b: 0.75294125, a: 1}
-  colorErrorMargin: 0.4
   lightsToActivate:
   - {fileID: 507267110}
-  addingTime: 0
+  wantedColor: {r: 0.003921569, g: 0.9960785, b: 0.75294125, a: 1}
+  colorErrorMargin: 0.4
+  needBallSize: 0
+  wantedBallsizeMinMax: {x: 0, y: 0}
+  triggerTime: 0.002
   playBallAudio: 1
   lampLinkedToAudio: 1
   lampStaysOn: 1
   audioPlayed: 0
-  needBallSize: 0
-  wantedBallsizeMinMax: {x: 0, y: 0}
   updateAudio: 0
+  lampActive: 0
 --- !u!1 &134647575 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: a7f8c3948338e134093d3319cc5b507e, type: 3}
@@ -2078,7 +2125,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6a08cac263f4f8a48b60611ffb03c887, type: 2}
+  - {fileID: 2100000, guid: 31acf087736a04f44955ae22aca67b32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

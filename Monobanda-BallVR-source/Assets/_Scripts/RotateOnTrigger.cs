@@ -32,6 +32,7 @@ public class RotateOnTrigger : MonoBehaviour {
 	
 	public Color wantedColor;
 	public float colorErrorMargin = 0.1f;
+	public bool destroyWrongBalls = true;
 
 	bool redGood = false;
 	bool greenGood = false;
@@ -100,34 +101,7 @@ public class RotateOnTrigger : MonoBehaviour {
 					if(g.rotTime < rotateTime){
 						g.RotObject.transform.localEulerAngles += (new Vector3(relativeRotate.x, relativeRotate.y, relativeRotate.z) * Time.deltaTime) / rotateTime;
 					}
-					/*if(relativeRotate.x >= 0){
-						if(g.RotObject.transform.localEulerAngles.x < g.neededRot.x){
-							g.RotObject.transform.localEulerAngles += (new Vector3(relativeRotate.x, 0, 0) * Time.deltaTime) / rotateTime;
-						}
-					} else {
-						if(g.RotObject.transform.localEulerAngles.x > g.neededRot.x){
-							g.RotObject.transform.localEulerAngles += (new Vector3(relativeRotate.x, 0, 0) * Time.deltaTime) / rotateTime;
-						}
-					}
-					if(relativeRotate.y >= 0){
-						if(g.RotObject.transform.localEulerAngles.y < g.neededRot.y){
-							g.RotObject.transform.localEulerAngles += (new Vector3(0, relativeRotate.y, 0) * Time.deltaTime) / rotateTime;
-							
-						}
-					} else {
-						if(g.RotObject.transform.localEulerAngles.y > g.neededRot.y){
-							g.RotObject.transform.localEulerAngles += (new Vector3(0, relativeRotate.y, 0) * Time.deltaTime) / rotateTime;
-						}
-					}
-					if(relativeRotate.z >= 0){
-						if(g.RotObject.transform.localEulerAngles.z < g.neededRot.z){
-							g.RotObject.transform.localEulerAngles += (new Vector3(0,0,relativeRotate.z) * Time.deltaTime) / rotateTime;
-						}
-					} else {
-						if(g.RotObject.transform.localEulerAngles.z > g.neededRot.z){
-							g.RotObject.transform.localEulerAngles += (new Vector3(0,0,relativeRotate.z) * Time.deltaTime) / rotateTime;
-						}
-					}*/
+					
 				}
 				timeNeeded += g.delayTime;
 			}
@@ -202,7 +176,9 @@ public class RotateOnTrigger : MonoBehaviour {
 			addingTime = true;
 			timer = 0.0f;
 		} else {
-			other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
+			if(destroyWrongBalls){
+				other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
+			}
 		}
 	}
 

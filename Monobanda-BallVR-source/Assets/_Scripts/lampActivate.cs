@@ -28,6 +28,7 @@ public class lampActivate : MonoBehaviour {
     bool sizeGood = false;
 
 	public bool updateAudio = false;
+	public bool destroyWrongBalls = true;
 	bool audioUpdated = false;
 	
 	[HideInInspector]public bool lampActive = false;
@@ -65,7 +66,8 @@ public class lampActivate : MonoBehaviour {
 						if(audioUpdated == false){
 							foreach (Light l in lightsToActivate){
 								l.GetComponent<AudioSource>().clip = currentOccupant.GetComponent<AudioSource>().clip;
-								l.GetComponent<AudioSource>().Play();
+								PlayAudioFaded.FadeInNOut(l.GetComponent<AudioSource>(), l.GetComponent<AudioSource>().clip.length/2, l.GetComponent<AudioSource>().clip.length/2);
+								//l.GetComponent<AudioSource>().Play();
 							}
 						}
 						audioUpdated = true;
@@ -143,7 +145,13 @@ public class lampActivate : MonoBehaviour {
 				audioUpdated = false;
 			}
 		} else {
+<<<<<<< HEAD
 			//{other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
+=======
+			if(destroyWrongBalls){
+				other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
+			}
+>>>>>>> origin/Evelyn_Fix
 		}
 
 	}
@@ -152,9 +160,10 @@ public class lampActivate : MonoBehaviour {
 	{
 		addingTime = false;
 		if(other.GetComponent<DestroyAtZeroVelocity>()){
-			other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
-			other.GetComponent<DestroyAtZeroVelocity>().lampActive = false;
+				other.GetComponent<DestroyAtZeroVelocity>().startTimer = false;
+				other.GetComponent<DestroyAtZeroVelocity>().lampActive = false;
 		}
+		
 		audioPlayed = false;
 		timer = 0.0f;
         if (lampStaysOn == false)

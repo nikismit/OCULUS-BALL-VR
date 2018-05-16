@@ -4,4 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes: []
+=======
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/EvelynTests.unity
+    guid: 3ad22c82dd8b79f4b813a95799c665f2
+  - enabled: 1
+    path: Assets/_Scenes/Level2.unity
+    guid: 5301a970081475048bf2e0450c162b32
+>>>>>>> origin/Evelyn_Fix

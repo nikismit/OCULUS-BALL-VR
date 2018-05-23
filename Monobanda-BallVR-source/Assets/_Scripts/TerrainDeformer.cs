@@ -16,7 +16,7 @@ public class TerrainDeformer : MonoBehaviour {
 		zResolution = myTerrain.terrainData.heightmapHeight;
 		//print(xResolution + "--" + zResolution);
 		heights = myTerrain.terrainData.GetHeights(0,0,xResolution,zResolution);
-		startingHeights = heights;
+		startingHeights = myTerrain.terrainData.GetHeights(0,0,myTerrain.terrainData.heightmapWidth,myTerrain.terrainData.heightmapHeight);
 	}
 
 	void Update()

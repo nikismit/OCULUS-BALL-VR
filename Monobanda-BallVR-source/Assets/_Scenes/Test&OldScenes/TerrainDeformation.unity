@@ -423,6 +423,16 @@ Prefab:
       propertyPath: _ballBounceMinMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 143191128077935558, guid: c7e7c7975094133499a22fa4d9ce635f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114528197681299614, guid: c7e7c7975094133499a22fa4d9ce635f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7e7c7975094133499a22fa4d9ce635f, type: 2}
   m_IsPrefabParent: 0

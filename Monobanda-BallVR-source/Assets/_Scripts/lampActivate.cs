@@ -145,13 +145,11 @@ public class lampActivate : MonoBehaviour {
 				audioUpdated = false;
 			}
 		} else {
-<<<<<<< HEAD
-			//{other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
-=======
+
 			if(destroyWrongBalls){
 				other.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
 			}
->>>>>>> origin/Evelyn_Fix
+
 		}
 
 	}

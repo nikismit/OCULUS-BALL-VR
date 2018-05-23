@@ -1024,6 +1024,7 @@ MonoBehaviour:
   growing: 0
   wantedColor: {r: 1, g: 1, b: 1, a: 1}
   colorErrorMargin: 1
+  destroyWrongBalls: 1
 --- !u!114 &123627362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1049,7 @@ MonoBehaviour:
   lampStaysOn: 1
   audioPlayed: 0
   updateAudio: 0
+  destroyWrongBalls: 1
   lampActive: 0
 --- !u!114 &123627363
 MonoBehaviour:
@@ -1072,6 +1074,7 @@ MonoBehaviour:
   lampStaysOn: 1
   audioPlayed: 0
   updateAudio: 0
+  destroyWrongBalls: 1
   lampActive: 0
 --- !u!1 &123799418
 GameObject:
@@ -3010,6 +3013,7 @@ MonoBehaviour:
   lampStaysOn: 1
   audioPlayed: 0
   updateAudio: 0
+  destroyWrongBalls: 1
   lampActive: 0
 --- !u!1 &411783661
 GameObject:
@@ -6785,6 +6789,7 @@ MonoBehaviour:
   moving: 0
   wantedColor: {r: 0.003921569, g: 0.9960785, b: 0.75294125, a: 1}
   colorErrorMargin: 0.4
+  destroyWrongBalls: 1
 --- !u!1 &940146847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9752,6 +9757,7 @@ MonoBehaviour:
   lampStaysOn: 1
   audioPlayed: 0
   updateAudio: 0
+  destroyWrongBalls: 1
   lampActive: 0
 --- !u!1001 &1293337822
 Prefab:
@@ -11682,6 +11688,7 @@ MonoBehaviour:
   moving: 0
   wantedColor: {r: 1, g: 1, b: 1, a: 1}
   colorErrorMargin: 1
+  destroyWrongBalls: 1
 --- !u!1 &1549848894
 GameObject:
   m_ObjectHideFlags: 0
@@ -11866,6 +11873,11 @@ Prefab:
         type: 2}
       propertyPath: relPortMove.y
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114016623485897918, guid: 9d909ceecba88df4da0d95537396bc01,
+        type: 2}
+      propertyPath: nameSceneToLoad
+      value: PT01_lvl02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d909ceecba88df4da0d95537396bc01, type: 2}
@@ -14703,6 +14715,7 @@ MonoBehaviour:
   rotating: 0
   wantedColor: {r: 1, g: 1, b: 1, a: 1}
   colorErrorMargin: 1
+  destroyWrongBalls: 1
 --- !u!114 &1858086538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14727,6 +14740,7 @@ MonoBehaviour:
   moving: 0
   wantedColor: {r: 1, g: 1, b: 1, a: 1}
   colorErrorMargin: 1
+  destroyWrongBalls: 1
 --- !u!65 &1858086539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16044,6 +16058,7 @@ MonoBehaviour:
   lampStaysOn: 1
   audioPlayed: 0
   updateAudio: 0
+  destroyWrongBalls: 1
   lampActive: 0
 --- !u!1001 &2109162674
 Prefab:
@@ -16441,6 +16456,7 @@ MonoBehaviour:
   lampStaysOn: 1
   audioPlayed: 0
   updateAudio: 0
+  destroyWrongBalls: 1
   lampActive: 0
 --- !u!1001 &2124136433
 Prefab:

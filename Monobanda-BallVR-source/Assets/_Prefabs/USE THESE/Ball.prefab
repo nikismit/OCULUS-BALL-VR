@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114290331016238506}
   - component: {fileID: 82094262298599070}
   - component: {fileID: 65850499057710444}
+  - component: {fileID: 114550752607389822}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -289,6 +290,18 @@ MonoBehaviour:
   growSize: 0
   audioPlayerPrefab: {fileID: 1123379449106794, guid: 372a6f636a4cc3848aeace8fec794641,
     type: 2}
+--- !u!114 &114550752607389822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422347210497496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddc16e97aed09f4b81846c100331a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meltingSpeed: 2
 --- !u!135 &135609236330556740
 SphereCollider:
   m_ObjectHideFlags: 1

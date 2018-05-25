@@ -38,6 +38,7 @@ public class Doorway : MonoBehaviour {
 	bool colorGood = false;
 
 	bool movePlayer = false;
+	bool playerOriginUpdated = false;
 	float movePlayerTimer = 0.0f;
 	Vector3 playerOrigin;
 	Vector3 newPlayerPos;
@@ -167,6 +168,10 @@ public class Doorway : MonoBehaviour {
 				if(timeReached){
 					theCompared.GetComponent<Renderer>().material.SetColor("_EmissionColor", wantedColor);
 					movePlayer = true;
+					if(playerOriginUpdated == false){
+						playerOrigin = player.transform.position;
+						playerOriginUpdated = true;
+					}
 				}
 
 				currentValuePointer = currentTime/NeededTime;

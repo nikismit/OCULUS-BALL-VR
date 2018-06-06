@@ -55,8 +55,8 @@ public class TerrainDeformer : MonoBehaviour {
                 float maxDist = 8f;
                 float proportion = dist_to_target / maxDist;
  
-                height[tempX,tempY] += 0.01f * (1f - proportion);
-                heights[terX - 4 + tempX,terZ - 4 + tempY] += 0.01f * (1f - proportion);
+                height[tempX,tempY] += 0.05f * (1f - proportion);
+                heights[terX - 4 + tempX,terZ - 4 + tempY] += 0.05f * (1f - proportion);
             }
  
         myTerrain.terrainData.SetHeights(terX - 4, terZ - 4, height);

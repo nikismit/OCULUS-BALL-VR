@@ -11,6 +11,7 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 	public bool lampActive = false;
     public float growSize = 0.0f;
 	public GameObject audioPlayerPrefab;
+	public Collider playerCollider;
 	GameObject audioPrefab;
 	bool launched = false;
 
@@ -21,6 +22,8 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//Physics.IgnoreCollision(playerCollider, this.GetComponent<Collider>());
 
 		if(rigbody.velocity.x > 0.0f || rigbody.velocity.y > 0.0f || rigbody.velocity.z > 0.0f && launched == false){
 			launched = true;

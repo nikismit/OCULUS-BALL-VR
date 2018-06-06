@@ -6,7 +6,7 @@ public class DestroyAtZeroVelocity : MonoBehaviour {
 
 	private Rigidbody rigbody;
 	public float deathTimer = 5.0f;
-	private float timer = 0.0f;
+	public float timer = 0.0f;
 	public bool startTimer;
 	public bool lampActive = false;
     public float growSize = 0.0f;

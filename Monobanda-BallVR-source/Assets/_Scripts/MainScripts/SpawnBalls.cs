@@ -77,6 +77,7 @@ public class SpawnBalls : MonoBehaviour {
 
 	[HideInInspector]public bool spawningBalls = true;
     
+	bool explodingBalls = false;
 
 
     // Use this for initialization
@@ -86,6 +87,10 @@ public class SpawnBalls : MonoBehaviour {
         _balls = new List<GameObject>();
         _lMaterial = new List<Material>();
         _lPhysicMaterial = new List<PhysicMaterial>();
+
+		if(_ballPrefab.name == "ExplosionBall"){
+			explodingBalls = true;
+		}
 
         for (int i = 0; i < _ballPoolAmount; i++)
         {
@@ -136,21 +141,30 @@ public class SpawnBalls : MonoBehaviour {
 
 			if ((_micAmplitude < VoiceProfile._amplitudeSilence) && (_isSpeaking)) //stop speaking RELEASE
 			{
-				if(_spawnTimer >= _minSpeakTime){
+				
+				if (_spawnTimer >= _minSpeakTime){
+					//print(_spawnTimer + " >= " + _minSpeakTime);
 					_clipEnd = MicManager.GetComponent<AudioSource>().time;
 					if(_playSoundMade){
 						_currentClip = MakeSubclip(MicManager.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
 						_currentBall.GetComponent<AudioSource>().clip = _currentClip;
 					}
 					_currentBall.GetComponent<DestroyAtZeroVelocity>().growSize = _ballSizeCurrent;
+					
 					_currentRigidbody.isKinematic = false;
-					_isSpeaking = false;
-					_timeRecording = 0;
+					
+					
 					_highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
 					//print(_currentBall.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
+					if(explodingBalls == true){
+						_currentBall.GetComponent<ExplodingBalls>().power = _highestAmplitude;
+						_currentBall.GetComponent<ExplodingBalls>().radius = _ballSizeCurrent * 2.0f;
+						GameObject.Find("ScoreKeeper").GetComponent<ScoreKeeper>().ballsLeft -= 1;
+					}
 					_highestAmplitude = 0;
 					MicManager.GetComponent<AudioPitch>().ClearMicrophone();
+					
 					if(lifeTime == true){
 						_currentBall.GetComponent<DestroyAtZeroVelocity>().deathTimer = BallLifeTime;
 						_currentBall.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
@@ -159,6 +173,10 @@ public class SpawnBalls : MonoBehaviour {
 					_currentBall.SetActive(false);
 					//_currentBallNum -= 1;
 				}
+				_isSpeaking = false;
+				_spawnTimer = 0.0f;
+				_timeRecording = 0.0f;
+				
 			}
 
 			if (_isSpeaking) //WHILE speaking
@@ -171,6 +189,7 @@ public class SpawnBalls : MonoBehaviour {
             
 				_timeRecording += Time.deltaTime;
 				_spawnTimer += Time.deltaTime;
+				
 				_currentBall.transform.position = _spawnLocation.position + (0.25f/(_growTimeMax/10)) * this.transform.forward * _timeRecording;
 				_ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
 				_currentBall.transform.localScale = new Vector3(_ballSizeCurrent, _ballSizeCurrent, _ballSizeCurrent);

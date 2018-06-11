@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/EvelynTests/EvelynTests.unity
+- path: Assets/_Scenes/EvelynTests/Night&Day.unity
   isLoaded: 1
   isActive: 1

@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 681, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 9
 --- !u!114 &3
@@ -64,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -337,23 +337,23 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 64}
-    m_SelectedIDs: ec540000
-    m_LastClickedID: 21740
-    m_ExpandedIDs: 00000000484d00004e4d0000d24d00000e4e0000524f0000884f0000505000006e500000ce500000fc50000048510000265200003653000044530000ca530000d0530000a65400004256000088560000dc560000065700004e57000050570000525700005457000056570000585700005a5700005c57000000ca9a3bffffff7f
+    m_SelectedIDs: 5e360000
+    m_LastClickedID: 13918
+    m_ExpandedIDs: 000000004a2b0000522b00003e2c00009a2c0000282e00007c2e00006c2f0000a22f000048300000863000001a31000084320000c8330000d63300008c34000092340000e635000090380000f83800000a3a0000543a00004441000046410000484100004a4100004c4100004e410000504100005241000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: NikiTests
-      m_OriginalName: NikiTests
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 20346
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000484d00004e4d0000d24d00000e4e0000524f0000505000006e500000ce50000048510000265200003653000044530000ca530000d0530000a65400004256000088560000dc560000065700004e57000050570000525700005457000056570000585700005a5700005c570000
+    m_ExpandedIDs: 000000004a2b0000522b00003e2c00009a2c0000282e00007c2e00006c2f0000a22f000048300000863000001a31000084320000c8330000d63300008c34000092340000e635000090380000f83800000a3a0000543a00004441000046410000484100004a4100004c4100004e4100005041000052410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -485,9 +485,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6ca5fcff
-    m_LastClickedID: -219796
-    m_ExpandedIDs: 6ea5fcff20a9fcffc2b3fcffe8bcfcffacbffcff6cc5fcffb6c8fcffa6cafcff34cdfcff8cd5fcff04ddfcff52e4fcffb0f2fcffaef5fcff5efafcffa8fcfcff0602fdfff207fdff540bfdffc4d9fdff80ddfdff8ae8fdff8ce8fdff8ee8fdffe823feffa07ffeffa27ffeffa47ffeff2048ffff6a66fffff467ffffa26affff2270ffffda76ffff00000000e27d000036b60000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 84fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

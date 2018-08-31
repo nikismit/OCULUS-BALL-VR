@@ -119,7 +119,10 @@ namespace AmplifyShaderEditor
 
 		protected bool m_freeName;
 		protected bool m_freeType;
+<<<<<<< HEAD
 		protected bool m_showVariableMode = false;
+=======
+>>>>>>> Niki
 		protected bool m_propertyNameIsDirty;
 
 		protected bool m_showAutoRegisterUI = true;
@@ -834,7 +837,11 @@ namespace AmplifyShaderEditor
 
 		public void ShowVariableMode()
 		{
+<<<<<<< HEAD
 			if( m_showVariableMode || m_freeType )
+=======
+			if( m_freeType )
+>>>>>>> Niki
 				m_variableMode = (VariableMode)EditorGUILayoutEnumPopup( IgnoreVarDeclarationStr, m_variableMode );
 		}
 

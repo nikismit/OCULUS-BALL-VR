@@ -22,8 +22,11 @@ namespace AmplifyShaderEditor
 
 		[SerializeField]
 		private RegisterLocalVarNode m_currentSelected = null;
+<<<<<<< HEAD
 		[SerializeField]
 		private string m_registerLocalVarName = string.Empty;
+=======
+>>>>>>> Niki
 
 		private int m_cachedPropertyId = -1;
 
@@ -235,10 +238,13 @@ namespace AmplifyShaderEditor
 			{
 				m_nodeId = Convert.ToInt32( GetCurrentParam( ref nodeParams ) );
 				m_outputPorts[ 0 ].Locked = ( m_nodeId < 0 );
+<<<<<<< HEAD
 				if( UIUtils.CurrentShaderVersion() > 15500 )
 				{
 					m_registerLocalVarName = GetCurrentParam( ref nodeParams );
 				}
+=======
+>>>>>>> Niki
 			}
 			else
 			{
@@ -250,6 +256,7 @@ namespace AmplifyShaderEditor
 		public override void WriteToString( ref string nodeInfo, ref string connectionsInfo )
 		{
 			base.WriteToString( ref nodeInfo, ref connectionsInfo );
+<<<<<<< HEAD
 			if( m_currentSelected != null )
 			{
 				IOUtils.AddFieldValueToString( ref nodeInfo, m_currentSelected.UniqueId );
@@ -261,6 +268,9 @@ namespace AmplifyShaderEditor
 				IOUtils.AddFieldValueToString( ref nodeInfo, string.Empty );
 			}
 
+=======
+			IOUtils.AddFieldValueToString( ref nodeInfo, ( m_currentSelected != null ? m_currentSelected.UniqueId : -1 ) );
+>>>>>>> Niki
 		}
 
 		public override void OnNodeDoubleClicked( Vector2 currentMousePos2D )
@@ -278,6 +288,7 @@ namespace AmplifyShaderEditor
 			{
 				CurrentSelected = UIUtils.GetNode( m_nodeId ) as RegisterLocalVarNode;
 				m_referenceId = UIUtils.GetLocalVarNodeRegisterId( m_nodeId );
+<<<<<<< HEAD
 				if( CurrentSelected == null && UIUtils.CurrentShaderVersion() > 15500 && !string.IsNullOrEmpty(m_registerLocalVarName))
 				{
 					CurrentSelected = m_containerGraph.LocalVarNodes.GetNodeByDataToArray( m_registerLocalVarName );
@@ -287,6 +298,8 @@ namespace AmplifyShaderEditor
 						m_referenceId = UIUtils.GetLocalVarNodeRegisterId( m_nodeId );
 					} 
 				}
+=======
+>>>>>>> Niki
 			}
 			else
 			{

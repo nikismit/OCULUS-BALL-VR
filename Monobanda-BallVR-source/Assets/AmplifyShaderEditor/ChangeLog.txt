@@ -1,4 +1,5 @@
 Release Notes:
+<<<<<<< HEAD
 v1.5.6 rev 00
 * New Samples:
     * SRP Lightweight Terrain
@@ -37,6 +38,8 @@ v1.5.5 rev 01
 * Improvements:
     * 'Register/Get Local Var' nodes maintain connections even if copied to another shader
 
+=======
+>>>>>>> Niki
 v1.5.5 rev 00
 * New Node:
     * Diffuse And Specular From Metallic

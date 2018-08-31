@@ -878,6 +878,7 @@ namespace AmplifyShaderEditor
 			{
 				return result;
 			}
+<<<<<<< HEAD
 			else if( m_currentSRPType == TemplateSRPType.HD )
 			{
 				if( GetCustomInterpolatedData( TemplateInfoOnSematics.RELATIVE_WORLD_POS, WirePortDataType.FLOAT3, PrecisionType.Float, ref result, useMasterNodeCategory, customCategory ) )
@@ -888,6 +889,8 @@ namespace AmplifyShaderEditor
 					return worldPosVarName;
 				}
 			}
+=======
+>>>>>>> Niki
 
 			string varName = GeneratorUtils.WorldPositionStr;//UIUtils.GetInputValueFromType( SurfaceInputs.WORLD_POS );
 			if( HasCustomInterpolatedData( varName, useMasterNodeCategory, customCategory ) )

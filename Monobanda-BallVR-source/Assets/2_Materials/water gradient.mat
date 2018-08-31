@@ -7,9 +7,15 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: water gradient
+<<<<<<< HEAD
   m_Shader: {fileID: 4800000, guid: 1397d172beeb9e240ad61a3233780b08, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
+=======
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_LightmapFlags: 4
+>>>>>>> Niki
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -63,13 +69,21 @@ Material:
     - _Distribution2: 0.32
     - _DstBlend: 0
     - _GlossMapScale: 1
+<<<<<<< HEAD
     - _Glossiness: 0.5
+=======
+    - _Glossiness: 0.689
+>>>>>>> Niki
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+<<<<<<< HEAD
     - _SmoothnessTextureChannel: 0
+=======
+    - _SmoothnessTextureChannel: 1
+>>>>>>> Niki
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _StartPoint: -0.3
@@ -80,7 +94,11 @@ Material:
     - __dirty: 0
     - _node_778_copy: 0.8
     m_Colors:
+<<<<<<< HEAD
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+=======
+    - _Color: {r: 0, g: 0.6838235, b: 0.51624626, a: 1}
+>>>>>>> Niki
     - _Color1: {r: 0.32115045, g: 0.992647, b: 0.96486086, a: 0}
     - _Color2: {r: 0.054065675, g: 0.23900771, b: 0.9191176, a: 0}
     - _Color3: {r: 1, g: 0.6882353, b: 0.2205882, a: 0}

@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 1988efc33915aee4b9517188de9c6e6a
 folderAsset: yes
+<<<<<<< HEAD
 timeCreated: 1535710697
+=======
+timeCreated: 1535366832
+>>>>>>> Niki
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

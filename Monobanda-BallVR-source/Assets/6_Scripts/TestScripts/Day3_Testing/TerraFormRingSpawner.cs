@@ -10,7 +10,11 @@ public class TerraFormRingSpawner : MonoBehaviour {
 	public GameObject spawnLocation;
 	public Color highPitchColor = Color.yellow;
 	public Color lowPitchColor = Color.red;
+<<<<<<< HEAD
 	private Color currentColor;
+=======
+	public Color currentColor;
+>>>>>>> Niki
 
 	private float _micPitch;
     private float _micAmplitude;
@@ -18,6 +22,10 @@ public class TerraFormRingSpawner : MonoBehaviour {
 	[Tooltip("Amount of Rings per second to spawn")]
 	public int ringSpawningSpeed = 10;
 	public float ringMoveSpeed = 5.0f;
+<<<<<<< HEAD
+=======
+    public float ringMaxSizeMultiplier = 5.0f;
+>>>>>>> Niki
 	private float speakingTimer;
 
 	// Use this for initialization
@@ -43,7 +51,11 @@ public class TerraFormRingSpawner : MonoBehaviour {
 			speakingTimer+=Time.deltaTime;
 			if(speakingTimer >= 1.0f/ringSpawningSpeed){
 				GameObject currentRing = GameObject.Instantiate(ring, spawnLocation.transform.position, this.transform.rotation);
+<<<<<<< HEAD
 				currentRing.transform.localScale = new Vector3(_micAmplitude*5, _micAmplitude*5, _micAmplitude*5);
+=======
+				currentRing.transform.localScale = new Vector3(_micAmplitude* ringMaxSizeMultiplier, _micAmplitude* ringMaxSizeMultiplier, _micAmplitude* ringMaxSizeMultiplier);
+>>>>>>> Niki
 				currentRing.GetComponent<TerraformRing_Script>().moveSpeed = ringMoveSpeed;
 				currentRing.GetComponent<TerraformRing_Script>().pitch = _micPitch;
 				currentRing.GetComponent<TerraformRing_Script>().currentColor = currentColor;

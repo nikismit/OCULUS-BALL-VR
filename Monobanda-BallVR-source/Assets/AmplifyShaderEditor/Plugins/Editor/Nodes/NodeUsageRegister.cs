@@ -140,11 +140,14 @@ namespace AmplifyShaderEditor
 			return m_nodes.Find( x => x.UniqueId == uniqueId );
 		}
 
+<<<<<<< HEAD
 		public T GetNodeByDataToArray( string data )
 		{
 			return m_nodes.Find( x => x.DataToArray.Equals( data ));
 		}
 
+=======
+>>>>>>> Niki
 		public int GetNodeRegisterIdx( int uniqueId )
 		{
 			int count = m_nodes.Count;

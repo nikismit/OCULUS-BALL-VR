@@ -48,9 +48,15 @@ namespace AmplifyShaderEditor
 			//}
 		}
 
+<<<<<<< HEAD
 		public override void AfterDuplication()
 		{
 			base.AfterDuplication();
+=======
+		public override void AfterDuplication( ParentNode original )
+		{
+			base.AfterDuplication( original );
+>>>>>>> Niki
 			m_isMainOutputNode = false;
 		}
 

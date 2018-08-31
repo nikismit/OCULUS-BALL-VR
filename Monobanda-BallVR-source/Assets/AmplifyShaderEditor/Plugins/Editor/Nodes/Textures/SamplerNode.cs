@@ -155,7 +155,10 @@ namespace AmplifyShaderEditor
 			m_freeType = false;
 			m_useSemantics = true;
 			m_drawPicker = false;
+<<<<<<< HEAD
 			m_showVariableMode = true;
+=======
+>>>>>>> Niki
 			ConfigTextureData( TextureType.Texture2D );
 			m_selectedLocation = PreviewLocation.TopCenter;
 			m_previewShaderGUID = "7b4e86a89b70ae64993bf422eb406422";

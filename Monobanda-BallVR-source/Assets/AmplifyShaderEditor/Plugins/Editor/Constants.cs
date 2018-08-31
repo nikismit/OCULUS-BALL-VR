@@ -31,7 +31,10 @@ namespace AmplifyShaderEditor
 		public readonly static string ReservedPropertyNameStr = "Property name '{0}' is reserved and cannot be used";
 		public readonly static string NumericPropertyNameStr = "Property name '{0}' is numeric thus cannot be used";
 		public readonly static string DeprecatedMessageStr = "Node '{0}' is deprecated. Use node '{1}' instead.";
+<<<<<<< HEAD
 		public readonly static string DeprecatedNoAlternativeMessageStr = "Node '{0}' is deprecated and should be removed.";
+=======
+>>>>>>> Niki
 		public readonly static string UndoChangePropertyTypeNodesId = "Changing Property Types";
 		public readonly static string UndoChangeTypeNodesId = "Changing Nodes Types";
 		public readonly static string UndoMoveNodesId = "Moving Nodes";

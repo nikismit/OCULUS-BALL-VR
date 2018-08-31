@@ -58,9 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4698677465388860}
   - component: {fileID: 82558011757317746}
-  - component: {fileID: 114020963676880438}
-  - component: {fileID: 114024250564802820}
-  - component: {fileID: 114187402436396358}
+  - component: {fileID: 114680484676720584}
   m_Layer: 0
   m_Name: MicManager
   m_TagString: Untagged
@@ -270,51 +268,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1024990470108746}
   m_Enabled: 1
---- !u!114 &114020963676880438
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1610853424102588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af839be84520144fa827854cec99ccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listenToAudioListener: 0
-  _audioProfile: 0
-  _publicAmplitude: 0
-  channel: 0
---- !u!114 &114024250564802820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1610853424102588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0d98ea58e864c4aa05a731dd9e6d4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentpublicpitch: 0
-  selectedMic: 
-  cumulativeDetections: 5
-  pitchTimeInterval: 200
-  minVolumeDB: -17
-  recTime: 0
---- !u!114 &114187402436396358
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1610853424102588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5152a3eccb99643876f48bb33efb05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _publicAmplitude: 0
-  _silenceAmplitude: 0.5
 --- !u!114 &114334980371055416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -403,6 +356,161 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bca8f58a0b8478e946e6e86658cb29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114680484676720584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1610853424102588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15178b5a800c4b84faaaa03c8df8ea65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wantedMic: 1
+  sampleMic: 0
+  sample: 0
+  settingsLocked: 0
+  cumulativeDetections: 5
+  settings: {fileID: 11400000, guid: 74dd1c8323972424da73ebb6b8e39636, type: 2}
+  currentAudioTime: 0
+  inputData:
+    frequency: 0
+    relativeFrequency: 0
+    amplitude: 0
+    relativeAmplitude: 0
+    amp01: 0
+    toneLength: 0
+    makingSound: 0
+    spectrum:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
 --- !u!114 &114976411669904220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -414,7 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37e7ddbc7bafc44cbbf2d2057a2a59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 143191128077935558}
   _ballPrefab: {fileID: 1422347210497496, guid: 53d6b3cae2be183419a7e236bc547741,
     type: 2}
   _ballMaterial: {fileID: 2100000, guid: 3efe6afa4bb2fac4f91e3828c484cda0, type: 2}
@@ -438,10 +545,7 @@ MonoBehaviour:
   midPitchColor: {r: 1, g: 1, b: 1, a: 1}
   highPitchColor: {r: 1, g: 1, b: 1, a: 1}
   _currentColor: {r: 0, g: 0, b: 0, a: 0}
-  MicManager: {fileID: 1610853424102588}
-  _minPitch: 10
-  _maxPitch: 30
-  _maxRegisteredAmplitude: 20
+  SIC: {fileID: 114680484676720584}
   _micPitch: 0
   _isSpeaking: 0
   spawningBalls: 1

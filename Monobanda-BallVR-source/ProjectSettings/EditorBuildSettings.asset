@@ -4,4 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes: []
+=======
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Destroyroom.unity
+    guid: 6023d3d0662358d4b800ff3265cf060e
+  - enabled: 1
+    path: Assets/_Scenes/Night&Day.unity
+    guid: cd08a14b75310b641bea23a045240d40
+  - enabled: 1
+    path: Assets/_Scenes/Voiceslot.unity
+    guid: 098f2f2b371c3ec408a212529470789d
+  - enabled: 1
+    path: Assets/5_Scenes/TestScenes/gptest_evelyn/Day2.unity
+    guid: 12756a41e4024c344abfd625be7fc198
+  - enabled: 1
+    path: Assets/5_Scenes/TestScenes/gptest_evelyn/Day3.unity
+    guid: 2ac0c795caecf7043a9d766391e5b21c
+>>>>>>> Niki

@@ -45,10 +45,22 @@ public class Day2_Puddle_Script : MonoBehaviour {
 				Destroy(this.gameObject);
 			}
 		}
+<<<<<<< HEAD
 		if(this.tag == "WaterPuddle" && timer>=1.0f && puddleAddedToPool == false){
 			GameObject.Find("PuddleChecker").GetComponent<PuddleChecker>().currentFullGrownPuddles +=1;
 			puddleAddedToPool = true;
 		}
+=======
+        if (GameObject.Find("PuddleChecker"))
+        {
+            if (this.tag == "WaterPuddle" && timer >= 1.0f && puddleAddedToPool == false)
+            {
+
+                GameObject.Find("PuddleChecker").GetComponent<PuddleChecker>().currentFullGrownPuddles += 1;
+                puddleAddedToPool = true;
+            }
+        }
+>>>>>>> Niki
 
 	}
 }

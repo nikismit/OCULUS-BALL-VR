@@ -278,7 +278,11 @@ namespace AmplifyShaderEditor
 		[SerializeField]
 		private UsePassHelper m_usePass;
 
+<<<<<<< HEAD
 		[SerializeField]
+=======
+		[ SerializeField]
+>>>>>>> Niki
 		private CustomTagsHelper m_customTagsHelper = new CustomTagsHelper();
 
 		[SerializeField]

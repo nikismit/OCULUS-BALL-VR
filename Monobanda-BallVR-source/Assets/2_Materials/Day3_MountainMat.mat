@@ -71,7 +71,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+<<<<<<< HEAD
     - _Power: 5
+=======
+    - _Power: 4.87
+>>>>>>> Niki
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -80,9 +84,16 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
     - _Color0: {r: 0.05406567, g: 0.2390077, b: 0.9191176, a: 0}
     - _Color1: {r: 0.3211505, g: 0.992647, b: 0.9648609, a: 0}
     - _ColorBase: {r: 0.32156864, g: 0.9921569, b: 0.96470594, a: 1}
     - _Colorinner: {r: 0.75294125, g: 0.24313706, b: 0.36862722, a: 1}
+=======
+    - _Color0: {r: 0.054065622, g: 0.23900762, b: 0.9191176, a: 0}
+    - _Color1: {r: 0.32115045, g: 0.992647, b: 0.96486086, a: 0}
+    - _ColorBase: {r: 0.32156864, g: 0.9921569, b: 0.96470594, a: 1}
+    - _Colorinner: {r: 0.75294125, g: 0.243137, b: 0.36862716, a: 1}
+>>>>>>> Niki
     - _Colorrim: {r: 1, g: 1, b: 0.60784316, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

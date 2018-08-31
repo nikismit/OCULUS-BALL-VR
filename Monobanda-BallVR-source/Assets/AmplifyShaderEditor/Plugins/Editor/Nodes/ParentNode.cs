@@ -2424,7 +2424,14 @@ namespace AmplifyShaderEditor
 			return null;
 		}
 
+<<<<<<< HEAD
 		public virtual void AfterDuplication(){}
+=======
+		public virtual void AfterDuplication( ParentNode original )
+		{
+
+		}
+>>>>>>> Niki
 
 		public override string ToString()
 		{

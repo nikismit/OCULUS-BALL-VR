@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b824cd709c527ff4db42b25889fb259b
 timeCreated: 1535712035
 licenseType: Free
+=======
+guid: e1099179ec97b2743b1e800ec42ea393
+timeCreated: 1528423694
+licenseType: Pro
+>>>>>>> Niki
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

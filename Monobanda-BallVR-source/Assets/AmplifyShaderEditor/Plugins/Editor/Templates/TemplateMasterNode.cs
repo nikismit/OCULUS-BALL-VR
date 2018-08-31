@@ -13,7 +13,11 @@ using UnityEditor;
 namespace AmplifyShaderEditor
 {
 	[Serializable]
+<<<<<<< HEAD
 	[NodeAttributes( "Template Master Node", "Master", "Shader Generated according to template rules", null, KeyCode.None, false, true, "Template MultiPass Master Node", typeof( TemplateMultiPassMasterNode ) )]
+=======
+	[NodeAttributes( "Template Master Node", "Master", "Shader Generated according to template rules", null, KeyCode.None, false, true, null, typeof( TemplateMultiPassMasterNode ) )]
+>>>>>>> Niki
 	public sealed class TemplateMasterNode : MasterNode
 	{
 		private const string WarningMessage = "Templates is a feature that is still heavily under development and users may experience some problems.\nPlease email support@amplify.pt if any issue occurs.";

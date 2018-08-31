@@ -45,10 +45,15 @@ namespace AmplifyShaderEditor
 			AddInputPort( WirePortDataType.FLOAT, false, Constants.EmptyPortValue );
 			AddOutputPort( WirePortDataType.FLOAT, Constants.EmptyPortValue );
 			m_textLabelWidth = 85;
+<<<<<<< HEAD
 
 			if( m_containerGraph != null )
 				m_variableName += m_containerGraph.LocalVarNodes.NodesList.Count;
 
+=======
+			if( UIUtils.CurrentWindow != null && UIUtils.CurrentWindow.CurrentGraph != null )
+				m_variableName += UIUtils.LocalVarNodeAmount();
+>>>>>>> Niki
 			m_oldName = m_variableName;
 			UpdateTitle();
 			m_previewShaderGUID = "5aaa1d3ea9e1fa64781647e035a82334";
@@ -57,7 +62,11 @@ namespace AmplifyShaderEditor
 		protected override void OnUniqueIDAssigned()
 		{
 			base.OnUniqueIDAssigned();
+<<<<<<< HEAD
 			m_containerGraph.LocalVarNodes.AddNode( this );
+=======
+			UIUtils.RegisterLocalVarNode( this );
+>>>>>>> Niki
 		}
 
 		public override void OnInputPortConnected( int portId, int otherNodeId, int otherPortId, bool activateNode = true )
@@ -91,9 +100,16 @@ namespace AmplifyShaderEditor
 			DrawPrecisionProperty();
 		}
 
+<<<<<<< HEAD
 		public override void AfterDuplication()
 		{
 			base.AfterDuplication();
+=======
+		public override void AfterDuplication( ParentNode original )
+		{
+			base.AfterDuplication( original );
+
+>>>>>>> Niki
 			CheckAndChangeName();
 		}
 
@@ -105,12 +121,21 @@ namespace AmplifyShaderEditor
 				m_variableName = LocalDefaultNameStr + OutputId;
 			}
 			bool isNumericName = UIUtils.IsNumericName( m_variableName );
+<<<<<<< HEAD
 			if( !isNumericName && m_containerGraph.ParentWindow.DuplicatePrevBufferInstance.IsLocalvariableNameAvailable( m_variableName ) )
 			{
 				m_containerGraph.ParentWindow.DuplicatePrevBufferInstance.ReleaseLocalVariableName( UniqueId, m_oldName );
 				m_containerGraph.ParentWindow.DuplicatePrevBufferInstance.RegisterLocalVariableName( UniqueId, m_variableName );
 				m_oldName = m_variableName;
 				m_containerGraph.LocalVarNodes.UpdateDataOnNode( UniqueId, m_variableName );
+=======
+			if( !isNumericName && UIUtils.IsLocalvariableNameAvailable( m_variableName ) )
+			{
+				UIUtils.ReleaseLocalVariableName( UniqueId, m_oldName );
+				UIUtils.RegisterLocalVariableName( UniqueId, m_variableName );
+				m_oldName = m_variableName;
+				UIUtils.UpdateLocalVarDataNode( UniqueId, m_variableName );
+>>>>>>> Niki
 				UpdateTitle();
 				m_forceUpdate = true;
 			}
@@ -122,7 +147,11 @@ namespace AmplifyShaderEditor
 				//}
 
 				m_variableName = m_oldName;
+<<<<<<< HEAD
 				m_containerGraph.LocalVarNodes.UpdateDataOnNode( UniqueId, m_variableName );
+=======
+				UIUtils.UpdateLocalVarDataNode( UniqueId, m_variableName );
+>>>>>>> Niki
 			}
 		}
 
@@ -137,14 +166,22 @@ namespace AmplifyShaderEditor
 					EditorGUILayout.LabelField( string.Format( GetLocalVarLabel, m_registeredGetLocalVars[ i ].UniqueId ) );
 					if( GUILayout.Button( "\u25BA", "minibutton", GUILayout.Width( 17 ) ) )
 					{
+<<<<<<< HEAD
 						m_containerGraph.ParentWindow.FocusOnNode( m_registeredGetLocalVars[ i ], 0, false );
+=======
+						UIUtils.FocusOnNode( m_registeredGetLocalVars[ i ], 0, false );
+>>>>>>> Niki
 					}
 					EditorGUILayout.EndHorizontal();
 				}
 
 				if( GUILayout.Button( "Back" ) )
 				{
+<<<<<<< HEAD
 					m_containerGraph.ParentWindow.FocusOnNode( this, 0, false );
+=======
+					UIUtils.FocusOnNode( this, 0, false );
+>>>>>>> Niki
 				}
 			}
 			else
@@ -195,7 +232,11 @@ namespace AmplifyShaderEditor
 			if( m_reRegisterName )
 			{
 				m_reRegisterName = false;
+<<<<<<< HEAD
 				m_containerGraph.ParentWindow.DuplicatePrevBufferInstance.RegisterLocalVariableName( UniqueId, m_variableName );
+=======
+				UIUtils.RegisterLocalVariableName( UniqueId, m_variableName );
+>>>>>>> Niki
 			}
 
 			if( m_forceUpdate )
@@ -231,12 +272,21 @@ namespace AmplifyShaderEditor
 			{
 				m_autoIndexActive = false;
 			}
+<<<<<<< HEAD
 			if( !m_isNodeBeingCopied )
 			{
 				m_containerGraph.LocalVarNodes.UpdateDataOnNode( UniqueId, m_variableName );
 				m_containerGraph.ParentWindow.DuplicatePrevBufferInstance.ReleaseLocalVariableName( UniqueId, m_oldName );
 				m_containerGraph.ParentWindow.DuplicatePrevBufferInstance.RegisterLocalVariableName( UniqueId, m_variableName );
 			}
+=======
+
+			UIUtils.UpdateLocalVarDataNode( UniqueId, m_variableName );
+
+			UIUtils.ReleaseLocalVariableName( UniqueId, m_oldName );
+			UIUtils.RegisterLocalVariableName( UniqueId, m_variableName );
+
+>>>>>>> Niki
 			m_forceUpdate = true;
 		}
 
@@ -303,7 +353,11 @@ namespace AmplifyShaderEditor
 			m_registeredGetLocalVars.Clear();
 			m_registeredGetLocalVars = null;
 
+<<<<<<< HEAD
 			m_containerGraph.LocalVarNodes.RemoveNode( this );
+=======
+			UIUtils.UnregisterLocalVarNode( this );
+>>>>>>> Niki
 		}
 
 		public override void ActivateNode( int signalGenNodeId, int signalGenPortId, Type signalGenNodeType )

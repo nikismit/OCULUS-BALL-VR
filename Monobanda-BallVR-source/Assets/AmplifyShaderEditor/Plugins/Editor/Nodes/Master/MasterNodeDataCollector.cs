@@ -867,17 +867,27 @@ namespace AmplifyShaderEditor
 			}
 		}
 
+<<<<<<< HEAD
 		public void AddToDefines( int nodeId, string value, bool define = true )
+=======
+		public void AddToDefines( int nodeId, string value )
+>>>>>>> Niki
 		{
 			if( string.IsNullOrEmpty( value ) )
 				return;
 
 			if( !m_definesDict.ContainsKey( value ) )
 			{
+<<<<<<< HEAD
 				string defineValue = ( define ? "#define " : "#undef " ) + value;
 				m_definesDict.Add( value, new PropertyDataCollector( nodeId, defineValue ) );
 				m_definesList.Add( m_definesDict[ value ] );
 				m_defines += "\t\t"+ defineValue + "\n";
+=======
+				m_definesDict.Add( value, new PropertyDataCollector( nodeId, "#define " + value ) );
+				m_definesList.Add( m_definesDict[ value ] );
+				m_defines += "\t\t#define " + value + "\n";
+>>>>>>> Niki
 				m_dirtyDefines = true;
 			}
 			else
@@ -1795,6 +1805,7 @@ namespace AmplifyShaderEditor
 		}
 
 		public NodeAvailability CurrentCanvasMode { get { return m_currentCanvasMode; } set { m_currentCanvasMode = value; } }
+<<<<<<< HEAD
 		public TemplateSRPType CurrentSRPType
 		{
 			get
@@ -1805,5 +1816,7 @@ namespace AmplifyShaderEditor
 				return TemplateSRPType.BuiltIn;
 			}
 		}
+=======
+>>>>>>> Niki
 	}
 }

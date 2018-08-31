@@ -55,7 +55,10 @@ namespace AmplifyShaderEditor
 		WORLD_BITANGENT,
 		WORLD_VIEW_DIR,
 		WORLD_POSITION,
+<<<<<<< HEAD
 		RELATIVE_WORLD_POS,
+=======
+>>>>>>> Niki
 		OTHER
 	}
 
@@ -82,6 +85,7 @@ namespace AmplifyShaderEditor
 		SyncProperties = 1 << 0
 	}
 
+<<<<<<< HEAD
 	public enum TemplateSpecialTags
 	{
 		RenderType,
@@ -89,6 +93,8 @@ namespace AmplifyShaderEditor
 		None
 	}
 
+=======
+>>>>>>> Niki
 	public class TemplateReplaceHelper
 	{
 		public TemplateMultiPassMasterNode MasterNode = null;
@@ -396,18 +402,25 @@ namespace AmplifyShaderEditor
 	{
 		public static string[] VectorSwizzle = { "x", "y", "z", "w" };
 		public static string[] ColorSwizzle = { "r", "g", "b", "a" };
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> Niki
 		public static readonly Dictionary<string, InvisibleOptionsEnum> InvisibleOptions = new Dictionary<string, InvisibleOptionsEnum>()
 		{
 			{ "SyncP", InvisibleOptionsEnum.SyncProperties }
 		};
 
+<<<<<<< HEAD
 		public static readonly Dictionary<string, TemplateSpecialTags> StringToReservedTags = new Dictionary<string, TemplateSpecialTags>()
 		{
 			{ TemplateSpecialTags.RenderType.ToString(), TemplateSpecialTags.RenderType},
 			{ TemplateSpecialTags.Queue.ToString(), TemplateSpecialTags.Queue},
 		};
 
+=======
+>>>>>>> Niki
 		public static readonly Dictionary<string, RenderType> StringToRenderType = new Dictionary<string, RenderType>
 		{
 			{"Opaque",RenderType.Opaque},
@@ -509,8 +522,12 @@ namespace AmplifyShaderEditor
 			{"wt"   ,TemplateInfoOnSematics.WORLD_TANGENT},
 			{"wbt"  ,TemplateInfoOnSematics.WORLD_BITANGENT},
 			{"wvd"  ,TemplateInfoOnSematics.WORLD_VIEW_DIR},
+<<<<<<< HEAD
 			{"wp"   ,TemplateInfoOnSematics.WORLD_POSITION},
 			{"rwp"   ,TemplateInfoOnSematics.RELATIVE_WORLD_POS}
+=======
+			{"wp"   ,TemplateInfoOnSematics.WORLD_POSITION}
+>>>>>>> Niki
 		};
 
 
@@ -529,8 +546,12 @@ namespace AmplifyShaderEditor
 			{TemplateInfoOnSematics.WORLD_TANGENT, GeneratorUtils.WorldTangentStr},
 			{TemplateInfoOnSematics.WORLD_BITANGENT, GeneratorUtils.WorldBitangentStr},
 			{TemplateInfoOnSematics.WORLD_VIEW_DIR, GeneratorUtils.WorldViewDirectionStr},
+<<<<<<< HEAD
 			{TemplateInfoOnSematics.WORLD_POSITION, GeneratorUtils.WorldPositionStr},
 			{TemplateInfoOnSematics.RELATIVE_WORLD_POS, GeneratorUtils.RelativeWorldPositionStr}
+=======
+			{TemplateInfoOnSematics.WORLD_POSITION, GeneratorUtils.WorldPositionStr}
+>>>>>>> Niki
 		};
 
 
@@ -549,8 +570,12 @@ namespace AmplifyShaderEditor
 			{TemplateInfoOnSematics.WORLD_TANGENT, WirePortDataType.FLOAT3},
 			{TemplateInfoOnSematics.WORLD_BITANGENT, WirePortDataType.FLOAT3},
 			{TemplateInfoOnSematics.WORLD_VIEW_DIR, WirePortDataType.FLOAT3},
+<<<<<<< HEAD
 			{TemplateInfoOnSematics.WORLD_POSITION, WirePortDataType.FLOAT3},
 			{TemplateInfoOnSematics.RELATIVE_WORLD_POS, WirePortDataType.FLOAT3},
+=======
+			{TemplateInfoOnSematics.WORLD_POSITION, WirePortDataType.FLOAT3}
+>>>>>>> Niki
 		};
 		public static readonly Dictionary<int, TemplateInfoOnSematics> IntToUVChannelInfo = new Dictionary<int, TemplateInfoOnSematics>
 		{

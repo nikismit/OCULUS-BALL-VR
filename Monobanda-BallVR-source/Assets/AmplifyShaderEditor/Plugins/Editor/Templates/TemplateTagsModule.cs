@@ -6,6 +6,7 @@ using UnityEditor;
 namespace AmplifyShaderEditor
 {
 	[Serializable]
+<<<<<<< HEAD
 	public class TemplateTagsRenderTools
 	{
 		private const string RenderTypeStr = " Render Type";
@@ -134,6 +135,8 @@ namespace AmplifyShaderEditor
 	}
 
 	[Serializable]
+=======
+>>>>>>> Niki
 	public class TemplateTagsModule : TemplateModuleParent
 	{
 		private const string CustomTagsStr = " SubShader Tags";
@@ -145,10 +148,14 @@ namespace AmplifyShaderEditor
 
 		private const float ShaderKeywordButtonLayoutWidth = 15;
 		private UndoParentNode m_currentOwner;
+<<<<<<< HEAD
 
 		//[SerializeField]
 		//private TemplateTagsRenderTools m_renderTools = new TemplateTagsRenderTools();
 
+=======
+		
+>>>>>>> Niki
 		[SerializeField]
 		private List<CustomTagData> m_availableTags = new List<CustomTagData>();
 
@@ -156,6 +163,7 @@ namespace AmplifyShaderEditor
 
 		public TemplateTagsModule() : base( "SubShader Tags" ) { }
 
+<<<<<<< HEAD
 		//void DetectSpecialTags()
 		//{
 		//	int count = m_availableTags.Count;
@@ -164,6 +172,8 @@ namespace AmplifyShaderEditor
 		//	}
 		//}
 		
+=======
+>>>>>>> Niki
 		public void CopyFrom( TemplateTagsModule other )
 		{
 			m_availableTags.Clear();
@@ -176,7 +186,10 @@ namespace AmplifyShaderEditor
 				m_availableTags.Add( newData );
 				m_availableTagsDict.Add( newData.TagName, newData );
 			}
+<<<<<<< HEAD
 			//m_renderTools.AnalyzeTags( ref m_availableTags , false );
+=======
+>>>>>>> Niki
 		}
 		
 		public void ConfigureFromTemplateData( TemplateTagsModuleData tagsData )
@@ -193,7 +206,10 @@ namespace AmplifyShaderEditor
 					m_availableTags.Add( tagData );
 					m_availableTagsDict.Add( tagsData.Tags[ i ].Name, tagData );
 				}
+<<<<<<< HEAD
 				//m_renderTools.AnalyzeTags( ref m_availableTags, false );
+=======
+>>>>>>> Niki
 			}
 			m_validData = newValidData;
 		}
@@ -207,8 +223,11 @@ namespace AmplifyShaderEditor
 
 		public override void Draw( UndoParentNode owner, bool style = true )
 		{
+<<<<<<< HEAD
 			//m_renderTools.IsLocked = style;
 
+=======
+>>>>>>> Niki
 			m_currentOwner = owner;
 			bool foldout = owner.ContainerGraph.ParentWindow.InnerWindowVariables.ExpandedCustomTags;
 			if( style )
@@ -246,7 +265,11 @@ namespace AmplifyShaderEditor
 
 		void DrawMainBody()
 		{
+<<<<<<< HEAD
 			//m_renderTools.Draw( m_currentOwner, ref m_availableTags );
+=======
+
+>>>>>>> Niki
 			EditorGUI.BeginChangeCheck();
 			{
 				EditorGUILayout.Separator();
@@ -272,7 +295,10 @@ namespace AmplifyShaderEditor
 						if( EditorGUI.EndChangeCheck() )
 						{
 							m_availableTags[ i ].TagName = UIUtils.RemoveShaderInvalidCharacters( m_availableTags[ i ].TagName );
+<<<<<<< HEAD
 							//m_renderTools.CheckTagUsage( i );
+=======
+>>>>>>> Niki
 						}
 
 						//Tag Value
@@ -281,7 +307,10 @@ namespace AmplifyShaderEditor
 						if( EditorGUI.EndChangeCheck() )
 						{
 							m_availableTags[ i ].TagValue = UIUtils.RemoveShaderInvalidCharacters( m_availableTags[ i ].TagValue );
+<<<<<<< HEAD
 							//m_renderTools.CheckTagUsage( i );
+=======
+>>>>>>> Niki
 						}
 
 						EditorGUIUtility.labelWidth = originalLabelWidth;
@@ -375,7 +404,10 @@ namespace AmplifyShaderEditor
 				{
 					AddTagFromRead( nodeParams[ index++ ] );
 				}
+<<<<<<< HEAD
 			//	m_renderTools.AnalyzeTags( ref m_availableTags, false );
+=======
+>>>>>>> Niki
 			}
 		}
 
@@ -425,9 +457,13 @@ namespace AmplifyShaderEditor
 			m_currentOwner = null;
 			m_availableTagsDict.Clear();
 			m_availableTagsDict = null;
+<<<<<<< HEAD
 		//	m_renderTools = null;
 		}
 
+=======
+		}
+>>>>>>> Niki
 		public List<CustomTagData> AvailableTags { get { return m_availableTags; } }
 
 		public bool HasRenderInfo( ref RenderType renderType, ref RenderQueue renderQueue )
@@ -450,10 +486,16 @@ namespace AmplifyShaderEditor
 				}
 				else if( m_availableTags[ i ].TagName.Equals( RenderQueueHelperStr ) )
 				{
+<<<<<<< HEAD
 					string value = m_availableTags[ i ].TagValue.Split( '+' )[ 0 ].Split( '-' )[0];
 					if( TemplateHelperFunctions.StringToRenderQueue.ContainsKey( value ) )
 					{
 						renderQueue = TemplateHelperFunctions.StringToRenderQueue[ value ];
+=======
+					if( TemplateHelperFunctions.StringToRenderQueue.ContainsKey( m_availableTags[ i ].TagValue ) )
+					{
+						renderQueue = TemplateHelperFunctions.StringToRenderQueue[ m_availableTags[ i ].TagValue ];
+>>>>>>> Niki
 						foundRenderQueue = true;
 					}
 				}

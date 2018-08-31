@@ -5,7 +5,6 @@ using UnityEngine;
 public class SwitchSceneOnGoButton : MonoBehaviour {
 
 	public string sceneToLoadName;
-    public OVRScreenFade screenfade_Script;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +15,7 @@ public class SwitchSceneOnGoButton : MonoBehaviour {
 	void Update () {
 		
 		if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || OVRInput.GetDown(OVRInput.Button.One)){
-            print("Load new level!");
-			screenfade_Script.FadeToNewLevel(sceneToLoadName);
+			GameObject.Find("Main Camera").GetComponent<OVRScreenFade>().FadeToNewLevel(sceneToLoadName);
 		}
 
 

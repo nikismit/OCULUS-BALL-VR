@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Test&OldScenes/TerrainDeformation.unity
+- path: Assets/5_Scenes/Terraforming.unity
   isLoaded: 1
   isActive: 1

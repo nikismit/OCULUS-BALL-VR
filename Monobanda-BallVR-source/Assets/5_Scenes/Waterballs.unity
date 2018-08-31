@@ -152,18 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4140667435579514, guid: df0c8ab76c9eaf54a90a0e6542020708, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4140667435579514, guid: df0c8ab76c9eaf54a90a0e6542020708, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4140667435579514, guid: df0c8ab76c9eaf54a90a0e6542020708, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df0c8ab76c9eaf54a90a0e6542020708, type: 2}
   m_IsPrefabParent: 0
@@ -273,6 +261,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406632627}
+  - component: {fileID: 406632626}
   - component: {fileID: 406632628}
   m_Layer: 0
   m_Name: SceneSwitcher
@@ -280,7 +269,20 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &406632626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406632625}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2e61409de32764584979067e3bf8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoadName: Day5
+  timeUntilSwitch: 60
 --- !u!4 &406632627
 Transform:
   m_ObjectHideFlags: 0
@@ -305,8 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b7b9ab85e460049ab188610b47361a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoadName: Terraforming
-  screenfade_Script: {fileID: 591940360}
+  sceneToLoadName: Day5
 --- !u!1 &488513658
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &521312147
 Transform:
   m_ObjectHideFlags: 0
@@ -552,7 +553,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   queueAhead: 1
   useRecommendedMSAALevel: 1
-  _monoscopic: 0
   enableAdaptiveResolution: 0
   minRenderScale: 0.7
   maxRenderScale: 1
@@ -587,7 +587,6 @@ MonoBehaviour:
   useIPDInPositionTracking: 1
   resetTrackerOnLoad: 0
   AllowRecenter: 1
-  _reorientHMDOnControllerRecenter: 1
 --- !u!1 &866238591
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +735,10 @@ MonoBehaviour:
   _spawnLocation: {fileID: 1160476767}
   _growTimeMax: 10
   _ballsizeMinMax: {x: 0.1, y: 5}
+  defaultMass: 1
+  _massMultiplyBySize: 0
+  _ballBounceMinMax: {x: 0.1, y: 1}
+  _bounceBasedOnPitch: 0
   _forceAdd: 5
   _minSpeakTime: 0.2
   _playSoundMade: 1
@@ -746,6 +749,9 @@ MonoBehaviour:
   highPitchColor: {r: 0, g: 0.23137257, b: 0.5019608, a: 1}
   _currentColor: {r: 0, g: 0, b: 0, a: 0}
   SIC: {fileID: 2048624638}
+  _minPitch: 100
+  _maxPitch: 300
+  _maxRegisteredAmplitude: 40
   _micPitch: 0
   _isSpeaking: 0
   spawningBalls: 1
@@ -830,42 +836,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 2}
-      propertyPath: m_modelGearVrController
-      value: 
-      objectReference: {fileID: 1794064655}
-    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 2}
-      propertyPath: m_controller
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 2}
-      propertyPath: m_modelOculusGoController
-      value: 
-      objectReference: {fileID: 1794064654}
-    - target: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1956530202777762, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1794064653 stripped
 Transform:
   m_PrefabParentObject: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 2}
-  m_PrefabInternal: {fileID: 1794064652}
---- !u!1 &1794064654 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1956530202777762, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,
-    type: 2}
-  m_PrefabInternal: {fileID: 1794064652}
---- !u!1 &1794064655 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010178323718, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,
-    type: 2}
   m_PrefabInternal: {fileID: 1794064652}
 --- !u!1 &2048624636
 GameObject:

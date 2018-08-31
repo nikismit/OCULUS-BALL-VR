@@ -24,6 +24,10 @@ public class SpawnBalls : MonoBehaviour {
     // ball size
     public float _growTimeMax;
     public Vector2 _ballsizeMinMax;
+	public float defaultMass;
+	public bool _massMultiplyBySize;
+    public Vector2 _ballBounceMinMax;
+	public bool _bounceBasedOnPitch;
 	public float _forceAdd;
 	
 	public float _minSpeakTime = 0.5f;
@@ -48,6 +52,9 @@ public class SpawnBalls : MonoBehaviour {
     //microphone variables
 	[Header("Mic Options")]
 	public SoundInputController SIC;
+	public float _minPitch;
+	public float _maxPitch;
+	public float _maxRegisteredAmplitude;
     public float _micPitch;
     private float _micAmplitude;
 
@@ -91,11 +98,14 @@ public class SpawnBalls : MonoBehaviour {
         {
             GameObject obj = (GameObject)Instantiate(_ballPrefab);
             Material mat = new Material(_ballMaterial);
+            PhysicMaterial physicmat = new PhysicMaterial(i.ToString()); 
 
             obj.GetComponent<Renderer>().material = mat;
+            obj.GetComponent<SphereCollider>().material = physicmat;
             obj.SetActive(false);
             _balls.Add(obj);
             _lMaterial.Add(mat);
+            _lPhysicMaterial.Add(physicmat);
         }
     }
 	
@@ -143,6 +153,9 @@ public class SpawnBalls : MonoBehaviour {
 						_currentBall.GetComponent<WaterBall_Script>().floatTimerStart = true;
 					}
 					
+					//_highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
+					
+					//print(_currentBall.name + " - Exit force -> " + this.transform.forward + " " + _forceAdd + " " +  _highestAmplitude);
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 					
 					_highestAmplitude = 0;

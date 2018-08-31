@@ -154,4 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   pitch: 1
-  currentColor: {r: 0.9803922, g: 0.9607844, b: 0.7725491, a: 1}
+  currentColor: {r: 1, g: 0, b: 0, a: 1}

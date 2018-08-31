@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoundInput;
 
 public class SpawnBalls : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class SpawnBalls : MonoBehaviour {
 
 	[Header("Ball Options")]
     
-	public Collider playerCollider;
+	//public Collider playerCollider;
     public GameObject _ballPrefab;
     public Material _ballMaterial;
     public PhysicMaterial _ballPhysicMaterial;
@@ -23,13 +24,8 @@ public class SpawnBalls : MonoBehaviour {
     // ball size
     public float _growTimeMax;
     public Vector2 _ballsizeMinMax;
-	public float defaultMass;
-	public bool _massMultiplyBySize;
-    public Vector2 _ballBounceMinMax;
-	public bool _bounceBasedOnPitch;
 	public float _forceAdd;
 	
-	private float _spawnTimer = 0.0f;
 	public float _minSpeakTime = 0.5f;
 	public bool _playSoundMade = true;
 
@@ -48,14 +44,10 @@ public class SpawnBalls : MonoBehaviour {
 	public Color _currentColor;
     private int _currentItem;
     private Rigidbody _currentRigidbody;
-    private SphereCollider _currentSphereCollider;
 
     //microphone variables
 	[Header("Mic Options")]
-	public GameObject MicManager;
-	public float _minPitch;
-	public float _maxPitch;
-	public float _maxRegisteredAmplitude;
+	public SoundInputController SIC;
     public float _micPitch;
     private float _micAmplitude;
 
@@ -68,7 +60,6 @@ public class SpawnBalls : MonoBehaviour {
 	private AudioClip _currentClip;
     
     private float _ballSizeCurrent;
-	private float _currentAmplitude;
     
     
     private float _highestAmplitude;
@@ -76,8 +67,9 @@ public class SpawnBalls : MonoBehaviour {
     public static int _currentBallNum = 1;
 
 	[HideInInspector]public bool spawningBalls = true;
-    
-	bool explodingBalls = false;
+
+	bool waterBalls = false;
+   
 
 
     // Use this for initialization
@@ -87,114 +79,98 @@ public class SpawnBalls : MonoBehaviour {
         _balls = new List<GameObject>();
         _lMaterial = new List<Material>();
         _lPhysicMaterial = new List<PhysicMaterial>();
-
-		if(_ballPrefab.name == "ExplosionBall"){
-			explodingBalls = true;
+		_isSpeaking = false;
+		
+		if(_ballPrefab.name == "WaterBall"){
+			waterBalls = true;
 		}
+        
 
+        //
         for (int i = 0; i < _ballPoolAmount; i++)
         {
             GameObject obj = (GameObject)Instantiate(_ballPrefab);
             Material mat = new Material(_ballMaterial);
-            PhysicMaterial physicmat = new PhysicMaterial(i.ToString()); 
 
             obj.GetComponent<Renderer>().material = mat;
-            obj.GetComponent<SphereCollider>().material = physicmat;
             obj.SetActive(false);
             _balls.Add(obj);
             _lMaterial.Add(mat);
-            _lPhysicMaterial.Add(physicmat);
         }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //pitch
+        
+        _micPitch =  SIC.inputData.relativeFrequency;
+        _micAmplitude = SIC.inputData.relativeAmplitude;
 
-        _micPitch =  Mathf.Clamp01(((Mathf.Clamp((float)VoiceProfile._voicePitch, _minPitch, _maxPitch))-_minPitch) / (_maxPitch - _minPitch));
-
-		
-
-		
-        _micAmplitude = VoiceProfile._amplitudeCurrent;
 		if(spawningBalls){
-			if ((_micAmplitude >= VoiceProfile._amplitudeSilence) && (!_isSpeaking)) //start speaking SPAWN
+			if ((_micAmplitude > 0) && (!_isSpeaking)) //start speaking SPAWN
 			{
+				//SIC.SetTime(0.0f);
 				_currentColor = new Color(0, 0, 0, 1);
 				_isSpeaking = true;
-				_spawnTimer = 0.0f;
 				_currentBall = GetPooledBall();
 				_currentMaterial = _currentBall.GetComponent<Renderer>().material;
 				_currentRigidbody = _currentBall.GetComponent<Rigidbody>();
-				_currentSphereCollider = _currentBall.GetComponent<SphereCollider>();
 				_currentMaterial.SetColor("_Color", _currentColor);
 				_currentBall.transform.position = _spawnLocation.position;
+				_currentBall.transform.rotation = _spawnLocation.rotation;
 				_currentBall.name = "Ball" + _currentBallNum;
 				//print(_currentBall.name);
 				_currentBallNum +=1;
 				_currentRigidbody.isKinematic = true;
-				_clipStart = MicManager.GetComponent<AudioSource>().time;
+				_clipStart = SIC.GetComponent<AudioSource>().time;
 				//_currentBall.GetComponent<DestroyAtZeroVelocity>().playerCollider = playerCollider;
 			
 			}
 
-			if ((_micAmplitude < VoiceProfile._amplitudeSilence) && (_isSpeaking)) //stop speaking RELEASE
+			if ((_micAmplitude <= 0) && (_isSpeaking)) //stop speaking RELEASE
 			{
 				
-				if (_spawnTimer >= _minSpeakTime){
-					//print(_spawnTimer + " >= " + _minSpeakTime);
-					_clipEnd = MicManager.GetComponent<AudioSource>().time;
+				if (_timeRecording >= _minSpeakTime){
+					_clipEnd = SIC.GetComponent<AudioSource>().time;
 					if(_playSoundMade){
-						_currentClip = MakeSubclip(MicManager.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
+						_currentClip = MakeSubclip(SIC.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
 						_currentBall.GetComponent<AudioSource>().clip = _currentClip;
 					}
-					_currentBall.GetComponent<DestroyAtZeroVelocity>().growSize = _ballSizeCurrent;
 					
 					_currentRigidbody.isKinematic = false;
 					
+					if(waterBalls){
+						_currentBall.GetComponent<WaterBall_Script>().floatTimerStart = true;
+					}
 					
-					_highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
-					//print(_currentBall.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
-					if(explodingBalls == true){
-						_currentBall.GetComponent<ExplodingBalls>().power = _highestAmplitude;
-						_currentBall.GetComponent<ExplodingBalls>().radius = _ballSizeCurrent * 2.0f;
-						GameObject.Find("ScoreKeeper").GetComponent<ScoreKeeper>().ballsLeft -= 1;
-					}
-					_highestAmplitude = 0;
-					MicManager.GetComponent<AudioPitch>().ClearMicrophone();
 					
-					if(lifeTime == true){
-						_currentBall.GetComponent<DestroyAtZeroVelocity>().deathTimer = BallLifeTime;
-						_currentBall.GetComponent<DestroyAtZeroVelocity>().startTimer = true;
-					}
+					_highestAmplitude = 0;
+					
+					
 				} else {
 					_currentBall.SetActive(false);
 					//_currentBallNum -= 1;
 				}
 				_isSpeaking = false;
-				_spawnTimer = 0.0f;
 				_timeRecording = 0.0f;
 				
 			}
-
+			
 			if (_isSpeaking) //WHILE speaking
 			{
-				if (_micAmplitude > _highestAmplitude)
-				{
+				_timeRecording += Time.deltaTime;
+
+				if (_micAmplitude > _highestAmplitude){
 					_highestAmplitude = _micAmplitude;
 				}
-				_currentAmplitude = _micAmplitude;
-            
-				_timeRecording += Time.deltaTime;
-				_spawnTimer += Time.deltaTime;
+				
 				
 				_currentBall.transform.position = _spawnLocation.position + (0.25f/(_growTimeMax/10)) * this.transform.forward * _timeRecording;
 				_ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
 				_currentBall.transform.localScale = new Vector3(_ballSizeCurrent, _ballSizeCurrent, _ballSizeCurrent);
 
-			
+				
 				bool belowMid = true;
 				float lowMid = 1.0f;
 				float midHigh = 0.0f;
@@ -215,26 +191,10 @@ public class SpawnBalls : MonoBehaviour {
 				}
 				_currentMaterial.SetColor("_Color", _currentColor);
 				_currentMaterial.SetColor("_EmissionColor", _currentColor);
-
-				if (_massMultiplyBySize)
-				{
-					_currentRigidbody.mass = defaultMass * _ballSizeCurrent;
-				}
-				else
-				{
-					_currentRigidbody.mass = defaultMass;
-				}
-
-				if (_bounceBasedOnPitch)
-				{
-					_currentSphereCollider.material.bounciness = Mathf.Lerp(_ballBounceMinMax.x, _ballBounceMinMax.y, _micPitch);
-				}
-				else
-				{
-					_currentSphereCollider.material.bounciness = _ballBounceMinMax.y;
-				}
-				_currentSphereCollider.material.bounceCombine = PhysicMaterialCombine.Average;
+				
+				
 			}
+			
 		}
     }
 
@@ -246,7 +206,6 @@ public class SpawnBalls : MonoBehaviour {
             if (!_balls[i].activeInHierarchy)
             {
                 _balls[i].SetActive(true);
-                _currentItem = i;
                 return _balls[i];
             }
         }
@@ -256,7 +215,6 @@ public class SpawnBalls : MonoBehaviour {
         {
             GameObject obj = (GameObject)Instantiate(_ballPrefab);
             _balls.Add(obj);
-            _currentItem = _balls.Count - 1;
             return obj;
 
         }

@@ -27,7 +27,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 	{
 		CheckEnableControlRig();
 	}
-<<<<<<< HEAD
+
 #else
         public int callbackOrder
         {
@@ -88,7 +88,6 @@ namespace UnityStandardAssets.CrossPlatformInput
         {
 #if MOBILE_INPUT
 		EnableControlRig(true);
-<<<<<<< HEAD
 #else
 
 		

@@ -40,7 +40,6 @@ namespace UnityStandardAssets.Utility
 	{
 		CheckEnableContent();
 	}
-<<<<<<< HEAD
 #else
         public int callbackOrder
         {

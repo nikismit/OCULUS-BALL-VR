@@ -20,6 +20,7 @@ limitations under the License.
 ************************************************************************************/
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections; // required for Coroutines
 
 /// <summary>
@@ -29,11 +30,18 @@ public class OVRScreenFade : MonoBehaviour
 {
     [Tooltip("Fade duration")]
 	public float fadeTime = 2.0f;
+	bool loadLevel = false;
+	string levelToLoad;
 
     [Tooltip("Screen color at maximum fade")]
 	public Color fadeColor = new Color(0.01f, 0.01f, 0.01f, 1.0f);
 
     public bool fadeOnStart = true;
+
+	/// <summary>
+	/// The render queue used by the fade mesh. Reduce this if you need to render on top of it.
+	/// </summary>
+	public int renderQueue = 5000;
 
     private float uiFadeAlpha = 0;
 
@@ -97,7 +105,7 @@ public class OVRScreenFade : MonoBehaviour
 
 		mesh.uv = uv;
 
-		fadeRenderer.material = fadeMaterial;
+		SetFadeLevel(0);
 	}
 
     /// <summary>
@@ -108,6 +116,11 @@ public class OVRScreenFade : MonoBehaviour
         StartCoroutine(Fade(0,1));
     }
 
+	public void FadeToNewLevel(string LevelName){
+		loadLevel = true;
+		levelToLoad = LevelName;
+		StartCoroutine(Fade(0,1));
+	}
 
 	/// <summary>
 	/// Starts a fade in when a new level is loaded
@@ -180,6 +193,10 @@ public class OVRScreenFade : MonoBehaviour
 			elapsedTime += Time.deltaTime;
             currentAlpha = Mathf.Lerp(startAlpha, endAlpha, Mathf.Clamp01(elapsedTime / fadeTime));
             SetMaterialAlpha();
+			//print(elapsedTime + " - " + Time.time);
+			if(currentAlpha >= 0.99f && loadLevel == true){
+				SceneManager.LoadScene(levelToLoad);
+			}
 			yield return new WaitForEndOfFrame();
 		}
 	}
@@ -196,6 +213,7 @@ public class OVRScreenFade : MonoBehaviour
         if (fadeMaterial != null)
         {
             fadeMaterial.color = color;
+			fadeMaterial.renderQueue = renderQueue;
 			fadeRenderer.material = fadeMaterial;
 			fadeRenderer.enabled = isFading;
         }

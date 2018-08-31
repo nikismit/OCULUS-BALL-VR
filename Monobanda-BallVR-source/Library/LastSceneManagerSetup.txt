@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/_Scenes/Voiceslot church trippy shadows.unity
-=======
-- path: Assets/_Scenes/EvelynTests/Night&Day.unity
->>>>>>> Evelyn_Fix
+- path: Assets/_Scenes/Test&OldScenes/old.unity
   isLoaded: 1
   isActive: 1

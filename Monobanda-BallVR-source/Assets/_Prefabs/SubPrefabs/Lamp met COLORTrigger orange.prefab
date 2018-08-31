@@ -83,9 +83,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784221220817162}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000008940697}
-  m_LocalPosition: {x: -0.050292928, y: -0.3445429, z: 0.040172845}
-  m_LocalScale: {x: 0.015572042, y: 0.015572049, z: 0.015572049}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -4, y: 0.55, z: -4}
+  m_LocalScale: {x: 1.0231458, y: 1.0231464, z: 1.0231464}
   m_Children:
   - {fileID: 4072052134300590}
   - {fileID: 4318091197556700}
@@ -268,16 +268,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700ecc00a7d81394ca5791804912ed32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerTime: 2
-  wantedColor: {r: 1, g: 0.5176471, b: 0, a: 0}
-  colorErrorMargin: 0.4
   lightsToActivate:
   - {fileID: 0}
-  addingTime: 0
+  wantedColor: {r: 1, g: 0.5176471, b: 0, a: 0}
+  colorErrorMargin: 0.4
+  needBallSize: 0
+  wantedBallsizeMinMax: {x: 0, y: 0}
+  triggerTime: 2
   playBallAudio: 0
   lampLinkedToAudio: 0
   lampStaysOn: 0
   audioPlayed: 0
-  needBallSize: 0
-  wantedBallsizeMinMax: {x: 0, y: 0}
   updateAudio: 0
+  destroyWrongBalls: 1
+  lampActive: 0

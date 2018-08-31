@@ -1020,40 +1020,15 @@ namespace AmplifyShaderEditor
 		[MenuItem( "Assets/Create/Shader/Amplify Surface Shader" )]
 		public static void CreateNewShader()
 		{
-<<<<<<< HEAD
 
-			string path = string.Empty; 
-			if( Selection.activeObject != null )
-			{
-				path = ( IOUtils.dataPath + AssetDatabase.GetAssetPath( Selection.activeObject ) );
-			}
-			else
-			{
-				UnityEngine.Object[] selection = Selection.GetFiltered( typeof( UnityEngine.Object ), SelectionMode.DeepAssets );
-				if( selection.Length > 0 && selection[ 0 ] != null )
-				{
-					path = ( IOUtils.dataPath + AssetDatabase.GetAssetPath( selection[0] ) );
-				}
-				else
-				{
-					path = Application.dataPath;
-				}
-
-			}
-
-=======
 			string path = Selection.activeObject == null ? Application.dataPath : ( IOUtils.dataPath + AssetDatabase.GetAssetPath( Selection.activeObject ) );
->>>>>>> Niki
+
 			if( path.IndexOf( '.' ) > -1 )
 			{
 				path = path.Substring( 0, path.LastIndexOf( '/' ) );
 			}
 			path += "/";
-<<<<<<< HEAD
-			
-=======
 
->>>>>>> Niki
 			if( IOUtils.AllOpenedWindows.Count > 0 )
 			{
 				EditorWindow openedWindow = AmplifyShaderEditorWindow.GetWindow<AmplifyShaderEditorWindow>();
@@ -3172,11 +3147,8 @@ namespace AmplifyShaderEditor
 					Vector2 pos = node.Vec2Position;
 					node.Vec2Position = pos + deltaPos + m_copyPasteDeltaMul * Constants.CopyPasteDeltaPos;
 					//node.RefreshExternalReferences();
-<<<<<<< HEAD
-					node.AfterDuplication();
-=======
+
 					node.AfterDuplication( node );
->>>>>>> Niki
 					createdNodes.Add( node );
 					m_mainGraphInstance.SelectNode( node, true, false );
 				}

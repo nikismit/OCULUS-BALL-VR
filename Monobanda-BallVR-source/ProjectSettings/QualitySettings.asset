@@ -148,28 +148,20 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Ultra
-<<<<<<< HEAD
     pixelLightCount: 4
-=======
-    pixelLightCount: 12
->>>>>>> Niki
     shadows: 2
     shadowResolution: 2
     shadowProjection: 1
     shadowCascades: 4
     shadowDistance: 150
-    shadowNearPlaneOffset: 12
+    shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
-    shadowmaskMode: 0
+    shadowmaskMode: 1
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-<<<<<<< HEAD
     antiAliasing: 0
-=======
-    antiAliasing: 4
->>>>>>> Niki
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1

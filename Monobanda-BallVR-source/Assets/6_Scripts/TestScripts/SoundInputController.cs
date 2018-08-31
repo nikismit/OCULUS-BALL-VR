@@ -91,10 +91,7 @@ namespace SoundInput
 						//Debug.Log("Selected Mic: "+ selectedDevice);
 
 						Microphone.GetDeviceCaps(SelectedDevice, out minFreq, out maxFreq);//Gets the frequency of the device
-<<<<<<< HEAD
-=======
-                        //print("MinFreq: " + minFreq + " - MaxFreq: " + maxFreq);
->>>>>>> Niki
+
 							if ((minFreq + maxFreq) == 0)
 								maxFreq = 44100;
 					}
@@ -187,13 +184,8 @@ namespace SoundInput
 
 			
 
-<<<<<<< HEAD
-			if(audio.time >= 29.0f && nullified == false){
-				//print("Time to Nullify!");
-=======
+
 			if(audio.time >= audio.clip.length - 1.0f && nullified == false){
-				print("Time to Nullify!");
->>>>>>> Niki
 				this.NullifyClipData();
 				nullified = true;
 			}
@@ -276,12 +268,9 @@ namespace SoundInput
 
 		public void NullifyClipData()
 		{
-<<<<<<< HEAD
-			float[] samples = new float[audio.clip.samples * audio.clip.channels];
-=======
-            print("Nullifying...");
+
+
             float[] samples = new float[audio.clip.samples * audio.clip.channels];
->>>>>>> Niki
 			audio.clip.GetData(samples, 0);
 			int i = 0;
 			while (i < samples.Length) {

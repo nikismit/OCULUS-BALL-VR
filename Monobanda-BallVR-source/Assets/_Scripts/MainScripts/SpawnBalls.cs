@@ -48,12 +48,10 @@ public class SpawnBalls : MonoBehaviour {
     //microphone variables
 	[Header("Mic Options")]
 	public SoundInputController SIC;
-<<<<<<< HEAD
+
 	public float _minPitch;
 	public float _maxPitch;
 	public float _maxRegisteredAmplitude;
-=======
->>>>>>> Niki
     public float _micPitch;
     private float _micAmplitude;
 
@@ -148,14 +146,7 @@ public class SpawnBalls : MonoBehaviour {
 					if(waterBalls){
 						_currentBall.GetComponent<WaterBall_Script>().floatTimerStart = true;
 					}
-<<<<<<< HEAD
-					
-					//_highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
-					
-					//print(_currentBall.name + " - Exit force -> " + this.transform.forward + " " + _forceAdd + " " +  _highestAmplitude);
-=======
-					
->>>>>>> Niki
+
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 					
 					_highestAmplitude = 0;

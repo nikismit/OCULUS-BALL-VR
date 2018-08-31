@@ -4,8 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
-<<<<<<< HEAD
-  productGUID: 625ccf6097aa92e458fde516bf2ebcff
+  productGUID: 04eea1149001ced4e8af9fa882b368de
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 3
@@ -14,17 +13,6 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Monobanda-BallVR-source
-=======
-  productGUID: fe3b087facffde346bca7260480fbda9
-  AndroidProfiler: 0
-  AndroidFilterTouchesWhenObscured: 0
-  defaultScreenOrientation: 4
-  targetDevice: 2
-  useOnDemandResources: 0
-  accelerometerFrequency: 60
-  companyName: Monobanda
-  productName: BallsVR
->>>>>>> Niki
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -57,8 +45,8 @@ PlayerSettings:
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
-  m_StereoRenderingPath: 1
-  m_ActiveColorSpace: 1
+  m_StereoRenderingPath: 0
+  m_ActiveColorSpace: 0
   m_MTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
@@ -93,7 +81,7 @@ PlayerSettings:
   resizableWindow: 0
   useMacAppStoreValidation: 0
   macAppStoreCategory: public.app-category.games
-  gpuSkinning: 1
+  gpuSkinning: 0
   graphicsJobs: 0
   xboxPIXTextureCapture: 0
   xboxEnableAvatar: 0
@@ -170,15 +158,10 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    '': com.oculus.UnitySample
-<<<<<<< HEAD
-=======
-    Android: com.mb.BallsVR
-    Standalone: com.mb.BallsVR
->>>>>>> Niki
+    Android: com.oculus.UnitySample
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 21
+  AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -275,29 +258,9 @@ PlayerSettings:
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons: []
   m_BuildTargetBatching: []
-  m_BuildTargetGraphicsAPIs:
-  - m_BuildTarget: MacStandaloneSupport
-    m_APIs: 1000000011000000
-    m_Automatic: 1
-  - m_BuildTarget: LinuxStandaloneSupport
-    m_APIs: 1100000015000000
-    m_Automatic: 1
-  - m_BuildTarget: WindowsStandaloneSupport
-    m_APIs: 02000000
-    m_Automatic: 1
-  - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b000000
-    m_Automatic: 0
+  m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
-    m_Enabled: 1
-    m_Devices:
-    - Oculus
-  - m_BuildTarget: Standalone
-    m_Enabled: 1
-    m_Devices:
-    - Oculus
-  - m_BuildTarget: 
     m_Enabled: 1
     m_Devices: []
   m_BuildTargetEnableVuforiaSettings: []
@@ -308,17 +271,7 @@ PlayerSettings:
     Android: 1
     iPhone: 1
     tvOS: 1
-<<<<<<< HEAD
   m_BuildTargetGroupLightmapEncodingQuality: []
-=======
-  m_BuildTargetGroupLightmapEncodingQuality:
-  - m_BuildTarget: Standalone
-    m_EncodingQuality: 1
-  - m_BuildTarget: XboxOne
-    m_EncodingQuality: 1
-  - m_BuildTarget: PS4
-    m_EncodingQuality: 1
->>>>>>> Niki
   wiiUTitleID: 0005000011000000
   wiiUGroupID: 00010000
   wiiUCommonSaveSize: 4096
@@ -599,21 +552,9 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-<<<<<<< HEAD
   scriptingDefineSymbols: {}
-=======
-  scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT;AMPLIFY_SHADER_EDITOR
-    4: CROSS_PLATFORM_INPUT
-    7: CROSS_PLATFORM_INPUT;AMPLIFY_SHADER_EDITOR
-    14: 
-    17: 
-    20: 
-    22: MOBILE_INPUT
->>>>>>> Niki
   platformArchitecture: {}
-  scriptingBackend:
-    Android: 1
+  scriptingBackend: {}
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0

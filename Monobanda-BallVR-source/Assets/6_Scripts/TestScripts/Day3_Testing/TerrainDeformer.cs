@@ -30,11 +30,8 @@ public class TerrainDeformer : MonoBehaviour {
 	private void OnCollisionEnter(Collision collision)
 	{
 		//print("collided with: " + collision.gameObject.name);
-<<<<<<< HEAD
-		RaiseTerrain(collision.transform.position, collision.transform.localScale, collision.gameObject.GetComponent<TerraformRing_Script>().pitch);
-=======
+		
 		RaiseTerrain(collision.transform.position, collision.transform.localScale*5, collision.gameObject.GetComponent<TerraformRing_Script>().pitch);
->>>>>>> Niki
 
 		Destroy(collision.gameObject);
 	}
@@ -86,11 +83,8 @@ public class TerrainDeformer : MonoBehaviour {
         myTerrain.terrainData.SetHeights(terX - (sizeX/2), terZ - (sizeX/2), height);
 	}
 
-<<<<<<< HEAD
-	private void OnApplicationQuit()
-=======
+
 	private void OnDisable()
->>>>>>> Niki
 	{
 		myTerrain.terrainData.SetHeights(0,0,startingHeights);
 	}

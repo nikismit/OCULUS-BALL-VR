@@ -459,10 +459,8 @@ public class OVROverlay : MonoBehaviour
 
 				tempRTDst.DiscardContents();
 
-<<<<<<< HEAD
 				var rt = textures[eyeId] as RenderTexture;
-=======
->>>>>>> Niki
+
 				bool dataIsLinear = isHdr || (QualitySettings.activeColorSpace == ColorSpace.Linear);
 
 #if !UNITY_2017_1_OR_NEWER

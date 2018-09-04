@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -283,7 +283,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4154567331968544, guid: 4a6b6060c90068a46adc20f0936f7228, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334861369628242, guid: 4a6b6060c90068a46adc20f0936f7228,
+        type: 2}
+      propertyPath: deathAfterLifeTime
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a6b6060c90068a46adc20f0936f7228, type: 2}
@@ -320,6 +325,48 @@ Transform:
   m_Father: {fileID: 1452954325}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &183991788
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.079
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000029504295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002719817666502, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6fc125c38b6f8b049931491588bb37dc, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &190347460 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: f39cf886063b07b47a1103b376841e86, type: 3}
@@ -665,6 +712,11 @@ Prefab:
       objectReference: {fileID: 243057832658455624, guid: 20d233c95205c2845a8e47cf1b1286b2,
         type: 2}
     - target: {fileID: 114334980371055416, guid: c7e7c7975094133499a22fa4d9ce635f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114528197681299614, guid: c7e7c7975094133499a22fa4d9ce635f,
         type: 2}
       propertyPath: m_Enabled
       value: 0
@@ -1380,7 +1432,7 @@ Transform:
   m_LocalScale: {x: 100, y: 0.1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1013854345
 MonoBehaviour:
@@ -1774,7 +1826,7 @@ Transform:
   - {fileID: 1932909515}
   - {fileID: 175581627}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1617849014 stripped
 GameObject:
@@ -2481,7 +2533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4824573705424400, guid: affc6f65f28bb41448ba5d97cb27874f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114932796781898960, guid: affc6f65f28bb41448ba5d97cb27874f, type: 2}
@@ -2504,7 +2556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b7b9ab85e460049ab188610b47361a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoadName: Voiceslot
+  sceneToLoadName: Terraforming
   screenfade_Script: {fileID: 416969501}
 --- !u!1 &2107761665
 GameObject:
@@ -2613,5 +2665,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

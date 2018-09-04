@@ -1,12 +1,13 @@
-Android
+WindowsStandalone
 PlayerPath?
-C:/GoBuilds/5Demos.apk
+C:/Users/Niki Smit/Desktop/VOICE DEMOS.exe
 SceneListBegin?
-Assets/5_Scenes/Destroyroom.unity
+Assets/5_Scenes/INTRO.unity
 Assets/5_Scenes/Night&Day.unity
-Assets/5_Scenes/Voiceslot.unity
-Assets/5_Scenes/Waterballs.unity
 Assets/5_Scenes/Terraforming.unity
+Assets/5_Scenes/Waterballs.unity
+Assets/5_Scenes/Destroyroom.unity
+Assets/5_Scenes/Voiceslot.unity
 SceneListEnd?
 25ff5e9cf8723ec4063927e2e1a07ae2 Assembly-CSharp.dll:.lampActivate
 8e75c7ff572e377afe5aec0a3c77276b Assembly-UnityScript.dll:.ThirdPersonCamera
@@ -155,7 +156,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 6f2f0979accbc3efafde0c413424f808 Assembly-CSharp.dll:.OVRTrackedRemote
 7556318b1ae8d2357e788b6de279526e Assembly-CSharp.dll:LowPolyWater.LowPolyWater
 5c67748270ca16e9fef8c1675ac6c49c Assembly-CSharp.dll:.AudioGong
-cb60dada61c8bbab632c46ea711b0ed8 Assembly-CSharp.dll:.TerraFormRingSpawner
+e9d1213322f5046e94fb4f77008d6bd2 Assembly-CSharp.dll:.TerraFormRingSpawner
 eb3da15c32b68d9f52c60dbb287d76b1 Assembly-CSharp.dll:.ONSPAudioSource
 c55f73f8f1562b6824faf4063dd4b0fd Assembly-CSharp.dll:TFHC_ForceShield_Shader_Sample.ForceShieldDestroyBall
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -229,7 +230,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 2dbfd4f7836c7f6a79e17be5f4bf7969 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.WaypointCircuit
-fa030c11dd301838dacb2ce604037439 Assembly-CSharp.dll:.TerrainDeformer
+da7afa81f3d379a82871c502f1d4ff28 Assembly-CSharp.dll:.TerrainDeformer
 58ea3d098767841a0513b059573cfc16 Assembly-CSharp.dll:.ONSPAmbisonicsNative
 43124e2b1cdbd29e9c64a75058aa954c Assembly-CSharp.dll:.BallDeformTerrain
 783bf6d659235f53a950684dd61ab5b9 Assembly-CSharp.dll:.MouseLook
@@ -272,6 +273,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 7e926316ce20e4d45cb9a9aebc6e79e9 Assembly-CSharp.dll:.OVRGridCube
 c1642aa96948a88011233be208cc8bdb Assembly-CSharp.dll:.MirrorScript
+a88a2e31ee5d0bd35f0066d79aed48b5 Assembly-CSharp.dll:.Lightsource_Script
 d8e7037a6806b5158196517147a7c329 Assembly-CSharp.dll:.Ripple_Script
 db3b233e35a88802fed1717d19c3d9ec Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FollowTarget
 410968bc67bbc4aee6c6fbb72824eb28 Assembly-CSharp.dll:.fps3Dtext

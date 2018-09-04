@@ -10,7 +10,7 @@ public class TerrainDeformer : MonoBehaviour {
 	int zResolution;
 	float[,] heights;
 	float[,] startingHeights;
-
+    public float pointyness;
 	
 
 	void Start()
@@ -42,8 +42,11 @@ public class TerrainDeformer : MonoBehaviour {
         int terZ =(int)((point.z / myTerrain.terrainData.size.z) * zResolution);
 		int sizeZ = (int)((size.z / myTerrain.terrainData.size.z) * zResolution);
         float[,] height = myTerrain.terrainData.GetHeights(terX - (sizeX/2),terZ - (sizeZ/2),sizeX,sizeZ);  //new float[1,1];
-		//print(size.x + " / " + myTerrain.terrainData.size.x + " * " + xResolution + " = " + sizeX);
-		//print("Raising Terrain! " + terX + " " + sizeX + " " + terZ + " " + sizeZ);
+                                                                                                            //print(size.x + " / " + myTerrain.terrainData.size.x + " * " + xResolution + " = " + sizeX);
+                                                                                                            //print("Raising Terrain! " + terX + " " + sizeX + " " + terZ + " " + sizeZ);
+        heightIncrease = heightIncrease / 2;
+        heightIncrease = (heightIncrease + 0.25f) / 0.75f;
+
         for(int tempY = 0; tempY < sizeZ; tempY++)
             for(int tempX = 0; tempX < sizeX; tempX++)
             {
@@ -53,7 +56,7 @@ public class TerrainDeformer : MonoBehaviour {
                 float proportion = dist_to_target / maxDist;
 				//print(dist_to_target + " -> " + proportion);
  
-                height[tempX,tempY] += 0.005f * heightIncrease * (1.0f - proportion) * Random.Range(0.01f, 1.0f);
+                height[tempX,tempY] += 0.005f * heightIncrease * (1.0f - proportion) * Random.Range(0.1f, 0.5f) * pointyness;
                 //heights[terX - (sizeX/2) + tempX,terZ - (sizeZ/2) + tempY] += 0.005f * (1f - proportion);
             }
  

@@ -62,7 +62,7 @@ Material:
     - _Distribution1: 0.15
     - _Distribution2: 0.32
     - _DstBlend: 0
-    - _GlossMapScale: 1
+    - _GlossMapScale: 0
     - _Glossiness: 0.689
     - _GlossyReflections: 1
     - _Metallic: 0

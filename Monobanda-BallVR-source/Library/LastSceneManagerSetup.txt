@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/5_Scenes/Destroyroom.unity
+- path: Assets/5_Scenes/Voiceslot.unity
   isLoaded: 1
   isActive: 1

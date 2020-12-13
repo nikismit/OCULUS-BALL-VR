@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/5_Scenes/INTRO.unity
+- path: Assets/_Scenes/NikiTests/MonumentValleyGarden.unity
   isLoaded: 1
   isActive: 1
